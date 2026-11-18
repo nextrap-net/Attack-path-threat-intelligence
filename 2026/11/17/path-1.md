@@ -312,11 +312,7 @@
 | `/postgres/config.json` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Bvc3RncmVzL2NvbmZpZy5qc29uKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
 | `/react/config.json` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3JlYWN0L2NvbmZpZy5qc29uKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
 | `/wp-config.php-backup` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dwLWNvbmZpZy5waHAtYmFja3VwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.
-./.
-./.
-./.
-./bin/sh` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy4NLi8uDS4vLg0uLy4NLi9iaW4vc2gqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
+| `/.\r./.\r./.\r./.\r./bin/sh` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy4NLi8uDS4vLg0uLy4NLi9iaW4vc2gqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
 | `/templates/attestation/../../selfservice/lawbase/downlawbase` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3RlbXBsYXRlcy9hdHRlc3RhdGlvbi8uLi8uLi9zZWxmc2VydmljZS9sYXdiYXNlL2Rvd25sYXdiYXNlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
 | `/WEB-INF/classes/jolokia-agent.properties` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1dFQi1JTkYvY2xhc3Nlcy9qb2xva2lhLWFnZW50LnByb3BlcnRpZXMqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
 | `/assets../.git/config` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Fzc2V0cy4uLy5naXQvY29uZmlnKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
@@ -338,8 +334,7 @@
 | `/smartbi/vision/RMIServlet` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NtYXJ0YmkvdmlzaW9uL1JNSVNlcnZsZXQqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
 | `/webtools/control/httpService` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dlYnRvb2xzL2NvbnRyb2wvaHR0cFNlcnZpY2UqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
 | `/XMLCHART` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1hNTENIQVJUKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/index.php/
-test` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2luZGV4LnBocC8KdGVzdCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
+| `/index.php/\ntest` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2luZGV4LnBocC8KdGVzdCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
 | `/sdwan/nitro/v1/config/get_package_file` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Nkd2FuL25pdHJvL3YxL2NvbmZpZy9nZXRfcGFja2FnZV9maWxlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
 | `/.env.preprod` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYucHJlcHJvZCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
 | `/WEB-INF/classes/jolokia-access.xml` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1dFQi1JTkYvY2xhc3Nlcy9qb2xva2lhLWFjY2Vzcy54bWwqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
