@@ -17,4 +17,4 @@ Each daily report lists denoised unique attack paths: static assets and high git
 | Date | Overview |
 | --- | --- |
 | 2026-10-01 | [查看](2026/10/01/index.md) |
-| 2026-11-17 | [查看](2026/11/17/index.html) |
+| 2026-11-17 | [查看](2026/11/17/index.md) |
