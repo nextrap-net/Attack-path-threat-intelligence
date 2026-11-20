@@ -12,11 +12,9 @@
 
 日报收录经降噪后的去重攻击路径：排除静态资源与高 git_count 噪声，剔除爆破型来源 IP，仅保留当天至少 2 个来源 IP 共同命中的路径。详情链接可跳转 Nextrap 情报检索页。
 
-日报正文为 HTML 表格。请通过 GitHub Pages 查看渲染：https://nextrap-net.github.io/Attack-path-threat-intelligence/
-
 ## 日报
 
 | 日期 | 总览 |
 | --- | --- |
-| 2026-10-01 | [查看](2026/10/01/index.html) |
+| 2026-10-01 | [查看](2026/10/01/index.md) |
 | 2026-11-17 | [查看](2026/11/17/index.html) |

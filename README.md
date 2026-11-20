@@ -12,11 +12,9 @@
 
 Each daily report lists denoised unique attack paths: static assets and high git_count noise are removed, blast-style source IPs are excluded, and only paths hit by at least two source IPs that day are kept. Detail links open the Nextrap intelligence search page.
 
-Reports are HTML. View via GitHub Pages: https://nextrap-net.github.io/Attack-path-threat-intelligence/
-
 ## Daily Reports
 
 | Date | Overview |
 | --- | --- |
-| 2026-10-01 | [查看](2026/10/01/index.html) |
+| 2026-10-01 | [查看](2026/10/01/index.md) |
 | 2026-11-17 | [查看](2026/11/17/index.html) |
