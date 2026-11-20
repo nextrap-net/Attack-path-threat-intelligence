@@ -1,1944 +1,603 @@
-# 2026-11-17 攻击路径（1/2）
+# 2026-11-17 攻击路径（1/7）
 
-共 1938 条。 [返回总览](index.md)
+共 300 条。 [返回总览](index.md)
 
-| 攻击路径 | 详情查看 |
-| --- | --- |
-| `/` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.orig` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYub3JpZyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.production.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYucHJvZHVjdGlvbi5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.example.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuZXhhbXBsZS5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.swp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuc3dwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/manage/login/exportAuthorize.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS9sb2dpbi9leHBvcnRBdXRob3JpemUuZG8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.copy` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuY29weSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.config` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuY29uZmlnKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.qa` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYucWEqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.azure` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuYXp1cmUqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.anthropic` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuYW50aHJvcGljKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.openai` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYub3BlbmFpKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.gcp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuZ2NwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.docker.dev` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuZG9ja2VyLmRldioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.heroku` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuaGVyb2t1KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.netlify` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYubmV0bGlmeSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.yml` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYueW1sKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.staging.local` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuc3RhZ2luZy5sb2NhbCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.vercel` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYudmVyY2VsKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.ini` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuaW5pKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.xml` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYueG1sKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.yaml` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYueWFtbCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.conf` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuY29uZioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.mysql` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYubXlzcWwqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.1` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuMSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/wordpress/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dvcmRwcmVzcy8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.mongo` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYubW9uZ28qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.production.local.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYucHJvZHVjdGlvbi5sb2NhbC5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.bak.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuYmFrLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.development.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuZGV2ZWxvcG1lbnQucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.enc` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuZW5jKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.example.local` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuZXhhbXBsZS5sb2NhbCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.keys.local` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYua2V5cy5sb2NhbCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.orig.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYub3JpZy5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.auth` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuYXV0aCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.aws.local` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuYXdzLmxvY2FsKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.copy.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuY29weS5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.deepseek` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuZGVlcHNlZWsqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.old.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYub2xkLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.prod.dist` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYucHJvZC5kaXN0KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.s3` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuczMqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.ai` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuYWkqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.db.local` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuZGIubG9jYWwqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.docker.local` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuZG9ja2VyLmxvY2FsKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.encrypted` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuZW5jcnlwdGVkKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.langchain` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYubGFuZ2NoYWluKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.local.dist` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYubG9jYWwuZGlzdCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.staging.local.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuc3RhZ2luZy5sb2NhbC5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.tokens` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYudG9rZW5zKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.backup.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuYmFja3VwLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/wp/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dwLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.secret.local` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuc2VjcmV0LmxvY2FsKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.save.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuc2F2ZS5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.huggingface` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuaHVnZ2luZ2ZhY2UqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.redis` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYucmVkaXMqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/media/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21lZGlhLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/app_dev.php/_profiler/open` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwcF9kZXYucGhwL19wcm9maWxlci9vcGVuKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/sendgrid/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlbmRncmlkLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/apis/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaXMvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/crm/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NybS8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/__nextjs_action` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL19fbmV4dGpzX2FjdGlvbioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/__rsc` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL19fcnNjKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/blog/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Jsb2cvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/system/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3N5c3RlbS8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env_1` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnZfMSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env~` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnZ-KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.www` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYud3d3KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.docker/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5kb2NrZXIvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/old/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL29sZC8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/new/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL25ldy8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.sample.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuc2FtcGxlLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.php.bak` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYucGhwLmJhayoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/wp-content/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dwLWNvbnRlbnQvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.php-backup` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYucGhwLWJhY2t1cCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.php-bak` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYucGhwLWJhayoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/config/.env.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvbmZpZy8uZW52LnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/sendgrid/.env.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlbmRncmlkLy5lbnYucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/twilio/.env.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3R3aWxpby8uZW52LnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.php.backup` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYucGhwLmJhY2t1cCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/app_dev.php/_profiler/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwcF9kZXYucGhwL19wcm9maWxlci8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/test/.env.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Rlc3QvLmVudi5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/var/.env.local.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Zhci8uZW52LmxvY2FsLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/mail/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21haWwvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/library/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2xpYnJhcnkvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cron/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Nyb24vLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/wp-admin/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dwLWFkbWluLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/static/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3N0YXRpYy8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/shop/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Nob3AvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/_static/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL19zdGF0aWMvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/v2/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3YyLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/files/hMorA9HH.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2ZpbGVzL2hNb3JBOUhILnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cgi-bin/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NnaS1iaW4vLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/base/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Jhc2UvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/audio/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2F1ZGlvLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/protected/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Byb3RlY3RlZC8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/sites/all/libraries/mailchimp/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NpdGVzL2FsbC9saWJyYXJpZXMvbWFpbGNoaW1wLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.save.1` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuc2F2ZS4xKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/login/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2xvZ2luLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/store/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3N0b3JlLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/erp/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2VycC8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/download/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Rvd25sb2FkLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.bkp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuYmtwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/sysplat/dataget/data.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3N5c3BsYXQvZGF0YWdldC9kYXRhLmFzaHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/files/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2ZpbGVzLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/scripts/ajaxPortal.lua` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NjcmlwdHMvYWpheFBvcnRhbC5sdWEqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/admin-app/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWluLWFwcC8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.new` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYubmV3KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cloud/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Nsb3VkLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cart/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NhcnQvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/mailgun/mail_config.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21haWxndW4vbWFpbF9jb25maWcuZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/js/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2pzLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/yii/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3lpaS92ZW5kb3IvcGhwdW5pdC9waHB1bml0L3NyYy9VdGlsL1BIUC9ldmFsLXN0ZGluLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/order/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL29yZGVyLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/zend/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3plbmQvdmVuZG9yL3BocHVuaXQvcGhwdW5pdC9zcmMvVXRpbC9QSFAvZXZhbC1zdGRpbi5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/..\..\..\..\..\..\var/log/apache2/access.log` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXHZhci9sb2cvYXBhY2hlMi9hY2Nlc3MubG9nKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/account/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FjY291bnQvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/mailgun/config.json` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21haWxndW4vY29uZmlnLmpzb24qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/marketplace/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hcmtldHBsYWNlLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/message/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21lc3NhZ2UvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/admin/.git/config` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWluLy5naXQvY29uZmlnKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/mail/config.ini` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21haWwvY29uZmlnLmluaSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/payments/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BheW1lbnRzLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/storage/logs/laravel.logapp/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3N0b3JhZ2UvbG9ncy9sYXJhdmVsLmxvZ2FwcC8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.mandrill` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYubWFuZHJpbGwqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/mail/config.yml` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21haWwvY29uZmlnLnltbCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/mailer/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21haWxlci8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/rest/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Jlc3QvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/sources/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NvdXJjZXMvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/app/config/mandrill.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwcC9jb25maWcvbWFuZHJpbGwuZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/app/mandrill.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwcC9tYW5kcmlsbC5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/core/public/db.env/` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvcmUvcHVibGljL2RiLmVudi8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/next/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL25leHQvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/old/bridgeapi4-john/bkg.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL29sZC9icmlkZ2VhcGk0LWpvaG4vYmtnLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/sendgrid/sendgrid.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlbmRncmlkL3NlbmRncmlkLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/tools/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Rvb2xzLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/tr-tr/admin/static/env.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3RyLXRyL2FkbWluL3N0YXRpYy9lbnYuZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/tr-tr/api/static/default.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3RyLXRyL2FwaS9zdGF0aWMvZGVmYXVsdC5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/tr-tr/config/static/database.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3RyLXRyL2NvbmZpZy9zdGF0aWMvZGF0YWJhc2UuZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/v4/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Y0Ly5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/admin/env/config.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWluL2Vudi9jb25maWcuZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/config/config.json` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9jb25maWcvY29uZmlnLmpzb24qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/app/mailjet.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwcC9tYWlsamV0LmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/conf/application.properties/` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvbmYvYXBwbGljYXRpb24ucHJvcGVydGllcy8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/core/php/config.json` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvcmUvcGhwL2NvbmZpZy5qc29uKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/admin/mail/mail_config.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWluL21haWwvbWFpbF9jb25maWcuZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/keys/readme.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9rZXlzL3JlYWRtZS5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/config/sql/wp-config.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvbmZpZy9zcWwvd3AtY29uZmlnLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/current/.env.dev` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2N1cnJlbnQvLmVudi5kZXYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/delivery/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RlbGl2ZXJ5Ly5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/lms/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2xtcy8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/php/assist_sys/admin/config.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BocC9hc3Npc3Rfc3lzL2FkbWluL2NvbmZpZy5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/qa/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3FhLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/view/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3ZpZXcvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/v2/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS92Mi8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/admin/config/site.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWluL2NvbmZpZy9zaXRlLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/config/index.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9jb25maWcvaW5kZXguZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.bak.rc1` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuYmFrLnJjMSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.smtp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuc210cCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `//.env.save` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy8uZW52LnNhdmUqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `//.env.staging` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy8uZW52LnN0YWdpbmcqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `///.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy8vLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `///backend/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy8vYmFja2VuZC8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `///server/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy8vc2VydmVyLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `//backend/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy9iYWNrZW5kLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/@core/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0Bjb3JlLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/admin-panel/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWluLXBhbmVsLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/android_app/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FuZHJvaWRfYXBwLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/.env.save` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS8uZW52LnNhdmUqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/sendgrid.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9zZW5kZ3JpZC5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/app//.env.back` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwcC8vLmVudi5iYWNrKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/application/.env.save` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwcGxpY2F0aW9uLy5lbnYuc2F2ZSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/beta/.env.bak` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2JldGEvLmVudi5iYWsqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/bookings/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Jvb2tpbmdzLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/bz4/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2J6NC8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/core/.env.save` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvcmUvLmVudi5zYXZlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/customer/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2N1c3RvbWVyLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/doc/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RvYy8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/eRp/.EnV` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2VScC8uRW5WKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/en/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2VuLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/etc/aws_config.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2V0Yy9hd3NfY29uZmlnLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/gateway/.env.staging.local` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2dhdGV3YXkvLmVudi5zdGFnaW5nLmxvY2FsKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/graphql/.env.staging` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2dyYXBocWwvLmVudi5zdGFnaW5nKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/identity/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2lkZW50aXR5Ly5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/inventory/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2ludmVudG9yeS8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/invoice/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2ludm9pY2UvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/latest/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2xhdGVzdC8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/loyalty/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2xveWFsdHkvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/mail/sendgrid.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21haWwvc2VuZGdyaWQuZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/mailer/sendgrid.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21haWxlci9zZW5kZ3JpZC5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/media/.env.bak` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21lZGlhLy5lbnYuYmFrKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/microservices/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21pY3Jvc2VydmljZXMvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/modules/*/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21vZHVsZXMvKi8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/neurofeedback/session.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL25ldXJvZmVlZGJhY2svc2Vzc2lvbi5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/plan/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BsYW4vLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/projects/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Byb2plY3RzLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/projeto/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Byb2pldG8vLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/settings/.env.local` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NldHRpbmdzLy5lbnYubG9jYWwqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/sms-service/.env.prod` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Ntcy1zZXJ2aWNlLy5lbnYucHJvZCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/social/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NvY2lhbC8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/staging/api/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3N0YWdpbmcvYXBpLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/status/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3N0YXR1cy8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/suppliers/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3N1cHBsaWVycy8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/svelte-app/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3N2ZWx0ZS1hcHAvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/symfony/.env.local` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3N5bWZvbnkvLmVudi5sb2NhbCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/test/bdd/fixtures/agent-rest/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Rlc3QvYmRkL2ZpeHR1cmVzL2FnZW50LXJlc3QvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/test/integration/env-config/app/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Rlc3QvaW50ZWdyYXRpb24vZW52LWNvbmZpZy9hcHAvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ticket/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3RpY2tldC8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/user-service/.env.staging` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3VzZXItc2VydmljZS8uZW52LnN0YWdpbmcqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/wallet/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dhbGxldC8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.aws/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5hd3MvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env_old` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnZfb2xkKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `//api/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy9hcGkvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `//local/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy9sb2NhbC8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `//media/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy9tZWRpYS8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `//server/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy9zZXJ2ZXIvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/admin/config.ini` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWluL2NvbmZpZy5pbmkqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/admin/db_credentials.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWluL2RiX2NyZWRlbnRpYWxzLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/admin/env/site.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWluL2Vudi9zaXRlLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/config/config.ini` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9jb25maWcvY29uZmlnLmluaSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/login.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9sb2dpbi5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/backup/site.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2JhY2t1cC9zaXRlLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/banking/oauth_redirects.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Jhbmtpbmcvb2F1dGhfcmVkaXJlY3RzLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/config/config.php.bak` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvbmZpZy9jb25maWcucGhwLmJhayoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/docs/config.yaml` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RvY3MvY29uZmlnLnlhbWwqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/lib/config.json` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2xpYi9jb25maWcuanNvbioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/��/s3/.env.bak` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL--_ve-_vS9zMy8uZW52LmJhayoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/v1/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3YxLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/admin/modules/h/config.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWluL21vZHVsZXMvaC9jb25maWcucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/customer/config.yaml` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2N1c3RvbWVyL2NvbmZpZy55YW1sKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/database.yml~/` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RhdGFiYXNlLnltbH4vKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/upload.php.old` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3VwbG9hZC5waHAub2xkKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/login` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2xvZ2luKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/uploads/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3VwbG9hZHMvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/rpc.cgi` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3JwYy5jZ2kqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/fuel/pages/select/` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Z1ZWwvcGFnZXMvc2VsZWN0Lyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/web/google_analytics.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dlYi9nb29nbGVfYW5hbHl0aWNzLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/plugins/editors/jckeditor/plugins/jtreelink/dialogs/links.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BsdWdpbnMvZWRpdG9ycy9qY2tlZGl0b3IvcGx1Z2lucy9qdHJlZWxpbmsvZGlhbG9ncy9saW5rcy5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cf_scripts/scripts/ajax/ckeditor/plugins/filemanager/upload.cfm` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NmX3NjcmlwdHMvc2NyaXB0cy9hamF4L2NrZWRpdG9yL3BsdWdpbnMvZmlsZW1hbmFnZXIvdXBsb2FkLmNmbSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/node/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL25vZGUvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/umotion/modules/reporting/track_import_export.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Vtb3Rpb24vbW9kdWxlcy9yZXBvcnRpbmcvdHJhY2tfaW1wb3J0X2V4cG9ydC5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cache/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NhY2hlLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/filemanager/upload.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2ZpbGVtYW5hZ2VyL3VwbG9hZC5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/administrator/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWluaXN0cmF0b3IvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/content/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvbnRlbnQvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/logs/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2xvZ3MvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/.git/config` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS8uZ2l0L2NvbmZpZyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/service/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlcnZpY2UvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/settings/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NldHRpbmdzLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/v3/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3YzLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/sandbox/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NhbmRib3gvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/temp/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3RlbXAvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/avcon.action` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2F2Y29uLmFjdGlvbioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/services/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlcnZpY2VzLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/manage/resourceUpload/imgDownload.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS9yZXNvdXJjZVVwbG9hZC9pbWdEb3dubG9hZC5kbyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/htdocs/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2h0ZG9jcy8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.dbeaver/credentials-config.json` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5kYmVhdmVyL2NyZWRlbnRpYWxzLWNvbmZpZy5qc29uKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/developer/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RldmVsb3Blci8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/stage/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3N0YWdlLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/service/~iufo/com.ufida.web.action.ActionServlet` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlcnZpY2Uvfml1Zm8vY29tLnVmaWRhLndlYi5hY3Rpb24uQWN0aW9uU2VydmxldCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/fcgi-bin/wgsetcgi` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2ZjZ2ktYmluL3dnc2V0Y2dpKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/manage/leaveList/exportResourceByFilePath.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS9sZWF2ZUxpc3QvZXhwb3J0UmVzb3VyY2VCeUZpbGVQYXRoLmRvKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/manage/personnel/fileDownload.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS9wZXJzb25uZWwvZmlsZURvd25sb2FkLmRvKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/assets/file:///etc/passwd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Fzc2V0cy9maWxlOi8vL2V0Yy9wYXNzd2QqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/wp-content/plugins/wp-payeezy-pay/donate.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dwLWNvbnRlbnQvcGx1Z2lucy93cC1wYXllZXp5LXBheS9kb25hdGUucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Doc/data.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0RvYy9kYXRhLmFzcHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/..\..\..\..\..\..\..\..\..\..\..\..\..\..\windows\win.ini` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFwuLlxcd2luZG93c1xcd2luLmluaSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/css//../../../../../../../../../../../../../../../../../../windows\win.ini` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Nzcy8vLi4vLi4vLi4vLi4vLi4vLi4vLi4vLi4vLi4vLi4vLi4vLi4vLi4vLi4vLi4vLi4vLi4vLi4vd2luZG93c1xcd2luLmluaSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/jQuery-File-Upload/server/php/index.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2pRdWVyeS1GaWxlLVVwbG9hZC9zZXJ2ZXIvcGhwL2luZGV4LnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ws_utc/resources/setting/keystore` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dzX3V0Yy9yZXNvdXJjZXMvc2V0dGluZy9rZXlzdG9yZSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/session/language` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Nlc3Npb24vbGFuZ3VhZ2UqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.docker/laravel/app/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5kb2NrZXIvbGFyYXZlbC9hcHAvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/jquery-file-upload/server/php/index.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2pxdWVyeS1maWxlLXVwbG9hZC9zZXJ2ZXIvcGhwL2luZGV4LnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/server/php/UploadHandler.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlcnZlci9waHAvVXBsb2FkSGFuZGxlci5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/mailsms/s` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21haWxzbXMvcyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/example/upload.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2V4YW1wbGUvdXBsb2FkLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/server/php/upload.class.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlcnZlci9waHAvdXBsb2FkLmNsYXNzLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/php/change_config.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BocC9jaGFuZ2VfY29uZmlnLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/db/config.json` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RiL2NvbmZpZy5qc29uKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ajax/render/widget_tabbedcontainer_tab_panel` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FqYXgvcmVuZGVyL3dpZGdldF90YWJiZWRjb250YWluZXJfdGFiX3BhbmVsKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/database/config.json` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RhdGFiYXNlL2NvbmZpZy5qc29uKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/w_selfservice/oauthservlet/../../common/org/loadtree` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dfc2VsZnNlcnZpY2Uvb2F1dGhzZXJ2bGV0Ly4uLy4uL2NvbW1vbi9vcmcvbG9hZHRyZWUqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/seeyon/m-signature/RunSignature/run/getAjaxDataServlet` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlZXlvbi9tLXNpZ25hdHVyZS9SdW5TaWduYXR1cmUvcnVuL2dldEFqYXhEYXRhU2VydmxldCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/pweb/careerapply/HrmCareerApplyPerView.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3B3ZWIvY2FyZWVyYXBwbHkvSHJtQ2FyZWVyQXBwbHlQZXJWaWV3LmpzcCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/eam/vib` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2VhbS92aWIqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/evo-apigw/evo-oauth/oauth/token` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2V2by1hcGlndy9ldm8tb2F1dGgvb2F1dGgvdG9rZW4qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/templates/attestation/../../general/info/view` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3RlbXBsYXRlcy9hdHRlc3RhdGlvbi8uLi8uLi9nZW5lcmFsL2luZm8vdmlldyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/uapws/service/nc.itf.smart.ISmartQueryWebService` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3VhcHdzL3NlcnZpY2UvbmMuaXRmLnNtYXJ0LklTbWFydFF1ZXJ5V2ViU2VydmljZSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/v2/config.json` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS92Mi9jb25maWcuanNvbioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/dist/config.json` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Rpc3QvY29uZmlnLmpzb24qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/manage/dgmCommand/finishRegister.do/..;/..;/reportResult/exportReportResultExcel.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS9kZ21Db21tYW5kL2ZpbmlzaFJlZ2lzdGVyLmRvLy4uOy8uLjsvcmVwb3J0UmVzdWx0L2V4cG9ydFJlcG9ydFJlc3VsdEV4Y2VsLmRvKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/manage/intercom/..;/..;/manage/meetingPersonal/exportMeetingFile.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS9pbnRlcmNvbS8uLjsvLi47L21hbmFnZS9tZWV0aW5nUGVyc29uYWwvZXhwb3J0TWVldGluZ0ZpbGUuZG8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/manage/intercom/..;/..;/manage/reportResult/exportReportResultExcel.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS9pbnRlcmNvbS8uLjsvLi47L21hbmFnZS9yZXBvcnRSZXN1bHQvZXhwb3J0UmVwb3J0UmVzdWx0RXhjZWwuZG8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/manage/reportResult/exportReportResultExcel.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS9yZXBvcnRSZXN1bHQvZXhwb3J0UmVwb3J0UmVzdWx0RXhjZWwuZG8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/secret/config.json` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlY3JldC9jb25maWcuanNvbioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/vue/config.json` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Z1ZS9jb25maWcuanNvbioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/media../.git/config` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21lZGlhLi4vLmdpdC9jb25maWcqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/rest/ofs/ProcessOverRequestByXml` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Jlc3Qvb2ZzL1Byb2Nlc3NPdmVyUmVxdWVzdEJ5WG1sKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/share/page/dologin` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NoYXJlL3BhZ2UvZG9sb2dpbioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/wxjsapi/saveYZJFile` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3d4anNhcGkvc2F2ZVlaSkZpbGUqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/v1/config.json` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS92MS9jb25maWcuanNvbioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/aws/config.json` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2F3cy9jb25maWcuanNvbioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/localhost.bak` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2xvY2FsaG9zdC5iYWsqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/localhost.sql` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2xvY2FsaG9zdC5zcWwqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/manage/intercom/..;/..;/manage/personnel/queryPersonnel.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS9pbnRlcmNvbS8uLjsvLi47L21hbmFnZS9wZXJzb25uZWwvcXVlcnlQZXJzb25uZWwuZG8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/mongodb/config.json` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21vbmdvZGIvY29uZmlnLmpzb24qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/postgres/config.json` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Bvc3RncmVzL2NvbmZpZy5qc29uKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/react/config.json` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3JlYWN0L2NvbmZpZy5qc29uKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/wp-config.php-backup` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dwLWNvbmZpZy5waHAtYmFja3VwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.\r./.\r./.\r./.\r./bin/sh` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy4NLi8uDS4vLg0uLy4NLi9iaW4vc2gqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/templates/attestation/../../selfservice/lawbase/downlawbase` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3RlbXBsYXRlcy9hdHRlc3RhdGlvbi8uLi8uLi9zZWxmc2VydmljZS9sYXdiYXNlL2Rvd25sYXdiYXNlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/WEB-INF/classes/jolokia-agent.properties` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1dFQi1JTkYvY2xhc3Nlcy9qb2xva2lhLWFnZW50LnByb3BlcnRpZXMqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/assets../.git/config` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Fzc2V0cy4uLy5naXQvY29uZmlnKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/static../.git/config` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3N0YXRpYy4uLy5naXQvY29uZmlnKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/timesheet/login.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3RpbWVzaGVldC9sb2dpbi5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/wp-json/visualizer/v1/update-chart` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dwLWpzb24vdmlzdWFsaXplci92MS91cGRhdGUtY2hhcnQqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Service/FileHandler.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1NlcnZpY2UvRmlsZUhhbmRsZXIuYXNoeCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/angular/config.json` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FuZ3VsYXIvY29uZmlnLmpzb24qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/auth/config.json` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2F1dGgvY29uZmlnLmpzb24qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/credentials/config.json` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NyZWRlbnRpYWxzL2NvbmZpZy5qc29uKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/css../.git/config` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Nzcy4uLy5naXQvY29uZmlnKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/events../.git/config` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2V2ZW50cy4uLy5naXQvY29uZmlnKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/js../.git/config` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2pzLi4vLmdpdC9jb25maWcqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/keys/config.json` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2tleXMvY29uZmlnLmpzb24qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/lib../.git/config` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2xpYi4uLy5naXQvY29uZmlnKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/manage/intercom/..;/..;/manage/personnel/fileDownload.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS9pbnRlcmNvbS8uLjsvLi47L21hbmFnZS9wZXJzb25uZWwvZmlsZURvd25sb2FkLmRvKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/mysql/config.json` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL215c3FsL2NvbmZpZy5qc29uKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/s3/config.json` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3MzL2NvbmZpZy5qc29uKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/smartbi/vision/RMIServlet` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NtYXJ0YmkvdmlzaW9uL1JNSVNlcnZsZXQqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/webtools/control/httpService` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dlYnRvb2xzL2NvbnRyb2wvaHR0cFNlcnZpY2UqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/XMLCHART` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1hNTENIQVJUKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/index.php/\ntest` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2luZGV4LnBocC8KdGVzdCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/sdwan/nitro/v1/config/get_package_file` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Nkd2FuL25pdHJvL3YxL2NvbmZpZy9nZXRfcGFja2FnZV9maWxlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.preprod` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYucHJlcHJvZCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/WEB-INF/classes/jolokia-access.xml` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1dFQi1JTkYvY2xhc3Nlcy9qb2xva2lhLWFjY2Vzcy54bWwqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/config.php.old` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvbmZpZy5waHAub2xkKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/server/php/UploadHandler.php/files/hMorA9HH.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlcnZlci9waHAvVXBsb2FkSGFuZGxlci5waHAvZmlsZXMvaE1vckE5SEgucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.debug` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuZGVidWcqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cloud/config.json` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Nsb3VkL2NvbmZpZy5qc29uKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/images../.git/config` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2ltYWdlcy4uLy5naXQvY29uZmlnKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/login/exportAuthorize.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2xvZ2luL2V4cG9ydEF1dGhvcml6ZS5kbyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/servlet/imagefield` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlcnZsZXQvaW1hZ2VmaWVsZCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/v1/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS92MS8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/jnoj/web/polygon/problem/viewfile` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2pub2ovd2ViL3BvbHlnb24vcHJvYmxlbS92aWV3ZmlsZSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.sandbox` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuc2FuZGJveCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/u8qx/bx_historyDataCheck.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3U4cXgvYnhfaGlzdG9yeURhdGFDaGVjay5qc3AqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/weaver/weaver.formmode.servelt.QRcodeBuildAction/login/LoginSSO.%6a%73%70` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dlYXZlci93ZWF2ZXIuZm9ybW1vZGUuc2VydmVsdC5RUmNvZGVCdWlsZEFjdGlvbi9sb2dpbi9Mb2dpblNTTy4lNmElNzMlNzAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/NateMail.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL05hdGVNYWlsLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/jQuery-File-Upload/server/php/index.php/files/hMorA9HH.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2pRdWVyeS1GaWxlLVVwbG9hZC9zZXJ2ZXIvcGhwL2luZGV4LnBocC9maWxlcy9oTW9yQTlISC5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/php/index.php/files/hMorA9HH.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BocC9pbmRleC5waHAvZmlsZXMvaE1vckE5SEgucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/templates/attestation/../../train/traincourse/trainplan_tree.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3RlbXBsYXRlcy9hdHRlc3RhdGlvbi8uLi8uLi90cmFpbi90cmFpbmNvdXJzZS90cmFpbnBsYW5fdHJlZS5qc3AqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/vision/RMIServlet` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Zpc2lvbi9STUlTZXJ2bGV0KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Webservice/IM/Config/ConfigService.asmx/GetIMDictionary` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1dlYnNlcnZpY2UvSU0vQ29uZmlnL0NvbmZpZ1NlcnZpY2UuYXNteC9HZXRJTURpY3Rpb25hcnkqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/img../.git/config` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2ltZy4uLy5naXQvY29uZmlnKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/index.php/Pan/Public/download` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2luZGV4LnBocC9QYW4vUHVibGljL2Rvd25sb2FkKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/v3/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS92My8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/C6/JHSoft.Web.WorkFlat/DBModules.aspx/` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0M2L0pIU29mdC5XZWIuV29ya0ZsYXQvREJNb2R1bGVzLmFzcHgvKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/CMSPages/Staging/SyncServer.asmx/ProcessSynchronizationTaskData` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0NNU1BhZ2VzL1N0YWdpbmcvU3luY1NlcnZlci5hc214L1Byb2Nlc3NTeW5jaHJvbml6YXRpb25UYXNrRGF0YSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/defaultroot/DownloadServlet` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RlZmF1bHRyb290L0Rvd25sb2FkU2VydmxldCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/svpn_html/loadfile.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3N2cG5faHRtbC9sb2FkZmlsZS5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/CDGServer3/NetSecConfigAjax;Service` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0NER1NlcnZlcjMvTmV0U2VjQ29uZmlnQWpheDtTZXJ2aWNlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Collector/appliancesettings/applianceSettingsFileTransfer` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0NvbGxlY3Rvci9hcHBsaWFuY2VzZXR0aW5ncy9hcHBsaWFuY2VTZXR0aW5nc0ZpbGVUcmFuc2Zlcioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/OA_HTML/lcmServiceController.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL09BX0hUTUwvbGNtU2VydmljZUNvbnRyb2xsZXIuanNwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/config/pw_snmp_done.html` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvbmZpZy9wd19zbm1wX2RvbmUuaHRtbCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/example/upload.php/files/hMorA9HH.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2V4YW1wbGUvdXBsb2FkLnBocC9maWxlcy9oTW9yQTlISC5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/jquery-file-upload/server/php/index.php/files/hMorA9HH.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2pxdWVyeS1maWxlLXVwbG9hZC9zZXJ2ZXIvcGhwL2luZGV4LnBocC9maWxlcy9oTW9yQTlISC5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/server/php/upload.class.php/files/hMorA9HH.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlcnZlci9waHAvdXBsb2FkLmNsYXNzLnBocC9maWxlcy9oTW9yQTlISC5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/SetupConfig.xml` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1NldHVwQ29uZmlnLnhtbCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/manage/intercom/..;/..;/manage/leaveList/exportResourceByFilePath.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS9pbnRlcmNvbS8uLjsvLi47L21hbmFnZS9sZWF2ZUxpc3QvZXhwb3J0UmVzb3VyY2VCeUZpbGVQYXRoLmRvKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/manage/intercom/..;/..;/manage/resourceUpload/imgDownload.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS9pbnRlcmNvbS8uLjsvLi47L21hbmFnZS9yZXNvdXJjZVVwbG9hZC9pbWdEb3dubG9hZC5kbyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/taste/addTaste` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Rhc3RlL2FkZFRhc3RlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/c6/jhsoft.mobileapp/AndroidSevices/HomeService.asmx/GetHomeInfo` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2M2L2poc29mdC5tb2JpbGVhcHAvQW5kcm9pZFNldmljZXMvSG9tZVNlcnZpY2UuYXNteC9HZXRIb21lSW5mbyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/dwr/call/plaincall/CptDwrUtil.ifNewsCheckOutByCurrentUser.dwr` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2R3ci9jYWxsL3BsYWluY2FsbC9DcHREd3JVdGlsLmlmTmV3c0NoZWNrT3V0QnlDdXJyZW50VXNlci5kd3IqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/general/appbuilder/web/calendar/calendarlist/getcallist` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2dlbmVyYWwvYXBwYnVpbGRlci93ZWIvY2FsZW5kYXIvY2FsZW5kYXJsaXN0L2dldGNhbGxpc3QqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/laravel52/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2xhcmF2ZWw1Mi92ZW5kb3IvcGhwdW5pdC9waHB1bml0L3NyYy9VdGlsL1BIUC9ldmFsLXN0ZGluLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/w_selfservice/oauthservlet/../../general/inform/org/loadhistroyorgtree` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dfc2VsZnNlcnZpY2Uvb2F1dGhzZXJ2bGV0Ly4uLy4uL2dlbmVyYWwvaW5mb3JtL29yZy9sb2FkaGlzdHJveW9yZ3RyZWUqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/w_selfservice/oauthservlet/../../gz/LoadOtherTreeServlet` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dfc2VsZnNlcnZpY2Uvb2F1dGhzZXJ2bGV0Ly4uLy4uL2d6L0xvYWRPdGhlclRyZWVTZXJ2bGV0KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/weaver/ln.FileDownload` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dlYXZlci9sbi5GaWxlRG93bmxvYWQqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.key` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYua2V5KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.llm` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYubGxtKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/CDGServer3/workflowE/useractivate/update.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0NER1NlcnZlcjMvd29ya2Zsb3dFL3VzZXJhY3RpdmF0ZS91cGRhdGUuanNwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/manage/dgmCommand/finishRegister.do/..;/..;/personnel/fileDownload.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS9kZ21Db21tYW5kL2ZpbmlzaFJlZ2lzdGVyLmRvLy4uOy8uLjsvcGVyc29ubmVsL2ZpbGVEb3dubG9hZC5kbyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/taste/addTasteJsonp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Rhc3RlL2FkZFRhc3RlSnNvbnAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/templates/attestation/../../kq/app_check_in/get_org_tree.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3RlbXBsYXRlcy9hdHRlc3RhdGlvbi8uLi8uLi9rcS9hcHBfY2hlY2tfaW4vZ2V0X29yZ190cmVlLmpzcCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/audit/gui_detail_view.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2F1ZGl0L2d1aV9kZXRhaWxfdmlldy5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/nagiosql/admin/logbook.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL25hZ2lvc3FsL2FkbWluL2xvZ2Jvb2sucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/seeyonreport/ReportServer` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlZXlvbnJlcG9ydC9SZXBvcnRTZXJ2ZXIqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.config.php.swp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5jb25maWcucGhwLnN3cCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/CDGServer3/dojojs/../PolicyAjax` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0NER1NlcnZlcjMvZG9qb2pzLy4uL1BvbGljeUFqYXgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/CDGServer3/logManagement/LogDownLoadService` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0NER1NlcnZlcjMvbG9nTWFuYWdlbWVudC9Mb2dEb3duTG9hZFNlcnZpY2UqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/CDGServer3/parameter/HookService;logindojojs` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0NER1NlcnZlcjMvcGFyYW1ldGVyL0hvb2tTZXJ2aWNlO2xvZ2luZG9qb2pzKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/CDGServer3/system/HookInvalidCourse;loginService` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0NER1NlcnZlcjMvc3lzdGVtL0hvb2tJbnZhbGlkQ291cnNlO2xvZ2luU2VydmljZSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/inc/package/down.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2luYy9wYWNrYWdlL2Rvd24ucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/js/hrm/getdata.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2pzL2hybS9nZXRkYXRhLmpzcCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/jsoa/OfficeServer` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2pzb2EvT2ZmaWNlU2VydmVyKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/mobile/api/qyapp.vote.submit.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21vYmlsZS9hcGkvcXlhcHAudm90ZS5zdWJtaXQucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/portal/attachment_downloadAtt.action` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BvcnRhbC9hdHRhY2htZW50X2Rvd25sb2FkQXR0LmFjdGlvbioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/portal/services/itcBulletin` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BvcnRhbC9zZXJ2aWNlcy9pdGNCdWxsZXRpbioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/services/ModeDateService` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlcnZpY2VzL01vZGVEYXRlU2VydmljZSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/taste/checkMobile` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Rhc3RlL2NoZWNrTW9iaWxlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/manage/dgmCommand/finishRegister.do/..;/..;/leaveList/exportResourceByFilePath.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS9kZ21Db21tYW5kL2ZpbmlzaFJlZ2lzdGVyLmRvLy4uOy8uLjsvbGVhdmVMaXN0L2V4cG9ydFJlc291cmNlQnlGaWxlUGF0aC5kbyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/manage/dgmCommand/finishRegister.do/..;/..;/resourceUpload/imgDownload.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS9kZ21Db21tYW5kL2ZpbmlzaFJlZ2lzdGVyLmRvLy4uOy8uLjsvcmVzb3VyY2VVcGxvYWQvaW1nRG93bmxvYWQuZG8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/plt_document/fragments/content/pdfViewLocal.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BsdF9kb2N1bWVudC9mcmFnbWVudHMvY29udGVudC9wZGZWaWV3TG9jYWwuanNwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/member/ajax_membergroup.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21lbWJlci9hamF4X21lbWJlcmdyb3VwLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/pandora_console/ajax.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BhbmRvcmFfY29uc29sZS9hamF4LnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/wls-wsat/RegistrationRequesterPortType` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dscy13c2F0L1JlZ2lzdHJhdGlvblJlcXVlc3RlclBvcnRUeXBlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ajax/getemaildata.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FqYXgvZ2V0ZW1haWxkYXRhLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/CDGServer3/js/../NavigationAjax` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0NER1NlcnZlcjMvanMvLi4vTmF2aWdhdGlvbkFqYXgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/engine-ui/0.0.0.0:4040/environment/` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2VuZ2luZS11aS8wLjAuMC4wOjQwNDAvZW52aXJvbm1lbnQvKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/general/management_center/portal/oa_engine/engine_manage_bulletin_number/query.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2dlbmVyYWwvbWFuYWdlbWVudF9jZW50ZXIvcG9ydGFsL29hX2VuZ2luZS9lbmdpbmVfbWFuYWdlX2J1bGxldGluX251bWJlci9xdWVyeS5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/general/reportshop/utils/get_datas.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2dlbmVyYWwvcmVwb3J0c2hvcC91dGlscy9nZXRfZGF0YXMucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/jsoa/workflow/dwr/exec/workflowSync.getUserStatusByRole.dwr` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2pzb2Evd29ya2Zsb3cvZHdyL2V4ZWMvd29ya2Zsb3dTeW5jLmdldFVzZXJTdGF0dXNCeVJvbGUuZHdyKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/portal/services/clientServer` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BvcnRhbC9zZXJ2aWNlcy9jbGllbnRTZXJ2ZXIqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/services/WorkPlanService` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlcnZpY2VzL1dvcmtQbGFuU2VydmljZSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/web/settings/settings.py` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dlYi9zZXR0aW5ncy9zZXR0aW5ncy5weSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api-backend/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS1iYWNrZW5kLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/wp-config.php.swp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dwLWNvbmZpZy5waHAuc3dwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/webadmin/script` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dlYmFkbWluL3NjcmlwdCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ProxyServletUtil` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1Byb3h5U2VydmxldFV0aWwqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/manage/device/queryDevice.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS9kZXZpY2UvcXVlcnlEZXZpY2UuZG8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.anthropic/config.json` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5hbnRocm9waWMvY29uZmlnLmpzb24qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.config/aichat/config.yaml` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5jb25maWcvYWljaGF0L2NvbmZpZy55YW1sKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.config/anthropic/config.json` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5jb25maWcvYW50aHJvcGljL2NvbmZpZy5qc29uKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.config/openai/config.json` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5jb25maWcvb3BlbmFpL2NvbmZpZy5qc29uKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env-sample` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYtc2FtcGxlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.production.backup` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYucHJvZHVjdGlvbi5iYWNrdXAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.git/info/refs` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5naXQvaW5mby9yZWZzKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.git/refs/heads/production` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5naXQvcmVmcy9oZWFkcy9wcm9kdWN0aW9uKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.git/refs/heads/staging` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5naXQvcmVmcy9oZWFkcy9zdGFnaW5nKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.litellm/config.yaml` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5saXRlbGxtL2NvbmZpZy55YW1sKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/@fs/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0Bmcy8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/admin-api/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWluLWFwaS8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/php/ping.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BocC9waW5nLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/jolokia/read/getDiagnosticOptions` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2pvbG9raWEvcmVhZC9nZXREaWFnbm9zdGljT3B0aW9ucyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/maint/modules/home/index.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21haW50L21vZHVsZXMvaG9tZS9pbmRleC5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/nagiosql/admin/menuaccess.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL25hZ2lvc3FsL2FkbWluL21lbnVhY2Nlc3MucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/E-mobile/App/Init.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0UtbW9iaWxlL0FwcC9Jbml0LnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ServiceAction/com.eweaver.base.DataAction` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1NlcnZpY2VBY3Rpb24vY29tLmV3ZWF2ZXIuYmFzZS5EYXRhQWN0aW9uKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/CDGServer3/SystemConfig` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0NER1NlcnZlcjMvU3lzdGVtQ29uZmlnKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/CommonFileServer/c:/windows/win.ini` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0NvbW1vbkZpbGVTZXJ2ZXIvYzovd2luZG93cy93aW4uaW5pKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/backup/config.xml` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2JhY2t1cC9jb25maWcueG1sKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/config.php.save` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvbmZpZy5waHAuc2F2ZSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/config.php.txt` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvbmZpZy5waHAudHh0KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/core-cloud-config.yml` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvcmUtY2xvdWQtY29uZmlnLnltbCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/django/settings.py` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RqYW5nby9zZXR0aW5ncy5weSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/portal/attachment_clearTempFile.action` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BvcnRhbC9hdHRhY2htZW50X2NsZWFyVGVtcEZpbGUuYWN0aW9uKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/sys/ui/sys_ui_component/sysUiComponent.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3N5cy91aS9zeXNfdWlfY29tcG9uZW50L3N5c1VpQ29tcG9uZW50LmRvKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/webtools/control/SOAPService` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dlYnRvb2xzL2NvbnRyb2wvU09BUFNlcnZpY2UqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/jeecg-boot/jmreport/qurestSql` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2plZWNnLWJvb3Qvam1yZXBvcnQvcXVyZXN0U3FsKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/seeyon/wpsAssistServlet` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlZXlvbi93cHNBc3Npc3RTZXJ2bGV0KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/solr/flow/debug/dump` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NvbHIvZmxvdy9kZWJ1Zy9kdW1wKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/weaver/weaver.docs.docs.ShowDocsImageServlet` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dlYXZlci93ZWF2ZXIuZG9jcy5kb2NzLlNob3dEb2NzSW1hZ2VTZXJ2bGV0KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/webtools/control/forgotPassword/././ProgramExport` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dlYnRvb2xzL2NvbnRyb2wvZm9yZ290UGFzc3dvcmQvLi8uL1Byb2dyYW1FeHBvcnQqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.uat` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYudWF0KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/ec/dev/locale/getLabelByModule` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9lYy9kZXYvbG9jYWxlL2dldExhYmVsQnlNb2R1bGUqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/clients/editclient.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NsaWVudHMvZWRpdGNsaWVudC5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/easportal/autoLogin.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Vhc3BvcnRhbC9hdXRvTG9naW4uanNwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/include/thumb.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2luY2x1ZGUvdGh1bWIucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/integration/saveGangster.action` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2ludGVncmF0aW9uL3NhdmVHYW5nc3Rlci5hY3Rpb24qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/openmrs/ws/rest/v1/xxxxxx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL29wZW5tcnMvd3MvcmVzdC92MS94eHh4eHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/photo-gallery/api/album/tree_lists/` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Bob3RvLWdhbGxlcnkvYXBpL2FsYnVtL3RyZWVfbGlzdHMvKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/photo-gallery/api/photo/search/` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Bob3RvLWdhbGxlcnkvYXBpL3Bob3RvL3NlYXJjaC8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/php/setup.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BocC9zZXR1cC5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/qsr_server/device/getThumbnail` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Fzcl9zZXJ2ZXIvZGV2aWNlL2dldFRodW1ibmFpbCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/struts2-rest-showcase/orders/3` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3N0cnV0czItcmVzdC1zaG93Y2FzZS9vcmRlcnMvMyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/vpn/user/download/client` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Zwbi91c2VyL2Rvd25sb2FkL2NsaWVudCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/weaver/org.apache.xmlrpc.webserver.XmlRpcServlet` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dlYXZlci9vcmcuYXBhY2hlLnhtbHJwYy53ZWJzZXJ2ZXIuWG1sUnBjU2VydmxldCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ws/rest/v1/xxxxxx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dzL3Jlc3QvdjEveHh4eHh4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/SMS/SmsDataList/` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1NNUy9TbXNEYXRhTGlzdC8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ws-config.json` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dzLWNvbmZpZy5qc29uKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cgi-bin/GetFileContent.cgi` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NnaS1iaW4vR2V0RmlsZUNvbnRlbnQuY2dpKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/iweboffice/officeserver.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2l3ZWJvZmZpY2Uvb2ZmaWNlc2VydmVyLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/yyoa/common/js/menu/test.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3l5b2EvY29tbW9uL2pzL21lbnUvdGVzdC5qc3AqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/app/options.py` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwcC9vcHRpb25zLnB5KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/portal/attachment_downloadByUrlAtt.action` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BvcnRhbC9hdHRhY2htZW50X2Rvd25sb2FkQnlVcmxBdHQuYWN0aW9uKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.release` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYucmVsZWFzZSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/AgentBoard.XGI` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0FnZW50Qm9hcmQuWEdJKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/src/sangforindex` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NyYy9zYW5nZm9yaW5kZXgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/webconf/GetFile/index` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dlYmNvbmYvR2V0RmlsZS9pbmRleCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/report/download.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3JlcG9ydC9kb3dubG9hZC5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Org/service/Service.asmx/GetUserByEmployeeCode` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL09yZy9zZXJ2aWNlL1NlcnZpY2UuYXNteC9HZXRVc2VyQnlFbXBsb3llZUNvZGUqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/appmonitor/protect/jndi/loadTree` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwcG1vbml0b3IvcHJvdGVjdC9qbmRpL2xvYWRUcmVlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/center/api/task/..;/orgManage/v1/orgs/download` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NlbnRlci9hcGkvdGFzay8uLjsvb3JnTWFuYWdlL3YxL29yZ3MvZG93bmxvYWQqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/defaultroot/convertFile/text2Html.controller` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RlZmF1bHRyb290L2NvbnZlcnRGaWxlL3RleHQySHRtbC5jb250cm9sbGVyKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/jeecg-boot/drag/onlDragDatasetHead/getTotalData` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2plZWNnLWJvb3QvZHJhZy9vbmxEcmFnRGF0YXNldEhlYWQvZ2V0VG90YWxEYXRhKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ESOP/DownLoad.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0VTT1AvRG93bkxvYWQuYXNweCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Mail/Services/EmailAccountOrgUserService.asmx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL01haWwvU2VydmljZXMvRW1haWxBY2NvdW50T3JnVXNlclNlcnZpY2UuYXNteCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/login.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2xvZ2luLmpzcCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/manage/resourceUpload/upload.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS9yZXNvdXJjZVVwbG9hZC91cGxvYWQuZG8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/client/cdnfile/1C/Windows/win.ini` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NsaWVudC9jZG5maWxlLzFDL1dpbmRvd3Mvd2luLmluaSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/jsp/help-sb-download.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2pzcC9oZWxwLXNiLWRvd25sb2FkLmpzcCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/..\..\..\..\..\..\..\..\..\..\/windows/win.ini` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFwvd2luZG93cy93aW4uaW5pKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/C6/Jhsoft.Web.module/testbill/dj/download.asp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0M2L0poc29mdC5XZWIubW9kdWxlL3Rlc3RiaWxsL2RqL2Rvd25sb2FkLmFzcCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/CDGServer3/document/RestoreFiles;login` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0NER1NlcnZlcjMvZG9jdW1lbnQvUmVzdG9yZUZpbGVzO2xvZ2luKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/E-mobile/flow/forwardsucess.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0UtbW9iaWxlL2Zsb3cvZm9yd2FyZHN1Y2Vzcy5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/bottomframe.cgi` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2JvdHRvbWZyYW1lLmNnaSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/building/backmgr/urlpage/mobileurl/configfile/jx2_config.ini` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2J1aWxkaW5nL2JhY2ttZ3IvdXJscGFnZS9tb2JpbGV1cmwvY29uZmlnZmlsZS9qeDJfY29uZmlnLmluaSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/general/document/index.php/recv/register/turn` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2dlbmVyYWwvZG9jdW1lbnQvaW5kZXgucGhwL3JlY3YvcmVnaXN0ZXIvdHVybioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/jc6/servlet/clobfield` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2pjNi9zZXJ2bGV0L2Nsb2JmaWVsZCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/mobile/ /plugin/browser.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21vYmlsZS8gL3BsdWdpbi9icm93c2VyLmpzcCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/portal/attachment_getAttList.action` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BvcnRhbC9hdHRhY2htZW50X2dldEF0dExpc3QuYWN0aW9uKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/servlet/ShowImageServlet` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlcnZsZXQvU2hvd0ltYWdlU2VydmxldCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/sys/webservice/sysNotifyTodoWebService` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3N5cy93ZWJzZXJ2aWNlL3N5c05vdGlmeVRvZG9XZWJTZXJ2aWNlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/yyoa/ext/trafaxserver/ExtnoManage/setextno.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3l5b2EvZXh0L3RyYWZheHNlcnZlci9FeHRub01hbmFnZS9zZXRleHRuby5qc3AqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.swo` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuc3dvKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/CommonFileServer/etc/passwd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0NvbW1vbkZpbGVTZXJ2ZXIvZXRjL3Bhc3N3ZCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/common/print/print!doSavePrintTpl.action` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvbW1vbi9wcmludC9wcmludCFkb1NhdmVQcmludFRwbC5hY3Rpb24qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/mobile/browser/WorkflowCenterTreeData.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21vYmlsZS9icm93c2VyL1dvcmtmbG93Q2VudGVyVHJlZURhdGEuanNwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/webconf/Exec/index` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dlYmNvbmYvRXhlYy9pbmRleCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/v1/slack/image/slack-image/../../../etc/passwd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS92MS9zbGFjay9pbWFnZS9zbGFjay1pbWFnZS8uLi8uLi8uLi9ldGMvcGFzc3dkKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/getCorsFile` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2dldENvcnNGaWxlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Org/service/Service.asmx/GetUserByUserCode` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL09yZy9zZXJ2aWNlL1NlcnZpY2UuYXNteC9HZXRVc2VyQnlVc2VyQ29kZSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/crm/WeiXinApp/marketing/index.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NybS9XZWlYaW5BcHAvbWFya2V0aW5nL2luZGV4LnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/defaultroot/public/iWebOfficeSign/Template/SendFileCheckTemplateEdit.jsp;xc` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RlZmF1bHRyb290L3B1YmxpYy9pV2ViT2ZmaWNlU2lnbi9UZW1wbGF0ZS9TZW5kRmlsZUNoZWNrVGVtcGxhdGVFZGl0LmpzcDt4Yyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/eps/triggerSnapshot/download.action` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Vwcy90cmlnZ2VyU25hcHNob3QvZG93bmxvYWQuYWN0aW9uKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/general/bi_design/appcenter/report_bi.func.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2dlbmVyYWwvYmlfZGVzaWduL2FwcGNlbnRlci9yZXBvcnRfYmkuZnVuYy5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/hrm/hrm_e9/orgChart/js/jquery/plugins/jqueryFileTree/connectors/jqueryFileTree.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2hybS9ocm1fZTkvb3JnQ2hhcnQvanMvanF1ZXJ5L3BsdWdpbnMvanF1ZXJ5RmlsZVRyZWUvY29ubmVjdG9ycy9qcXVlcnlGaWxlVHJlZS5qc3AqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/interface/auth.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2ludGVyZmFjZS9hdXRoLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/jc6/JHSoft.WCF/TEST/GetAttOut` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2pjNi9KSFNvZnQuV0NGL1RFU1QvR2V0QXR0T3V0KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/jobmanager/logs/..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2fetc%2fpasswd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2pvYm1hbmFnZXIvbG9ncy8uLiUyZi4uJTJmLi4lMmYuLiUyZi4uJTJmLi4lMmYuLiUyZi4uJTJmLi4lMmYuLiUyZi4uJTJmLi4lMmZldGMlMmZwYXNzd2QqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/jsoa/wap2/personalMessage/user_list_3g.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2pzb2Evd2FwMi9wZXJzb25hbE1lc3NhZ2UvdXNlcl9saXN0XzNnLmpzcCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/kylin/api/admin/config` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2t5bGluL2FwaS9hZG1pbi9jb25maWcqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/plus/guestbook.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BsdXMvZ3Vlc3Rib29rLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/portal/pt/xml/file/download` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BvcnRhbC9wdC94bWwvZmlsZS9kb3dubG9hZCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/rest/ofs/deleteUserRequestInfoByXml` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Jlc3Qvb2ZzL2RlbGV0ZVVzZXJSZXF1ZXN0SW5mb0J5WG1sKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/services/WorkflowServiceXml` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlcnZpY2VzL1dvcmtmbG93U2VydmljZVhtbCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/upload/mobile/index.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3VwbG9hZC9tb2JpbGUvaW5kZXgucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/w_selfservice/oauthservlet/../../DownLoadCourseware` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dfc2VsZnNlcnZpY2Uvb2F1dGhzZXJ2bGV0Ly4uLy4uL0Rvd25Mb2FkQ291cnNld2FyZSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/w_selfservice/oauthservlet/../../servlet/sduty/getSdutyTree` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dfc2VsZnNlcnZpY2Uvb2F1dGhzZXJ2bGV0Ly4uLy4uL3NlcnZsZXQvc2R1dHkvZ2V0U2R1dHlUcmVlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/wls-wsat/ParticipantPortType` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dscy13c2F0L1BhcnRpY2lwYW50UG9ydFR5cGUqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.previous` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYucHJldmlvdXMqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/C6/Jhsoft.Web.users/GetTreeDate.aspx/` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0M2L0poc29mdC5XZWIudXNlcnMvR2V0VHJlZURhdGUuYXNweC8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/CDGServer3/downloadfromfile` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0NER1NlcnZlcjMvZG93bmxvYWRmcm9tZmlsZSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ConsoleExternalApi.XGI` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0NvbnNvbGVFeHRlcm5hbEFwaS5YR0kqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/WebService/BasicService.asmx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1dlYlNlcnZpY2UvQmFzaWNTZXJ2aWNlLmFzbXgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/ec/dev/search/datas` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9lYy9kZXYvc2VhcmNoL2RhdGFzKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/contentwebserver` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvbnRlbnR3ZWJzZXJ2ZXIqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/payment/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BheW1lbnQvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/templates/attestation/../../servlet/DisplayExcelCustomReport` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3RlbXBsYXRlcy9hdHRlc3RhdGlvbi8uLi8uLi9zZXJ2bGV0L0Rpc3BsYXlFeGNlbEN1c3RvbVJlcG9ydCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/webtools/control/main/ProgramExport` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dlYnRvb2xzL2NvbnRyb2wvbWFpbi9Qcm9ncmFtRXhwb3J0KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/app/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwcC92ZW5kb3IvcGhwdW5pdC9waHB1bml0L3NyYy9VdGlsL1BIUC9ldmFsLXN0ZGluLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/blog/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Jsb2cvdmVuZG9yL3BocHVuaXQvcGhwdW5pdC9zcmMvVXRpbC9QSFAvZXZhbC1zdGRpbi5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/demo/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RlbW8vdmVuZG9yL3BocHVuaXQvcGhwdW5pdC9zcmMvVXRpbC9QSFAvZXZhbC1zdGRpbi5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/rest/tinymce/1/macro/preview` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Jlc3QvdGlueW1jZS8xL21hY3JvL3ByZXZpZXcqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/CDGServer3/ClientAjax` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0NER1NlcnZlcjMvQ2xpZW50QWpheCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/CDGServer3/LinkFilterService` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0NER1NlcnZlcjMvTGlua0ZpbHRlclNlcnZpY2UqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Handler/FileDownLoad.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0hhbmRsZXIvRmlsZURvd25Mb2FkLmFzaHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/UpLoad/FileManage.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1VwTG9hZC9GaWxlTWFuYWdlLmFzaHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/a/b/%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2fetc/resolv.conf` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2EvYi8lMmYuLiUyZi4uJTJmLi4lMmYuLiUyZi4uJTJmLi4lMmYuLiUyZmV0Yy9yZXNvbHYuY29uZioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/blade-system/menu/menu-list` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9ibGFkZS1zeXN0ZW0vbWVudS9tZW51LWxpc3QqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/building/config/config.ini` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2J1aWxkaW5nL2NvbmZpZy9jb25maWcuaW5pKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cms/content/list` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Ntcy9jb250ZW50L2xpc3QqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/evo-apigw/evo-cirs/file/readPic` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2V2by1hcGlndy9ldm8tY2lycy9maWxlL3JlYWRQaWMqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/general/mytable/intel_view/video_file.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2dlbmVyYWwvbXl0YWJsZS9pbnRlbF92aWV3L3ZpZGVvX2ZpbGUucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ispirit/retrieve_pwd.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2lzcGlyaXQvcmV0cmlldmVfcHdkLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/jsoa/wap.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2pzb2Evd2FwLmRvKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/jsrpc.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2pzcnBjLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/pages/systemcall.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BhZ2VzL3N5c3RlbWNhbGwucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/seeyon/webmail.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlZXlvbi93ZWJtYWlsLmRvKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/share/handle.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NoYXJlL2hhbmRsZS5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/static/../../../../../../../../../../../etc/passwd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3N0YXRpYy8uLi8uLi8uLi8uLi8uLi8uLi8uLi8uLi8uLi8uLi8uLi9ldGMvcGFzc3dkKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/stripe/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3N0cmlwZS8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/sys/treeXml.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3N5cy90cmVlWG1sLmpzcCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/templates/attestation/../../general/muster/hmuster/openFile.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3RlbXBsYXRlcy9hdHRlc3RhdGlvbi8uLi8uLi9nZW5lcmFsL211c3Rlci9obXVzdGVyL29wZW5GaWxlLmpzcCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/tomcat.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3RvbWNhdC5qc3AqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ui_base/js/../../../../../../../../../../etc/passwd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3VpX2Jhc2UvanMvLi4vLi4vLi4vLi4vLi4vLi4vLi4vLi4vLi4vLi4vZXRjL3Bhc3N3ZCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/CardSolution/card/accessControl/swingCardRecord/deleteFtp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0NhcmRTb2x1dGlvbi9jYXJkL2FjY2Vzc0NvbnRyb2wvc3dpbmdDYXJkUmVjb3JkL2RlbGV0ZUZ0cCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/a/sys/user/validateMobile` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Evc3lzL3VzZXIvdmFsaWRhdGVNb2JpbGUqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/a/sys/user/validateMobileExist` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Evc3lzL3VzZXIvdmFsaWRhdGVNb2JpbGVFeGlzdCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/blade-desk/notice/list` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9ibGFkZS1kZXNrL25vdGljZS9saXN0KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/docexchangeManage/checkGroupCode.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RvY2V4Y2hhbmdlTWFuYWdlL2NoZWNrR3JvdXBDb2RlLmpzcCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ipms/barpay/pay` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2lwbXMvYmFycGF5L3BheSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/jc6/servlet/WebBill` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2pjNi9zZXJ2bGV0L1dlYkJpbGwqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/protocol/index.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Byb3RvY29sL2luZGV4LnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/templates/attestation/../../servlet/FrCodeAddTreeServlet` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3RlbXBsYXRlcy9hdHRlc3RhdGlvbi8uLi8uLi9zZXJ2bGV0L0ZyQ29kZUFkZFRyZWVTZXJ2bGV0KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/backup/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2JhY2t1cC92ZW5kb3IvcGhwdW5pdC9waHB1bml0L3NyYy9VdGlsL1BIUC9ldmFsLXN0ZGluLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/public/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3B1YmxpYy92ZW5kb3IvcGhwdW5pdC9waHB1bml0L3NyYy9VdGlsL1BIUC9ldmFsLXN0ZGluLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/test/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Rlc3QvdmVuZG9yL3BocHVuaXQvcGhwdW5pdC9zcmMvVXRpbC9QSFAvZXZhbC1zdGRpbi5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/GNRemote.dll` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0dOUmVtb3RlLmRsbCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/assets/php/upload.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Fzc2V0cy9waHAvdXBsb2FkLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cc/common/components/uploadimage/getuploadimage.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NjL2NvbW1vbi9jb21wb25lbnRzL3VwbG9hZGltYWdlL2dldHVwbG9hZGltYWdlLmpzcCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd#/a` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy4uJTJGLi4lMkYuLiUyRi4uJTJGLi4lMkYuLiUyRi4uJTJGLi4lMkYuLiUyRi4uJTJGLi4lMkZldGMlMkZwYXNzd2QjL2EqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/../../../../../../../../Windows/win.ini` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uL1dpbmRvd3Mvd2luLmluaSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.env.sendgrid` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuc2VuZGdyaWQqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/C6/JHSoft.Web.AddMenu/LoginTemplate/DownLoadBgImage.aspx/` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0M2L0pIU29mdC5XZWIuQWRkTWVudS9Mb2dpblRlbXBsYXRlL0Rvd25Mb2FkQmdJbWFnZS5hc3B4Lyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/E-mobile/flowdo_page.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0UtbW9iaWxlL2Zsb3dkb19wYWdlLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/FileProxyHandler.kdfile` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0ZpbGVQcm94eUhhbmRsZXIua2RmaWxlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/GB/LK/Document/ArchiveService/ArchiveWebService.asmx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0dCL0xLL0RvY3VtZW50L0FyY2hpdmVTZXJ2aWNlL0FyY2hpdmVXZWJTZXJ2aWNlLmFzbXgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Webservice/IM/Config/ConfigService.asmx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1dlYnNlcnZpY2UvSU0vQ29uZmlnL0NvbmZpZ1NlcnZpY2UuYXNteCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/admin/;//protect/datasource/createDataSource` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWluLzsvL3Byb3RlY3QvZGF0YXNvdXJjZS9jcmVhdGVEYXRhU291cmNlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/blade-user/export-user` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9ibGFkZS11c2VyL2V4cG9ydC11c2VyKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/client/down_file.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9jbGllbnQvZG93bl9maWxlLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/virtual/home/status` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS92aXJ0dWFsL2hvbWUvc3RhdHVzKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/building/json_common.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2J1aWxkaW5nL2pzb25fY29tbW9uLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cpt/capital/CptInstock1Ajax.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NwdC9jYXBpdGFsL0NwdEluc3RvY2sxQWpheC5qc3AqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/defaultroot/platform/bpm/ezflow/operation/ezflow_gd.jsp;` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RlZmF1bHRyb290L3BsYXRmb3JtL2JwbS9lemZsb3cvb3BlcmF0aW9uL2V6Zmxvd19nZC5qc3A7KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/defaultroot/public/iWebOfficeSign/DocumentEdit_unite.jsp;` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RlZmF1bHRyb290L3B1YmxpYy9pV2ViT2ZmaWNlU2lnbi9Eb2N1bWVudEVkaXRfdW5pdGUuanNwOyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/easWebClient/deploy/client/ctrlhome/webapps/extweb/WEB-INF/web.xml` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Vhc1dlYkNsaWVudC9kZXBsb3kvY2xpZW50L2N0cmxob21lL3dlYmFwcHMvZXh0d2ViL1dFQi1JTkYvd2ViLnhtbCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/general/file_folder/file_new/neworedit/download.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2dlbmVyYWwvZmlsZV9mb2xkZXIvZmlsZV9uZXcvbmV3b3JlZGl0L2Rvd25sb2FkLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/general/score/flow/scoredate/result.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2dlbmVyYWwvc2NvcmUvZmxvdy9zY29yZWRhdGUvcmVzdWx0LnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/jc6/JHSoft.WCF/login/oaplusrangedownloadfile` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2pjNi9KSFNvZnQuV0NGL2xvZ2luL29hcGx1c3JhbmdlZG93bmxvYWRmaWxlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/jsoa/WebServiceProxy` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2pzb2EvV2ViU2VydmljZVByb3h5KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/lib/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2xpYi8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/module/retrieve_pwd/header.inc.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21vZHVsZS9yZXRyaWV2ZV9wd2QvaGVhZGVyLmluYy5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ops/index.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL29wcy9pbmRleC5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/portal/services/carQuery/getNewStaypointDetailQuery` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BvcnRhbC9zZXJ2aWNlcy9jYXJRdWVyeS9nZXROZXdTdGF5cG9pbnREZXRhaWxRdWVyeSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/rest/ofs/ReceiveCCRequestByXml` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Jlc3Qvb2ZzL1JlY2VpdmVDQ1JlcXVlc3RCeVhtbCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/s3/bucket.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3MzL2J1Y2tldC5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/serverLog/showFile.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlcnZlckxvZy9zaG93RmlsZS5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/servlet/DisplayCustomerReportExcelFile` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlcnZsZXQvRGlzcGxheUN1c3RvbWVyUmVwb3J0RXhjZWxGaWxlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/system/mediafile/downLoadFiles.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3N5c3RlbS9tZWRpYWZpbGUvZG93bkxvYWRGaWxlcy5qc3AqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/taillog/logs/..\easycvr.ini` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3RhaWxsb2cvbG9ncy8uLlxcZWFzeWN2ci5pbmkqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/templates/attestation/../../servlet/DisplayFiles` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3RlbXBsYXRlcy9hdHRlc3RhdGlvbi8uLi8uLi9zZXJ2bGV0L0Rpc3BsYXlGaWxlcyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/templates/attestation/../../servlet/fieldsettree` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3RlbXBsYXRlcy9hdHRlc3RhdGlvbi8uLi8uLi9zZXJ2bGV0L2ZpZWxkc2V0dHJlZSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/v1_0/home/jobfairol/resumelist` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3YxXzAvaG9tZS9qb2JmYWlyb2wvcmVzdW1lbGlzdCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/weaver/weaver.file.SignatureDownLoad` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dlYXZlci93ZWF2ZXIuZmlsZS5TaWduYXR1cmVEb3duTG9hZCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/yyoa/portal/style/controller/operaFileActionController.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3l5b2EvcG9ydGFsL3N0eWxlL2NvbnRyb2xsZXIvb3BlcmFGaWxlQWN0aW9uQ29udHJvbGxlci5qc3AqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/adpweb/static/..;/a/sys/runtimeLog/download` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FkcHdlYi9zdGF0aWMvLi47L2Evc3lzL3J1bnRpbWVMb2cvZG93bmxvYWQqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/v2/simulation` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS92Mi9zaW11bGF0aW9uKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cgi-bin/luci/api/auth` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NnaS1iaW4vbHVjaS9hcGkvYXV0aCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ebvp/advorappcoll/complainbilldetail` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2VidnAvYWR2b3JhcHBjb2xsL2NvbXBsYWluYmlsbGRldGFpbCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/jsoa/hntdCustomDesktopActionContent` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2pzb2EvaG50ZEN1c3RvbURlc2t0b3BBY3Rpb25Db250ZW50KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/pmb/opac_css/ajax.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BtYi9vcGFjX2Nzcy9hamF4LnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/public_html/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3B1YmxpY19odG1sLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/resin-doc/resource/tutorial/jndi-appconfig/test` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Jlc2luLWRvYy9yZXNvdXJjZS90dXRvcmlhbC9qbmRpLWFwcGNvbmZpZy90ZXN0KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/admin/do/proxy.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWluL2RvL3Byb3h5LnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/adminer/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWluZXIvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/backend/.env.staging` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2JhY2tlbmQvLmVudi5zdGFnaW5nKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/de2api/datasource/validate` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RlMmFwaS9kYXRhc291cmNlL3ZhbGlkYXRlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/index.php/api/login/httpGet` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2luZGV4LnBocC9hcGkvbG9naW4vaHR0cEdldCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/interlib/report/ShowImage` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2ludGVybGliL3JlcG9ydC9TaG93SW1hZ2UqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/manage/intercom/..;/..;/manage/personnel/exportUsersExcel.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS9pbnRlcmNvbS8uLjsvLi47L21hbmFnZS9wZXJzb25uZWwvZXhwb3J0VXNlcnNFeGNlbC5kbyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/manage/timePeriodManage/queryTimePeriodList.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS90aW1lUGVyaW9kTWFuYWdlL3F1ZXJ5VGltZVBlcmlvZExpc3QuZG8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/modules/mail/main/maildetail.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21vZHVsZXMvbWFpbC9tYWluL21haWxkZXRhaWwucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/prx/000/http/localhost/login` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3ByeC8wMDAvaHR0cC9sb2NhbGhvc3QvbG9naW4qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/s3/.env.bak` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3MzLy5lbnYuYmFrKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/selfservice/selfservice/module/scgroup/web/login_judge.jsf` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlbGZzZXJ2aWNlL3NlbGZzZXJ2aWNlL21vZHVsZS9zY2dyb3VwL3dlYi9sb2dpbl9qdWRnZS5qc2YqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/settings/config.json` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NldHRpbmdzL2NvbmZpZy5qc29uKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ResetUserInfo.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1Jlc2V0VXNlckluZm8ucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/images/../info.html` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2ltYWdlcy8uLi9pbmZvLmh0bWwqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/notice/confirm.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL25vdGljZS9jb25maXJtLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/objects/getSpiritsFromVideo.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL29iamVjdHMvZ2V0U3Bpcml0c0Zyb21WaWRlby5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/aim/equipmap/accept.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FpbS9lcXVpcG1hcC9hY2NlcHQuanNwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/model_report/file/download` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9tb2RlbF9yZXBvcnQvZmlsZS9kb3dubG9hZCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cgi-bin/downloadFlile.cgi` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NnaS1iaW4vZG93bmxvYWRGbGlsZS5jZ2kqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/confluence/pages/createpage-entervariables.action` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvbmZsdWVuY2UvcGFnZXMvY3JlYXRlcGFnZS1lbnRlcnZhcmlhYmxlcy5hY3Rpb24qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/downloadFile.down` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Rvd25sb2FkRmlsZS5kb3duKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/iOffice/prg/set/wss/mobileoa.asmx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2lPZmZpY2UvcHJnL3NldC93c3MvbW9iaWxlb2EuYXNteCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/manage/log/view` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS9sb2cvdmlldyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/sobey-mchEditor/watermark/upload` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NvYmV5LW1jaEVkaXRvci93YXRlcm1hcmsvdXBsb2FkKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ConsoleExternalUploadApi.XGI` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0NvbnNvbGVFeHRlcm5hbFVwbG9hZEFwaS5YR0kqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/RP` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1JQKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ReportServlet` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1JlcG9ydFNlcnZsZXQqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/app/.env.dev` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwcC8uZW52LmRldioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/common/down/file` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvbW1vbi9kb3duL2ZpbGUqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/custom/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2N1c3RvbS8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/en/php/usb_sync.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2VuL3BocC91c2Jfc3luYy5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/home/campus/campus_job` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2hvbWUvY2FtcHVzL2NhbXB1c19qb2IqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/inter/update_software_info_v2.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2ludGVyL3VwZGF0ZV9zb2Z0d2FyZV9pbmZvX3YyLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ispirit/interface/gateway.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2lzcGlyaXQvaW50ZXJmYWNlL2dhdGV3YXkucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/iweboffice/officeserver2.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2l3ZWJvZmZpY2Uvb2ZmaWNlc2VydmVyMi5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/manage/employeeCardRecord/employeeCardRecordImport.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS9lbXBsb3llZUNhcmRSZWNvcmQvZW1wbG95ZWVDYXJkUmVjb3JkSW1wb3J0LmRvKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/manage/intercom/..;/..;/manage/personnel/queryPersonnelInfo.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS9pbnRlcmNvbS8uLjsvLi47L21hbmFnZS9wZXJzb25uZWwvcXVlcnlQZXJzb25uZWxJbmZvLmRvKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/service/~iufo/nc.itf.iufo.mobilereport.data.ReportDetailDataQuery` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlcnZpY2Uvfml1Zm8vbmMuaXRmLml1Zm8ubW9iaWxlcmVwb3J0LmRhdGEuUmVwb3J0RGV0YWlsRGF0YVF1ZXJ5KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/src/.env.local` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NyYy8uZW52LmxvY2FsKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/systemController/showOrDownByurl.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3N5c3RlbUNvbnRyb2xsZXIvc2hvd09yRG93bkJ5dXJsLmRvKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/tplus/SM/DTS/DownloadProxy.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3RwbHVzL1NNL0RUUy9Eb3dubG9hZFByb3h5LmFzcHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ueditor/jsp/controller.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3VlZGl0b3IvanNwL2NvbnRyb2xsZXIuanNwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cgi-bin/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/bin/sh` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NnaS1iaW4vJSUzMiU2NSUlMzIlNjUvJSUzMiU2NSUlMzIlNjUvJSUzMiU2NSUlMzIlNjUvJSUzMiU2NSUlMzIlNjUvJSUzMiU2NSUlMzIlNjUvJSUzMiU2NSUlMzIlNjUvJSUzMiU2NSUlMzIlNjUvYmluL3NoKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cgi-bin/mt/mt-xmlrpc.cgi` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NnaS1iaW4vbXQvbXQteG1scnBjLmNnaSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ACSServer/WebServlet` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0FDU1NlcnZlci9XZWJTZXJ2bGV0KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api-third-party/download/extdisks../etc/passwd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS10aGlyZC1wYXJ0eS9kb3dubG9hZC9leHRkaXNrcy4uL2V0Yy9wYXNzd2QqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cgi-bin/libagent.cgi` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NnaS1iaW4vbGliYWdlbnQuY2dpKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/include/makecvs.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2luY2x1ZGUvbWFrZWN2cy5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/tplus/ajaxpro/Ufida.T.CodeBehind._PriorityLevel,App_Code.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3RwbHVzL2FqYXhwcm8vVWZpZGEuVC5Db2RlQmVoaW5kLl9Qcmlvcml0eUxldmVsLEFwcF9Db2RlLmFzaHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/wp-content/plugins/site-editor/editor/extensions/pagebuilder/includes/ajax_shortcode_pattern.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dwLWNvbnRlbnQvcGx1Z2lucy9zaXRlLWVkaXRvci9lZGl0b3IvZXh0ZW5zaW9ucy9wYWdlYnVpbGRlci9pbmNsdWRlcy9hamF4X3Nob3J0Y29kZV9wYXR0ZXJuLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Ajax/upload.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0FqYXgvdXBsb2FkLmFzaHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/E-mobile/App/Ajax/ajax.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0UtbW9iaWxlL0FwcC9BamF4L2FqYXgucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ERP/StockreceiveEdit.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0VSUC9TdG9ja3JlY2VpdmVFZGl0LmFzcHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/admin/edit_fire_wall.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWluL2VkaXRfZmlyZV93YWxsLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/edr/sangforinter/v2/cssp/slog_client` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9lZHIvc2FuZ2ZvcmludGVyL3YyL2Nzc3Avc2xvZ19jbGllbnQqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/base_import/static/c:/windows/win.ini` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Jhc2VfaW1wb3J0L3N0YXRpYy9jOi93aW5kb3dzL3dpbi5pbmkqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/bic/ssoService/v1/applyCT` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2JpYy9zc29TZXJ2aWNlL3YxL2FwcGx5Q1QqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cas/fileUpload/upload` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Nhcy9maWxlVXBsb2FkL3VwbG9hZCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/eps/api/triggerSnapshot/download` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Vwcy9hcGkvdHJpZ2dlclNuYXBzaG90L2Rvd25sb2FkKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/filter/jmol/js/jsmol/php/jsmol.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2ZpbHRlci9qbW9sL2pzL2pzbW9sL3BocC9qc21vbC5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/image/image://..%2fetc%2fpasswd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2ltYWdlL2ltYWdlOi8vLi4lMmZldGMlMmZwYXNzd2QqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/main/inc/ajax/model.ajax.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21haW4vaW5jL2FqYXgvbW9kZWwuYWpheC5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/module` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21vZHVsZSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/plus/ajax_street.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BsdXMvYWpheF9zdHJlZXQucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/service/~iufo/nc.itf.iufo.mobilereport.data.KeyWordDetailReportQuery` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlcnZpY2Uvfml1Zm8vbmMuaXRmLml1Zm8ubW9iaWxlcmVwb3J0LmRhdGEuS2V5V29yZERldGFpbFJlcG9ydFF1ZXJ5KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/system/dict/list` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3N5c3RlbS9kaWN0L2xpc3QqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/tplus/ajaxpro/Ufida.T.SM.UIP.ScheduleManage.ScheduleManageController,Ufida.T.SM.UIP.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3RwbHVzL2FqYXhwcm8vVWZpZGEuVC5TTS5VSVAuU2NoZWR1bGVNYW5hZ2UuU2NoZWR1bGVNYW5hZ2VDb250cm9sbGVyLFVmaWRhLlQuU00uVUlQLmFzaHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/webauth_operation.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dlYmF1dGhfb3BlcmF0aW9uLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/zentao/user-login.html` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3plbnRhby91c2VyLWxvZ2luLmh0bWwqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/AliRPH5/fileStream.json` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0FsaVJQSDUvZmlsZVN0cmVhbS5qc29uKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/CFIDE/wizards/common/utils.cfc` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0NGSURFL3dpemFyZHMvY29tbW9uL3V0aWxzLmNmYyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Interface/DevManage/VM.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0ludGVyZmFjZS9EZXZNYW5hZ2UvVk0ucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/OCR/fileStream.json` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL09DUi9maWxlU3RyZWFtLmpzb24qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ajaxPages/writeBrowseFilePathAjax.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FqYXhQYWdlcy93cml0ZUJyb3dzZUZpbGVQYXRoQWpheC5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/auth/requestreset` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2F1dGgvcmVxdWVzdHJlc2V0KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cgi-bin/supervisor/CloudSetup.cgi` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NnaS1iaW4vc3VwZXJ2aXNvci9DbG91ZFNldHVwLmNnaSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/config/.env.staging` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvbmZpZy8uZW52LnN0YWdpbmcqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/en/9-12ping.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2VuLzktMTJwaW5nLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/index.php/component/jemessenger/box_details` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2luZGV4LnBocC9jb21wb25lbnQvamVtZXNzZW5nZXIvYm94X2RldGFpbHMqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/js/player/dmplayer/dmku/index.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2pzL3BsYXllci9kbXBsYXllci9kbWt1L2luZGV4LnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/manage/intercom/..;/..;/manage/visitorInformation/queryHistoryVisitorInformation.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS9pbnRlcmNvbS8uLjsvLi47L21hbmFnZS92aXNpdG9ySW5mb3JtYXRpb24vcXVlcnlIaXN0b3J5VmlzaXRvckluZm9ybWF0aW9uLmRvKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/messageType.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21lc3NhZ2VUeXBlLmRvKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/mysql/backrestore` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL215c3FsL2JhY2tyZXN0b3JlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/oa/fileDownload.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL29hL2ZpbGVEb3dubG9hZC5kbyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/openam/oauth2/..;/ccversion/Version` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL29wZW5hbS9vYXV0aDIvLi47L2NjdmVyc2lvbi9WZXJzaW9uKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/popup.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BvcHVwLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/portal/pt/printpdf/printBill` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BvcnRhbC9wdC9wcmludHBkZi9wcmludEJpbGwqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/server/.git/config` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlcnZlci8uZ2l0L2NvbmZpZyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/templates/attestation/../../pos/roleinfo/pos_dept_post` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3RlbXBsYXRlcy9hdHRlc3RhdGlvbi8uLi8uLi9wb3Mvcm9sZWluZm8vcG9zX2RlcHRfcG9zdCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/tools.cgi` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Rvb2xzLmNnaSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/view/systemConfig/management/nmc_sync.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3ZpZXcvc3lzdGVtQ29uZmlnL21hbmFnZW1lbnQvbm1jX3N5bmMucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/vpn/list_base_config.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Zwbi9saXN0X2Jhc2VfY29uZmlnLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/weaver/weaver.formmode.servelt.BrowserAction` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dlYXZlci93ZWF2ZXIuZm9ybW1vZGUuc2VydmVsdC5Ccm93c2VyQWN0aW9uKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/wp-content/plugins/simple-file-list/ee-upload-engine.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dwLWNvbnRlbnQvcGx1Z2lucy9zaW1wbGUtZmlsZS1saXN0L2VlLXVwbG9hZC1lbmdpbmUucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/wp-content/plugins/usc-e-shop/functions/progress-check.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dwLWNvbnRlbnQvcGx1Z2lucy91c2MtZS1zaG9wL2Z1bmN0aW9ucy9wcm9ncmVzcy1jaGVjay5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ws/GetFunc_code.asmx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dzL0dldEZ1bmNfY29kZS5hc214KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/OA/Mailbox.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL09BL01haWxib3guYXNweCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/client/task/savetask.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9jbGllbnQvdGFzay9zYXZldGFzay5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/backupmgt/localJob.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2JhY2t1cG1ndC9sb2NhbEpvYi5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cgi-bin/slogin/login.py` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NnaS1iaW4vc2xvZ2luL2xvZ2luLnB5KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/manage/dgmCommand/resourceUploadFile.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS9kZ21Db21tYW5kL3Jlc291cmNlVXBsb2FkRmlsZS5kbyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/pages/doenterpagevariables.action` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BhZ2VzL2RvZW50ZXJwYWdldmFyaWFibGVzLmFjdGlvbioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/static/../../../../../../etc/passwd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3N0YXRpYy8uLi8uLi8uLi8uLi8uLi8uLi9ldGMvcGFzc3dkKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/websso/SAML2/SSO/vsphere.local` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dlYnNzby9TQU1MMi9TU08vdnNwaGVyZS5sb2NhbCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ACSServer/DownloadFileServlet` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0FDU1NlcnZlci9Eb3dubG9hZEZpbGVTZXJ2bGV0KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/C6/JHSoft.Web.DailyTaskManage/TaskTreeJSON.aspx/.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0M2L0pIU29mdC5XZWIuRGFpbHlUYXNrTWFuYWdlL1Rhc2tUcmVlSlNPTi5hc3B4Ly5hc2h4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/OAapp/bfapp/buffalo/TemplateService` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL09BYXBwL2JmYXBwL2J1ZmZhbG8vVGVtcGxhdGVTZXJ2aWNlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/QH.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1FILmFzcHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Setting/Report/DesignReportSave.html` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1NldHRpbmcvUmVwb3J0L0Rlc2lnblJlcG9ydFNhdmUuaHRtbCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/admin/ajax/pages.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWluL2FqYXgvcGFnZXMucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/sms_check.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9zbXNfY2hlY2sucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/baoleiji/api/tokens` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Jhb2xlaWppL2FwaS90b2tlbnMqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/card_scan.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NhcmRfc2Nhbi5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/defaultroot/govezoffice/custom_documentmanager/smartUpload.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RlZmF1bHRyb290L2dvdmV6b2ZmaWNlL2N1c3RvbV9kb2N1bWVudG1hbmFnZXIvc21hcnRVcGxvYWQuanNwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/entsoft/ep/LoginDoAction.entcrm` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2VudHNvZnQvZXAvTG9naW5Eb0FjdGlvbi5lbnRjcm0qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/eoffice10/server/public/iWebOffice2015/OfficeServer.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2VvZmZpY2UxMC9zZXJ2ZXIvcHVibGljL2lXZWJPZmZpY2UyMDE1L09mZmljZVNlcnZlci5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/general/document/index.php/recv/register/insert` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2dlbmVyYWwvZG9jdW1lbnQvaW5kZXgucGhwL3JlY3YvcmVnaXN0ZXIvaW5zZXJ0KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/him/api/rest/V1.0/system/log/list` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2hpbS9hcGkvcmVzdC9WMS4wL3N5c3RlbS9sb2cvbGlzdCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/hms/user-login.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2htcy91c2VyLWxvZ2luLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/hrss/servlet/uploadImg2File` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2hyc3Mvc2VydmxldC91cGxvYWRJbWcyRmlsZSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/index.php/Home/uploadify/fileList` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2luZGV4LnBocC9Ib21lL3VwbG9hZGlmeS9maWxlTGlzdCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/index/download/index` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2luZGV4L2Rvd25sb2FkL2luZGV4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/jeeplus-vue/file/download` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2plZXBsdXMtdnVlL2ZpbGUvZG93bmxvYWQqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/lib///....//....//....//....//....//....//....//....//etc//passwd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2xpYi8vLy4uLi4vLy4uLi4vLy4uLi4vLy4uLi4vLy4uLi4vLy4uLi4vLy4uLi4vLy4uLi4vL2V0Yy8vcGFzc3dkKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/logs/downloadMainLog` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2xvZ3MvZG93bmxvYWRNYWluTG9nKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/maportal/appmanager/init` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hcG9ydGFsL2FwcG1hbmFnZXIvaW5pdCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/page/exportImport/uploadOperation.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BhZ2UvZXhwb3J0SW1wb3J0L3VwbG9hZE9wZXJhdGlvbi5qc3AqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/plugins/servlet/snjFooterNavigationConfig` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BsdWdpbnMvc2VydmxldC9zbmpGb290ZXJOYXZpZ2F0aW9uQ29uZmlnKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/portal/rest/attachment_downloadByUrlAtt.action` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BvcnRhbC9yZXN0L2F0dGFjaG1lbnRfZG93bmxvYWRCeVVybEF0dC5hY3Rpb24qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/public/../../../../../etc/passwd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3B1YmxpYy8uLi8uLi8uLi8uLi8uLi9ldGMvcGFzc3dkKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/public/index.php/weixin/auto_reply/check_keyword` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3B1YmxpYy9pbmRleC5waHAvd2VpeGluL2F1dG9fcmVwbHkvY2hlY2tfa2V5d29yZCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/scgi-bin/platform.cgi` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NjZ2ktYmluL3BsYXRmb3JtLmNnaSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/servlet/~uap/com.yonyou.ma.roster.servlet.MARosterPhotoServlet` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlcnZsZXQvfnVhcC9jb20ueW9ueW91Lm1hLnJvc3Rlci5zZXJ2bGV0Lk1BUm9zdGVyUGhvdG9TZXJ2bGV0KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/servlet/~uap/nc.bs.sm.login2.RegisterServlet` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlcnZsZXQvfnVhcC9uYy5icy5zbS5sb2dpbjIuUmVnaXN0ZXJTZXJ2bGV0KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/sslvpn/sslvpn_client.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NzbHZwbi9zc2x2cG5fY2xpZW50LnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ui/vcav-bootstrap/rest/vcav-providers/provider-logo` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3VpL3ZjYXYtYm9vdHN0cmFwL3Jlc3QvdmNhdi1wcm92aWRlcnMvcHJvdmlkZXItbG9nbyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/v1_0/home/campus/campus_job` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3YxXzAvaG9tZS9jYW1wdXMvY2FtcHVzX2pvYioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/weaver/org.springframework.web.servlet.ResourceServlet` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dlYXZlci9vcmcuc3ByaW5nZnJhbWV3b3JrLndlYi5zZXJ2bGV0LlJlc291cmNlU2VydmxldCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/webui/index.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dlYnVpL2luZGV4LnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/wiki/pages/createpage-entervariables.action` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dpa2kvcGFnZXMvY3JlYXRlcGFnZS1lbnRlcnZhcmlhYmxlcy5hY3Rpb24qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/wp-content/plugins/chopslider/get_script/index.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dwLWNvbnRlbnQvcGx1Z2lucy9jaG9wc2xpZGVyL2dldF9zY3JpcHQvaW5kZXgucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/xds/deleteStudy.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3hkcy9kZWxldGVTdHVkeS5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/C6/Control/UploadFileEditor.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0M2L0NvbnRyb2wvVXBsb2FkRmlsZUVkaXRvci5hc3B4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Conf/jsp/systembulletin/bulletinAction.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0NvbmYvanNwL3N5c3RlbWJ1bGxldGluL2J1bGxldGluQWN0aW9uLmRvKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ExternalApi.XGI` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0V4dGVybmFsQXBpLlhHSSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/FoxhisFileServer/action` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0ZveGhpc0ZpbGVTZXJ2ZXIvYWN0aW9uKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/OA/SMS/download.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL09BL1NNUy9kb3dubG9hZC5hc2h4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/SYSN/json/pcclient/GetPersonalSealData.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1NZU04vanNvbi9wY2NsaWVudC9HZXRQZXJzb25hbFNlYWxEYXRhLmFzaHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/WEB_SERVICE/DingTalkTool.asmx/TodayAttenDanceDataSave` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1dFQl9TRVJWSUNFL0RpbmdUYWxrVG9vbC5hc214L1RvZGF5QXR0ZW5EYW5jZURhdGFTYXZlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/../fetch` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS8uLi9mZXRjaCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/client/audiobroadcast/invite_one_member.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9jbGllbnQvYXVkaW9icm9hZGNhc3QvaW52aXRlX29uZV9tZW1iZXIucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/index/config` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9pbmRleC9jb25maWcqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/src/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9zcmMvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/app/.git/config` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwcC8uZ2l0L2NvbmZpZyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cdn/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Nkbi8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cgi-bin/jumpto.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NnaS1iaW4vanVtcHRvLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cgi-bin/network_test.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NnaS1iaW4vbmV0d29ya190ZXN0LnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/checkout/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NoZWNrb3V0Ly5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cmd,/simZysh/register_main/setCookie` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NtZCwvc2ltWnlzaC9yZWdpc3Rlcl9tYWluL3NldENvb2tpZSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cms/.git/config` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Ntcy8uZ2l0L2NvbmZpZyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/config/.git/config` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvbmZpZy8uZ2l0L2NvbmZpZyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/core/.git/config` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvcmUvLmdpdC9jb25maWcqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/data/echart/terminals.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RhdGEvZWNoYXJ0L3Rlcm1pbmFscy5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/demo/proxy` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RlbW8vcHJveHkqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/dev/.git/config` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Rldi8uZ2l0L2NvbmZpZyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/developLog/downloadLog.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RldmVsb3BMb2cvZG93bmxvYWRMb2cucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/devtools/tools/exportdictionary.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RldnRvb2xzL3Rvb2xzL2V4cG9ydGRpY3Rpb25hcnkucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/goform/setSysAdm` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2dvZm9ybS9zZXRTeXNBZG0qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/imc/javax.faces.resource/dynamiccontent.properties.xhtml` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2ltYy9qYXZheC5mYWNlcy5yZXNvdXJjZS9keW5hbWljY29udGVudC5wcm9wZXJ0aWVzLnhodG1sKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/importhtml.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2ltcG9ydGh0bWwucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/index.php/bbs/index/download` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2luZGV4LnBocC9iYnMvaW5kZXgvZG93bmxvYWQqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/interface/go.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2ludGVyZmFjZS9nby5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/jeecg-boot/sys/dict/queryTableData` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2plZWNnLWJvb3Qvc3lzL2RpY3QvcXVlcnlUYWJsZURhdGEqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/manage/systemLogMgr/queryManageDeviceLogs.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS9zeXN0ZW1Mb2dNZ3IvcXVlcnlNYW5hZ2VEZXZpY2VMb2dzLmRvKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/manage/systemRoleMgr/queryUserBySystemRoleId.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS9zeXN0ZW1Sb2xlTWdyL3F1ZXJ5VXNlckJ5U3lzdGVtUm9sZUlkLmRvKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/maportal/appmanager/uploadApk.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hcG9ydGFsL2FwcG1hbmFnZXIvdXBsb2FkQXBrLmRvKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/media/.git/config` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21lZGlhLy5naXQvY29uZmlnKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/mobilemode/Action.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21vYmlsZW1vZGUvQWN0aW9uLmpzcCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/nccloud/mob/pfxx/manualload/importhttpscer` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL25jY2xvdWQvbW9iL3BmeHgvbWFudWFsbG9hZC9pbXBvcnRodHRwc2Nlcioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/plugins/servlet/snjCustomDesignConfig` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BsdWdpbnMvc2VydmxldC9zbmpDdXN0b21EZXNpZ25Db25maWcqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/preview/getCorsFile` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3ByZXZpZXcvZ2V0Q29yc0ZpbGUqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/public/.git/config` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3B1YmxpYy8uZ2l0L2NvbmZpZyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/services/HrpServices` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlcnZpY2VzL0hycFNlcnZpY2VzKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/src/.git/config` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NyYy8uZ2l0L2NvbmZpZyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/sys/webservice/yworkWebserviceService` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3N5cy93ZWJzZXJ2aWNlL3l3b3JrV2Vic2VydmljZVNlcnZpY2UqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/system/role/list` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3N5c3RlbS9yb2xlL2xpc3QqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/tplus/SM/SetupAccount/Upload.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3RwbHVzL1NNL1NldHVwQWNjb3VudC9VcGxvYWQuYXNweCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/uapws/service/uap.pubitf.ae.meta.IMetaWebService4BqCloud` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3VhcHdzL3NlcnZpY2UvdWFwLnB1Yml0Zi5hZS5tZXRhLklNZXRhV2ViU2VydmljZTRCcUNsb3VkKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/wlmeng/../../../../../../../../../../../etc/passwd index.htm` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dsbWVuZy8uLi8uLi8uLi8uLi8uLi8uLi8uLi8uLi8uLi8uLi8uLi9ldGMvcGFzc3dkAGluZGV4Lmh0bSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/www/.git/config` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3d3dy8uZ2l0L2NvbmZpZyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/zabbix/popup.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3phYmJpeC9wb3B1cC5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/~/v3/pub/security/jsTree/media/../../../../../proxool.xml` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL34vdjMvcHViL3NlY3VyaXR5L2pzVHJlZS9tZWRpYS8uLi8uLi8uLi8uLi8uLi9wcm94b29sLnhtbCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/test.hello` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Rlc3QuaGVsbG8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/4/config` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS80L2NvbmZpZyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/defaultroot/upload/fileUpload.controller` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RlZmF1bHRyb290L3VwbG9hZC9maWxlVXBsb2FkLmNvbnRyb2xsZXIqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/main/webservices/additional_webservices.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21haW4vd2Vic2VydmljZXMvYWRkaXRpb25hbF93ZWJzZXJ2aWNlcy5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/plugins/system/cdscriptegrator/libraries/highslide/js/jsloader.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BsdWdpbnMvc3lzdGVtL2Nkc2NyaXB0ZWdyYXRvci9saWJyYXJpZXMvaGlnaHNsaWRlL2pzL2pzbG9hZGVyLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/../../../../../../../../../../../../../../etc/passwd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uL2V0Yy9wYXNzd2QqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Ajax/AjaxMethod.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0FqYXgvQWpheE1ldGhvZC5hc2h4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Api/portal/elementEcodeAddon/getSqlData` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0FwaS9wb3J0YWwvZWxlbWVudEVjb2RlQWRkb24vZ2V0U3FsRGF0YSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Base/BaseHandler.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0Jhc2UvQmFzZUhhbmRsZXIuYXNoeCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Handler/Ajax.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0hhbmRsZXIvQWpheC5hc2h4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/IND780/excalweb.dll` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0lORDc4MC9leGNhbHdlYi5kbGwqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/InputServlet` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0lucHV0U2VydmxldCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/NWorkFlow/NWorkToDoAdd.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL05Xb3JrRmxvdy9OV29ya1RvRG9BZGQuYXNweCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/OA_HTML/jsp/bsc/bscpgraph.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL09BX0hUTUwvanNwL2JzYy9ic2NwZ3JhcGguanNwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Solar_Image.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1NvbGFyX0ltYWdlLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/a/sys/user/resetPassword` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Evc3lzL3VzZXIvcmVzZXRQYXNzd29yZCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/admin/File/DownloadFile` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWluL0ZpbGUvRG93bmxvYWRGaWxlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/adpweb/static/..;/a/srm/inquiry/getSuppliers` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FkcHdlYi9zdGF0aWMvLi47L2Evc3JtL2lucXVpcnkvZ2V0U3VwcGxpZXJzKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/jmeter/download/files` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9qbWV0ZXIvZG93bmxvYWQvZmlsZXMqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/backup/auto.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2JhY2t1cC9hdXRvLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/c6/Jhsoft.Web.dailytaskmanage/TaskReportConfirm.aspx/` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2M2L0poc29mdC5XZWIuZGFpbHl0YXNrbWFuYWdlL1Rhc2tSZXBvcnRDb25maXJtLmFzcHgvKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cgi-bin/file_transfer.cgi` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NnaS1iaW4vZmlsZV90cmFuc2Zlci5jZ2kqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cgi-bin/jarrewrite.sh` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NnaS1iaW4vamFycmV3cml0ZS5zaCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cgi-bin/nas_sharing.cgi` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NnaS1iaW4vbmFzX3NoYXJpbmcuY2dpKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cgi-bin/touchlist_sync.cgi` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NnaS1iaW4vdG91Y2hsaXN0X3N5bmMuY2dpKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/common/jsp/upload3.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvbW1vbi9qc3AvdXBsb2FkMy5qc3AqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/components/com_moofaq/includes/file_includer.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvbXBvbmVudHMvY29tX21vb2ZhcS9pbmNsdWRlcy9maWxlX2luY2x1ZGVyLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/config.json` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvbmZpZy5qc29uKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/config/asst/system_setPassWordValidate.action/capture_handle.action` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvbmZpZy9hc3N0L3N5c3RlbV9zZXRQYXNzV29yZFZhbGlkYXRlLmFjdGlvbi9jYXB0dXJlX2hhbmRsZS5hY3Rpb24qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cooperate/videotexMonitor.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Nvb3BlcmF0ZS92aWRlb3RleE1vbml0b3IuanNwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/defaultroot/iWebOfficeSign/OfficeServer.jsp/../../public/iSignatureHTML.jsp/DocumentEdit.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RlZmF1bHRyb290L2lXZWJPZmZpY2VTaWduL09mZmljZVNlcnZlci5qc3AvLi4vLi4vcHVibGljL2lTaWduYXR1cmVIVE1MLmpzcC9Eb2N1bWVudEVkaXQuanNwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/defaultroot/wpsservlet` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RlZmF1bHRyb290L3dwc3NlcnZsZXQqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/emap/webservice/gis/soap/bitmap` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2VtYXAvd2Vic2VydmljZS9naXMvc29hcC9iaXRtYXAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/erp/dwr/call/plaincall/NamedParameterSingleRowQueryConvertor.queryForString.dwr` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2VycC9kd3IvY2FsbC9wbGFpbmNhbGwvTmFtZWRQYXJhbWV0ZXJTaW5nbGVSb3dRdWVyeUNvbnZlcnRvci5xdWVyeUZvclN0cmluZy5kd3IqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/flash/addcrypted2` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2ZsYXNoL2FkZGNyeXB0ZWQyKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/general/weibo/javascript/uploadify/uploadify.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2dlbmVyYWwvd2VpYm8vamF2YXNjcmlwdC91cGxvYWRpZnkvdXBsb2FkaWZ5LnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/gespage/doDownloadData` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2dlc3BhZ2UvZG9Eb3dubG9hZERhdGEqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/glpi/scripts/unlock_tasks.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2dscGkvc2NyaXB0cy91bmxvY2tfdGFza3MucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/images//////////////////../../../../../../../../etc/passwd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2ltYWdlcy8vLy8vLy8vLy8vLy8vLy8vLy4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uL2V0Yy9wYXNzd2QqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/includes/lib/gz.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2luY2x1ZGVzL2xpYi9nei5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/index/ajax/lang` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2luZGV4L2FqYXgvbGFuZyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ioffice/prg/set/iocom/ioFileExport.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2lvZmZpY2UvcHJnL3NldC9pb2NvbS9pb0ZpbGVFeHBvcnQuYXNweCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/jeecg-boot/jmreport/queryFieldBySql` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2plZWNnLWJvb3Qvam1yZXBvcnQvcXVlcnlGaWVsZEJ5U3FsKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/login/../../../etc/passwd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2xvZ2luLy4uLy4uLy4uL2V0Yy9wYXNzd2QqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ma/emp/maEmp/download` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hL2VtcC9tYUVtcC9kb3dubG9hZCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/mailingupgrade.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21haWxpbmd1cGdyYWRlLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/mainpage/msglog.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21haW5wYWdlL21zZ2xvZy5hc3B4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/manage/leaveList/monadFileUpload.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS9sZWF2ZUxpc3QvbW9uYWRGaWxlVXBsb2FkLmRvKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/manage/meetingPersonal/uploadMeetingFile.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS9tZWV0aW5nUGVyc29uYWwvdXBsb2FkTWVldGluZ0ZpbGUuZG8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/mas/front/vod/main.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hcy9mcm9udC92b2QvbWFpbi5kbyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/module/bdroppy/cron` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21vZHVsZS9iZHJvcHB5L2Nyb24qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/newlive/manager/uploadBin.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL25ld2xpdmUvbWFuYWdlci91cGxvYWRCaW4ucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/newspublish/downnewsatt.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL25ld3NwdWJsaXNoL2Rvd25uZXdzYXR0LmpzcCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/pages/templates2/viewpagetemplate.action` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BhZ2VzL3RlbXBsYXRlczIvdmlld3BhZ2V0ZW1wbGF0ZS5hY3Rpb24qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/plug/comment/commentList.asp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BsdWcvY29tbWVudC9jb21tZW50TGlzdC5hc3AqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/plus/ajax_officebuilding.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BsdXMvYWpheF9vZmZpY2VidWlsZGluZy5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/public/index.php/home/index/bind_follow/` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3B1YmxpYy9pbmRleC5waHAvaG9tZS9pbmRleC9iaW5kX2ZvbGxvdy8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/public/index.php/material/Material/_download_imgage` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3B1YmxpYy9pbmRleC5waHAvbWF0ZXJpYWwvTWF0ZXJpYWwvX2Rvd25sb2FkX2ltZ2FnZSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/report/reportServlet` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3JlcG9ydC9yZXBvcnRTZXJ2bGV0KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/resources/files/ue/word` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Jlc291cmNlcy9maWxlcy91ZS93b3JkKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/scripts/unlock_tasks.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NjcmlwdHMvdW5sb2NrX3Rhc2tzLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/selfservice/service/operatorReportorRoamService` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlbGZzZXJ2aWNlL3NlcnZpY2Uvb3BlcmF0b3JSZXBvcnRvclJvYW1TZXJ2aWNlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/service/~iufo/nc.itf.iufo.mobilereport.data.KeyWordReportQuery` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlcnZpY2Uvfml1Zm8vbmMuaXRmLml1Zm8ubW9iaWxlcmVwb3J0LmRhdGEuS2V5V29yZFJlcG9ydFF1ZXJ5KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/service/~uap/nc.bs.pf.pub.ThinApproveServlet` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlcnZpY2UvfnVhcC9uYy5icy5wZi5wdWIuVGhpbkFwcHJvdmVTZXJ2bGV0KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/servlet/com.sksoft.v8.trans.servlet.DataReceiverServlet` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlcnZsZXQvY29tLnNrc29mdC52OC50cmFucy5zZXJ2bGV0LkRhdGFSZWNlaXZlclNlcnZsZXQqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/softnas/snserver/snserv.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NvZnRuYXMvc25zZXJ2ZXIvc25zZXJ2LnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/system/mediafile/templateOfTaohong_manager.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3N5c3RlbS9tZWRpYWZpbGUvdGVtcGxhdGVPZlRhb2hvbmdfbWFuYWdlci5qc3AqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/uapim/upload/grouptemplet` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3VhcGltL3VwbG9hZC9ncm91cHRlbXBsZXQqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/upload/UploadResourcePic.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3VwbG9hZC9VcGxvYWRSZXNvdXJjZVBpYy5hc2h4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/viewfile` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3ZpZXdmaWxlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/webGui/images/green-on.png/` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dlYkd1aS9pbWFnZXMvZ3JlZW4tb24ucG5nLyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/webroot/decision/view/ReportServer` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dlYnJvb3QvZGVjaXNpb24vdmlldy9SZXBvcnRTZXJ2ZXIqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/whir_system/ajax/content/onlyvalid.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3doaXJfc3lzdGVtL2FqYXgvY29udGVudC9vbmx5dmFsaWQuYXNweCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/wp-json/notificationx/v1/analytics` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dwLWpzb24vbm90aWZpY2F0aW9ueC92MS9hbmFseXRpY3MqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/wxapp.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3d4YXBwLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/. /WEB-INF/web.xml` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy4AL1dFQi1JTkYvd2ViLnhtbCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/808gps/StandardReportMediaAction_getImage.action` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLzgwOGdwcy9TdGFuZGFyZFJlcG9ydE1lZGlhQWN0aW9uX2dldEltYWdlLmFjdGlvbioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/@fs/etc/passwd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0Bmcy9ldGMvcGFzc3dkKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Api/Order/DownLoadFile` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0FwaS9PcmRlci9Eb3duTG9hZEZpbGUqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/C6/JHSoft.Web.Tasks/TaskDataQuery.aspx/` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0M2L0pIU29mdC5XZWIuVGFza3MvVGFza0RhdGFRdWVyeS5hc3B4Lyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/C6/JHSoft.Web.Tasks/TaskRemind.aspx/` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0M2L0pIU29mdC5XZWIuVGFza3MvVGFza1JlbWluZC5hc3B4Lyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/DevicesGateway/apps/system-app-metadata/1` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0RldmljZXNHYXRld2F5L2FwcHMvc3lzdGVtLWFwcC1tZXRhZGF0YS8xKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/E-mobile/create/ajax_do.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0UtbW9iaWxlL2NyZWF0ZS9hamF4X2RvLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/FeeCodes/AttributeAdapter.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0ZlZUNvZGVzL0F0dHJpYnV0ZUFkYXB0ZXIuYXNweCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/FeeCodes/SubCompSeaeDefAdapter.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0ZlZUNvZGVzL1N1YkNvbXBTZWFlRGVmQWRhcHRlci5hc3B4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/HM/M_main/InformationManage/PlanDownLoad.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0hNL01fbWFpbi9JbmZvcm1hdGlvbk1hbmFnZS9QbGFuRG93bkxvYWQuYXNweCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Handler/UserCodeName.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0hhbmRsZXIvVXNlckNvZGVOYW1lLmFzaHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Json_db/flight_return.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0pzb25fZGIvZmxpZ2h0X3JldHVybi5hc3B4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/MyDown/MyImportData` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL015RG93bi9NeUltcG9ydERhdGEqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Page/UploadComponent/UploadComponentHandler.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1BhZ2UvVXBsb2FkQ29tcG9uZW50L1VwbG9hZENvbXBvbmVudEhhbmRsZXIuYXNoeCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Platform/System/FileUpload.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1BsYXRmb3JtL1N5c3RlbS9GaWxlVXBsb2FkLmFzaHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Services/Convert/UploadFile.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1NlcnZpY2VzL0NvbnZlcnQvVXBsb2FkRmlsZS5hc3B4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/SystemManage/BaseProject/GetImg` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1N5c3RlbU1hbmFnZS9CYXNlUHJvamVjdC9HZXRJbWcqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Test.exe` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1Rlc3QuZXhlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/UniExServices/link/queryLinkInfo` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1VuaUV4U2VydmljZXMvbGluay9xdWVyeUxpbmtJbmZvKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/UserMng.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1VzZXJNbmcuYXNoeCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/WebSer~1/create_site.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1dlYlNlcn4xL2NyZWF0ZV9zaXRlLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/a/b/.. /WEB-INF/web.xml` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2EvYi8uLgAvV0VCLUlORi93ZWIueG1sKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/acm/api/v1/../../see/view/uploadImage.json` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FjbS9hcGkvdjEvLi4vLi4vc2VlL3ZpZXcvdXBsb2FkSW1hZ2UuanNvbioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/admin/add_ikev2.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWluL2FkZF9pa2V2Mi5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ajax/checkDoubleUserNameForAdd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FqYXgvY2hlY2tEb3VibGVVc2VyTmFtZUZvckFkZCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ajax/uploadfile.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FqYXgvdXBsb2FkZmlsZS5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/admin/cms/templates/templatesAssetsEditor` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9hZG1pbi9jbXMvdGVtcGxhdGVzL3RlbXBsYXRlc0Fzc2V0c0VkaXRvcioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/blade-log/usual/list` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9ibGFkZS1sb2cvdXN1YWwvbGlzdCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/config.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9jb25maWcuZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/swaggerui/static/../../../../../../../etc/passwd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9zd2FnZ2VydWkvc3RhdGljLy4uLy4uLy4uLy4uLy4uLy4uLy4uL2V0Yy9wYXNzd2QqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/system/ExecuteSqlForSingle` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9zeXN0ZW0vRXhlY3V0ZVNxbEZvclNpbmdsZSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/terminal/clientinfobymid` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS90ZXJtaW5hbC9jbGllbnRpbmZvYnltaWQqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/user_login` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS91c2VyX2xvZ2luKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/apps/client/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwcHMvY2xpZW50Ly5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/assets/../../.HTTP/HTTP.db` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Fzc2V0cy8uLi8uLi8uSFRUUC9IVFRQLmRiKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/awstats/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2F3c3RhdHMvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/backup/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2JhY2t1cC8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/backup/.git/config` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2JhY2t1cC8uZ2l0L2NvbmZpZyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/backups/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2JhY2t1cHMvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/billing/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2JpbGxpbmcvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cgi-bin/account_mgr.cgi` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NnaS1iaW4vYWNjb3VudF9tZ3IuY2dpKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cgi-bin/adm.cgi` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NnaS1iaW4vYWRtLmNnaSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cgi-bin/export-cgi` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NnaS1iaW4vZXhwb3J0LWNnaSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cgi-bin/wapopen` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NnaS1iaW4vd2Fwb3Blbioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cgztbweb/VisitorWeb/VisitorWeb_XMLHTTP.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NnenRid2ViL1Zpc2l0b3JXZWIvVmlzaXRvcldlYl9YTUxIVFRQLmFzcHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/comment/api/index.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvbW1lbnQvYXBpL2luZGV4LnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/configuration/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvbmZpZ3VyYXRpb24vLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/control/upload.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvbnRyb2wvdXBsb2FkLmFzaHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/css/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Nzcy8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ddi/server/fileupload.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RkaS9zZXJ2ZXIvZmlsZXVwbG9hZC5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/defaultroot/public/iWebOfficeSign/DocumentEditExcel.jsp;` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RlZmF1bHRyb290L3B1YmxpYy9pV2ViT2ZmaWNlU2lnbi9Eb2N1bWVudEVkaXRFeGNlbC5qc3A7KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/easportal/buffalo/../cm/myUploadFile.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Vhc3BvcnRhbC9idWZmYWxvLy4uL2NtL215VXBsb2FkRmlsZS5kbyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/emap/bitmap/bitMap_addLayer.action` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2VtYXAvYml0bWFwL2JpdE1hcF9hZGRMYXllci5hY3Rpb24qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/general/new_mytable/block_content.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2dlbmVyYWwvbmV3X215dGFibGUvYmxvY2tfY29udGVudC5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/home/jobfairol/resumelist` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2hvbWUvam9iZmFpcm9sL3Jlc3VtZWxpc3QqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/html/ad/adpesquisasql/request/processVariavel.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2h0bWwvYWQvYWRwZXNxdWlzYXNxbC9yZXF1ZXN0L3Byb2Nlc3NWYXJpYXZlbC5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/index.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2luZGV4LnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/index.php/admin/index/login` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2luZGV4LnBocC9hZG1pbi9pbmRleC9sb2dpbioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/index.php/upload/ajax_upload` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2luZGV4LnBocC91cGxvYWQvYWpheF91cGxvYWQqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ioffice/prg/set/wss/ioAssistance.asmx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2lvZmZpY2UvcHJnL3NldC93c3MvaW9Bc3Npc3RhbmNlLmFzbXgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/jeewms/cgDynamGraphController.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2plZXdtcy9jZ0R5bmFtR3JhcGhDb250cm9sbGVyLmRvKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/jeewms/cgReportController.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2plZXdtcy9jZ1JlcG9ydENvbnRyb2xsZXIuZG8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/k3cloud/SRM/ScpSupRegHandler` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2szY2xvdWQvU1JNL1NjcFN1cFJlZ0hhbmRsZXIqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/lfw/core/rpc` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2xmdy9jb3JlL3JwYyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/linuxUpdate/dlUltrasec` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2xpbnV4VXBkYXRlL2RsVWx0cmFzZWMqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/mdiy/dict/list` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21kaXkvZGljdC9saXN0KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/modules/appagebuilder/apajax.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21vZHVsZXMvYXBwYWdlYnVpbGRlci9hcGFqYXgucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/mysql_config.ini` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL215c3FsX2NvbmZpZy5pbmkqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/newsedit/newsplan/screen.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL25ld3NlZGl0L25ld3NwbGFuL3NjcmVlbi5kbyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/pandora_console/include/chart_generator.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BhbmRvcmFfY29uc29sZS9pbmNsdWRlL2NoYXJ0X2dlbmVyYXRvci5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/plugins/content/jw_allvideos/includes/download.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BsdWdpbnMvY29udGVudC9qd19hbGx2aWRlb3MvaW5jbHVkZXMvZG93bmxvYWQucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/plus/ajax_common.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BsdXMvYWpheF9jb21tb24ucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/portal/pt/PaWfm2/open` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BvcnRhbC9wdC9QYVdmbTIvb3Blbioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/prod-api/iot/tool/download` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Byb2QtYXBpL2lvdC90b29sL2Rvd25sb2FkKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/prx/000/http/localhost/login/index.html` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3ByeC8wMDAvaHR0cC9sb2NhbGhvc3QvbG9naW4vaW5kZXguaHRtbCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/public/jump` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3B1YmxpYy9qdW1wKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/register/toDownload.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3JlZ2lzdGVyL3RvRG93bmxvYWQuZG8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/res/I18nMsg,AjxMsg,ZMsg,ZmMsg,AjxKeys,ZmKeys,ZdMsg,Ajx TemplateMsg.js.zgz` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Jlcy9JMThuTXNnLEFqeE1zZyxaTXNnLFptTXNnLEFqeEtleXMsWm1LZXlzLFpkTXNnLEFqeCBUZW1wbGF0ZU1zZy5qcy56Z3oqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/resource/file:///etc/passwd/` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Jlc291cmNlL2ZpbGU6Ly8vZXRjL3Bhc3N3ZC8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/rest/api/latest/projects/BIZEE/repos/bizee-communication-api/archive` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Jlc3QvYXBpL2xhdGVzdC9wcm9qZWN0cy9CSVpFRS9yZXBvcy9iaXplZS1jb21tdW5pY2F0aW9uLWFwaS9hcmNoaXZlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/savefile/1` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NhdmVmaWxlLzEqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/service/extension/backup/mboximport` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlcnZpY2UvZXh0ZW5zaW9uL2JhY2t1cC9tYm94aW1wb3J0KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/servlet/com.sksoft.v8.desktop.UploadImage` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlcnZsZXQvY29tLnNrc29mdC52OC5kZXNrdG9wLlVwbG9hZEltYWdlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/servlet/com.sksoft.v8.trans.servlet.TaskRequestServlet` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlcnZsZXQvY29tLnNrc29mdC52OC50cmFucy5zZXJ2bGV0LlRhc2tSZXF1ZXN0U2VydmxldCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/tags.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3RhZ3MucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/tos/index.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Rvcy9pbmRleC5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/uapjs/jsinvoke/` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3VhcGpzL2pzaW52b2tlLyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/userLogin.asp/../actionpolicy_status/../GR-1200W.cfg` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3VzZXJMb2dpbi5hc3AvLi4vYWN0aW9ucG9saWN5X3N0YXR1cy8uLi9HUi0xMjAwVy5jZmcqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/userLogin.asp/../actionpolicy_status/../GR1100-P.cfg` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3VzZXJMb2dpbi5hc3AvLi4vYWN0aW9ucG9saWN5X3N0YXR1cy8uLi9HUjExMDAtUC5jZmcqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/userLogin.asp/../actionpolicy_status/../GR2200.cfg` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3VzZXJMb2dpbi5hc3AvLi4vYWN0aW9ucG9saWN5X3N0YXR1cy8uLi9HUjIyMDAuY2ZnKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/vpn/list_ip_network.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Zwbi9saXN0X2lwX25ldHdvcmsucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/weaver/com.weaver.formmodel.apps.ktree.servlet.KtreeUploadAction` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dlYXZlci9jb20ud2VhdmVyLmZvcm1tb2RlbC5hcHBzLmt0cmVlLnNlcnZsZXQuS3RyZWVVcGxvYWRBY3Rpb24qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/wp-content/plugins/superstorefinder-wp/ssf-social-action.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dwLWNvbnRlbnQvcGx1Z2lucy9zdXBlcnN0b3JlZmluZGVyLXdwL3NzZi1zb2NpYWwtYWN0aW9uLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/~C:/WINDOWS/system32/drivers/etc/hosts` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL35DOi9XSU5ET1dTL3N5c3RlbTMyL2RyaXZlcnMvZXRjL2hvc3RzKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/V2/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1YyL3ZlbmRvci9waHB1bml0L3BocHVuaXQvc3JjL1V0aWwvUEhQL2V2YWwtc3RkaW4ucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/app/sys1.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwcC9zeXMxLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/apps/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwcHMvdmVuZG9yL3BocHVuaXQvcGhwdW5pdC9zcmMvVXRpbC9QSFAvZXZhbC1zdGRpbi5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/boardDataWW.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2JvYXJkRGF0YVdXLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cgi-bin/../../../../../../../../../../bin/sh` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NnaS1iaW4vLi4vLi4vLi4vLi4vLi4vLi4vLi4vLi4vLi4vLi4vYmluL3NoKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cms/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Ntcy92ZW5kb3IvcGhwdW5pdC9waHB1bml0L3NyYy9VdGlsL1BIUC9ldmFsLXN0ZGluLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/crm/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NybS92ZW5kb3IvcGhwdW5pdC9waHB1bml0L3NyYy9VdGlsL1BIUC9ldmFsLXN0ZGluLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/forms/doLogin` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Zvcm1zL2RvTG9naW4qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/general/file_folder/swfupload_new.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2dlbmVyYWwvZmlsZV9mb2xkZXIvc3dmdXBsb2FkX25ldy5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/goanywhere/images/..;/wizard/InitialAccountSetup.xhtml` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2dvYW55d2hlcmUvaW1hZ2VzLy4uOy93aXphcmQvSW5pdGlhbEFjY291bnRTZXR1cC54aHRtbCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/panel/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BhbmVsL3ZlbmRvci9waHB1bml0L3BocHVuaXQvc3JjL1V0aWwvUEhQL2V2YWwtc3RkaW4ucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/testing/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Rlc3RpbmcvdmVuZG9yL3BocHVuaXQvcGhwdW5pdC9zcmMvVXRpbC9QSFAvZXZhbC1zdGRpbi5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/tests/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Rlc3RzL3ZlbmRvci9waHB1bml0L3BocHVuaXQvc3JjL1V0aWwvUEhQL2V2YWwtc3RkaW4ucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/vendor/phpunit/phpunit/LICENSE/eval-stdin.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3ZlbmRvci9waHB1bml0L3BocHVuaXQvTElDRU5TRS9ldmFsLXN0ZGluLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/vendor/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3ZlbmRvci92ZW5kb3IvcGhwdW5pdC9waHB1bml0L3NyYy9VdGlsL1BIUC9ldmFsLXN0ZGluLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/workspace/drupal/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dvcmtzcGFjZS9kcnVwYWwvdmVuZG9yL3BocHVuaXQvcGhwdW5pdC9zcmMvVXRpbC9QSFAvZXZhbC1zdGRpbi5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ws/ec/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dzL2VjL3ZlbmRvci9waHB1bml0L3BocHVuaXQvc3JjL1V0aWwvUEhQL2V2YWwtc3RkaW4ucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ws/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dzL3ZlbmRvci9waHB1bml0L3BocHVuaXQvc3JjL1V0aWwvUEhQL2V2YWwtc3RkaW4ucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/www/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3d3dy92ZW5kb3IvcGhwdW5pdC9waHB1bml0L3NyYy9VdGlsL1BIUC9ldmFsLXN0ZGluLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/../../../../../../../../../../../../../../../../../../../../etc/passwd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uL2V0Yy9wYXNzd2QqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/..;//content/dam/formsanddocuments.form.validator.html/home/....children.tidy...infinity..json` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy4uOy8vY29udGVudC9kYW0vZm9ybXNhbmRkb2N1bWVudHMuZm9ybS52YWxpZGF0b3IuaHRtbC9ob21lLy4uLi5jaGlsZHJlbi50aWR5Li4uaW5maW5pdHkuLmpzb24qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/3/ImportFiles` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLzMvSW1wb3J0RmlsZXMqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/CFIDE/adminapi/base.cfc` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0NGSURFL2FkbWluYXBpL2Jhc2UuY2ZjKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/DownloadWindow.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0Rvd25sb2FkV2luZG93LnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Electron/download/windows/\windows\win.ini` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0VsZWN0cm9uL2Rvd25sb2FkL3dpbmRvd3MvXFx3aW5kb3dzXFx3aW4uaW5pKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Module/CJGL/Controller/PPlugList.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL01vZHVsZS9DSkdML0NvbnRyb2xsZXIvUFBsdWdMaXN0LmFzaHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/OAapp/bfapp/buffalo/workFlowService` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL09BYXBwL2JmYXBwL2J1ZmZhbG8vd29ya0Zsb3dTZXJ2aWNlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/R9iPortal/cm/cm_notice_content.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1I5aVBvcnRhbC9jbS9jbV9ub3RpY2VfY29udGVudC5qc3AqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/U8AppProxy` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1U4QXBwUHJveHkqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/admin/cms_channel.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWluL2Ntc19jaGFubmVsLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/admin/controller/ue_serve.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWluL2NvbnRyb2xsZXIvdWVfc2VydmUucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/admin/transceiver_schedule.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWluL3RyYW5zY2VpdmVyX3NjaGVkdWxlLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/adpweb/static/..;/api/sys/app/autologin` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FkcHdlYi9zdGF0aWMvLi47L2FwaS9zeXMvYXBwL2F1dG9sb2dpbioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/app/ajax/product_data.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwcC9hamF4L3Byb2R1Y3RfZGF0YS5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/base/static/c:/windows/win.ini` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Jhc2Uvc3RhdGljL2M6L3dpbmRvd3Mvd2luLmluaSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/callcenter/public/index.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NhbGxjZW50ZXIvcHVibGljL2luZGV4LnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cgi-bin/system_mgr.cgi` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NnaS1iaW4vc3lzdGVtX21nci5jZ2kqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/classes/common/busiFacade.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NsYXNzZXMvY29tbW9uL2J1c2lGYWNhZGUucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/common/parseTree.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvbW1vbi9wYXJzZVRyZWUuanNwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/content/dam/formsanddocuments.form.validator.html/home/....children.tidy...infinity..json` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvbnRlbnQvZGFtL2Zvcm1zYW5kZG9jdW1lbnRzLmZvcm0udmFsaWRhdG9yLmh0bWwvaG9tZS8uLi4uY2hpbGRyZW4udGlkeS4uLmluZmluaXR5Li5qc29uKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/core/launch.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvcmUvbGF1bmNoLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/css//../../../../../../../../etc/passwd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Nzcy8vLi4vLi4vLi4vLi4vLi4vLi4vLi4vLi4vZXRjL3Bhc3N3ZCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/dataSetParam/verification;swagger-ui/` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RhdGFTZXRQYXJhbS92ZXJpZmljYXRpb247c3dhZ2dlci11aS8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/defaultroot/download_old.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RlZmF1bHRyb290L2Rvd25sb2FkX29sZC5qc3AqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/defaultroot/iWebOfficeSign/OfficeServer.jsp/../../platform/custom/custom_form/run/checkform/check_onlyfield.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RlZmF1bHRyb290L2lXZWJPZmZpY2VTaWduL09mZmljZVNlcnZlci5qc3AvLi4vLi4vcGxhdGZvcm0vY3VzdG9tL2N1c3RvbV9mb3JtL3J1bi9jaGVja2Zvcm0vY2hlY2tfb25seWZpZWxkLmpzcCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/entsoft/CrmBasicAction.entcrm` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2VudHNvZnQvQ3JtQmFzaWNBY3Rpb24uZW50Y3JtKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/front//\..\..\..\..\..\..\..\..\..\\..\..\..\..\..\..\..\..\..\/etc/passwd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Zyb250Ly9cXC4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXFxcLi5cXC4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFwuLlxcL2V0Yy9wYXNzd2QqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/general/crm/record/detail.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2dlbmVyYWwvY3JtL3JlY29yZC9kZXRhaWwucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/general/index/UploadFile.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2dlbmVyYWwvaW5kZXgvVXBsb2FkRmlsZS5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/glpi/plugins/barcode/front/send.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2dscGkvcGx1Z2lucy9iYXJjb2RlL2Zyb250L3NlbmQucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/htmltopdf/downfile.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2h0bWx0b3BkZi9kb3duZmlsZS5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/include/plugin/payment/alipay/pay.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2luY2x1ZGUvcGx1Z2luL3BheW1lbnQvYWxpcGF5L3BheS5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/index.php/Channel/voteAdd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2luZGV4LnBocC9DaGFubmVsL3ZvdGVBZGQqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/init_ctl.cgi` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2luaXRfY3RsLmNnaSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/jeecg-boot/jmreport/show` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2plZWNnLWJvb3Qvam1yZXBvcnQvc2hvdyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/jmreport/show` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2ptcmVwb3J0L3Nob3cqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/lab.html` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2xhYi5odG1sKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/login/LoginLog.jre` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2xvZ2luL0xvZ2luTG9nLmpyZSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/mainFunctions/comboxstore.action` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21haW5GdW5jdGlvbnMvY29tYm94c3RvcmUuYWN0aW9uKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/mobile/plugin/SyncUserInfo.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21vYmlsZS9wbHVnaW4vU3luY1VzZXJJbmZvLmpzcCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/module/tshirtecommerce/designer` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21vZHVsZS90c2hpcnRlY29tbWVyY2UvZGVzaWduZXIqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/mp/mp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21wL21wKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/nagiosql/admin/helpedit.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL25hZ2lvc3FsL2FkbWluL2hlbHBlZGl0LnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/objects/getImage.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL29iamVjdHMvZ2V0SW1hZ2UucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/openWB/modules/soc_eq/callback_lp.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL29wZW5XQi9tb2R1bGVzL3NvY19lcS9jYWxsYmFja19scC5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/pandora_console/index.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BhbmRvcmFfY29uc29sZS9pbmRleC5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/pay/index/pay_callback.html` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BheS9pbmRleC9wYXlfY2FsbGJhY2suaHRtbCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/portal/info.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BvcnRhbC9pbmZvLmpzcCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/portal/ptt/album/edit` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BvcnRhbC9wdHQvYWxidW0vZWRpdCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/resin-doc/;/WEB-INF/resin-web.xml` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Jlc2luLWRvYy87L1dFQi1JTkYvcmVzaW4td2ViLnhtbCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/seeyon/thirdpartyController.do.css/..;/ajax.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlZXlvbi90aGlyZHBhcnR5Q29udHJvbGxlci5kby5jc3MvLi47L2FqYXguZG8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/sitecore_xaml.ashx/-/xaml/Sitecore.Xaml.Tutorials.Styles.Index` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NpdGVjb3JlX3hhbWwuYXNoeC8tL3hhbWwvU2l0ZWNvcmUuWGFtbC5UdXRvcmlhbHMuU3R5bGVzLkluZGV4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/static/..\..\..\..\etc/passwd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3N0YXRpYy8uLlxcLi5cXC4uXFwuLlxcZXRjL3Bhc3N3ZCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/static/link/../etc/passwd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3N0YXRpYy9saW5rLy4uL2V0Yy9wYXNzd2QqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/template/aui/text-inline.vm` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3RlbXBsYXRlL2F1aS90ZXh0LWlubGluZS52bSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/templates/editor-preload-container` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3RlbXBsYXRlcy9lZGl0b3ItcHJlbG9hZC1jb250YWluZXIqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/tshirtecommerce/fonts.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3RzaGlydGVjb21tZXJjZS9mb250cy5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/user/login/.html` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3VzZXIvbG9naW4vLmh0bWwqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/user_management/sichuan_login/` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3VzZXJfbWFuYWdlbWVudC9zaWNodWFuX2xvZ2luLyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/users/user-dark-features` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3VzZXJzL3VzZXItZGFyay1mZWF0dXJlcyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/web/static/c:/windows/win.ini` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dlYi9zdGF0aWMvYzovd2luZG93cy93aW4uaW5pKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/webservice/calendar/cale.wsdl.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dlYnNlcnZpY2UvY2FsZW5kYXIvY2FsZS53c2RsLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/wp-json/rsvpmaker/v1/stripesuccess/anythinghere` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dwLWpzb24vcnN2cG1ha2VyL3YxL3N0cmlwZXN1Y2Nlc3MvYW55dGhpbmdoZXJlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/xwiki/bin/get/Main/DatabaseSearch` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3h3aWtpL2Jpbi9nZXQvTWFpbi9EYXRhYmFzZVNlYXJjaCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/zm/index.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3ptL2luZGV4LnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ztp/cgi-bin/handler` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3p0cC9jZ2ktYmluL2hhbmRsZXIqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/..\..\..\..\..\..\..\..\Program Files\traccar\conf\traccar.xml` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFwuLlxcUHJvZ3JhbSBGaWxlc1xcdHJhY2NhclxcY29uZlxcdHJhY2Nhci54bWwqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Adminpage/Remote/cmdOver` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0FkbWlucGFnZS9SZW1vdGUvY21kT3Zlcioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Api/FileUploadApi.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0FwaS9GaWxlVXBsb2FkQXBpLmFzaHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Archive/ErecordManage/uploadScan` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0FyY2hpdmUvRXJlY29yZE1hbmFnZS91cGxvYWRTY2FuKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/AutoUpdate/WSFM.asmx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0F1dG9VcGRhdGUvV1NGTS5hc214KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/C6/Jhsoft.Web.appraise/AppraiseScoreUpdate.aspx/` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0M2L0poc29mdC5XZWIuYXBwcmFpc2UvQXBwcmFpc2VTY29yZVVwZGF0ZS5hc3B4Lyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/C6/Jhsoft.web.module/eformaspx/editeprint.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0M2L0poc29mdC53ZWIubW9kdWxlL2Vmb3JtYXNweC9lZGl0ZXByaW50LmFzcHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/CFIDE/adminapi/accessmanager.cfc` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0NGSURFL2FkbWluYXBpL2FjY2Vzc21hbmFnZXIuY2ZjKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/CRMtable/PublicPage/CustomerLogin.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0NSTXRhYmxlL1B1YmxpY1BhZ2UvQ3VzdG9tZXJMb2dpbi5hc3B4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Common.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0NvbW1vbi5kbyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/DataSrvs/UCCGSrv.asmx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0RhdGFTcnZzL1VDQ0dTcnYuYXNteCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/E-mobile/diarydo.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0UtbW9iaWxlL2RpYXJ5ZG8ucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/EIS/service/pdf.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0VJUy9zZXJ2aWNlL3BkZi5hc3B4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/HM/M_Main/UpLoad/UpFile.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0hNL01fTWFpbi9VcExvYWQvVXBGaWxlLmFzcHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Invoice/InvoiceApplicationGridSource.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0ludm9pY2UvSW52b2ljZUFwcGxpY2F0aW9uR3JpZFNvdXJjZS5hc3B4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Kfxt/Service.asmx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0tmeHQvU2VydmljZS5hc214KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/MvcShipping/MsCwGenlegAccitems/GetDataListCA` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL012Y1NoaXBwaW5nL01zQ3dHZW5sZWdBY2NpdGVtcy9HZXREYXRhTGlzdENBKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/OA/PM/svc.asmx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL09BL1BNL3N2Yy5hc214KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/OAapp/jsp/downloadWpsFile.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL09BYXBwL2pzcC9kb3dubG9hZFdwc0ZpbGUuanNwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/PSE/Upload` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1BTRS9VcGxvYWQqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Page/SalerManager/StarryQuoteEdit.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1BhZ2UvU2FsZXJNYW5hZ2VyL1N0YXJyeVF1b3RlRWRpdC5hc3B4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ReadFile` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1JlYWRGaWxlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Service.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1NlcnZpY2UuZG8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Shipping/CompanysAccountGridSource.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1NoaXBwaW5nL0NvbXBhbnlzQWNjb3VudEdyaWRTb3VyY2UuYXNweCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/SiteScope/services/APISiteScopeImpl` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1NpdGVTY29wZS9zZXJ2aWNlcy9BUElTaXRlU2NvcGVJbXBsKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/SysManage/sys_blogtemplate_new.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1N5c01hbmFnZS9zeXNfYmxvZ3RlbXBsYXRlX25ldy5hc3B4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/TruckMng/MsWlDriver/GetDataList` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1RydWNrTW5nL01zV2xEcml2ZXIvR2V0RGF0YUxpc3QqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Utility/GetJSFile` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1V0aWxpdHkvR2V0SlNGaWxlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/WEB_SERVICE/Finance_Changed.asmx/GetTableSet` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1dFQl9TRVJWSUNFL0ZpbmFuY2VfQ2hhbmdlZC5hc214L0dldFRhYmxlU2V0KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/WEB_SERVICE/PubWeb.asmx/ExecuteSql` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1dFQl9TRVJWSUNFL1B1YldlYi5hc214L0V4ZWN1dGVTcWwqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/WebSer~1/get_usedspace.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1dlYlNlcn4xL2dldF91c2Vkc3BhY2UucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/WorkFlow/WorkFlowGridSource.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1dvcmtGbG93L1dvcmtGbG93R3JpZFNvdXJjZS5hc3B4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/WorkFlow/wf_work_stat_setting.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1dvcmtGbG93L3dmX3dvcmtfc3RhdF9zZXR0aW5nLmFzcHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/__debugging_center_utils___.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL19fZGVidWdnaW5nX2NlbnRlcl91dGlsc19fXy5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/_plugin/head/../../../../../../../../../etc/passwd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL19wbHVnaW4vaGVhZC8uLi8uLi8uLi8uLi8uLi8uLi8uLi8uLi8uLi9ldGMvcGFzc3dkKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/addons/cuxd/index.ccc` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FkZG9ucy9jdXhkL2luZGV4LmNjYyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/addons/shopro/goods/lists` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FkZG9ucy9zaG9wcm8vZ29vZHMvbGlzdHMqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/admin_pic_upload.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWluX3BpY191cGxvYWQucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/adminx/ticket.edit.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWlueC90aWNrZXQuZWRpdC5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ajax/LVS.Web.AgencytaskList,LVS.Web.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FqYXgvTFZTLldlYi5BZ2VuY3l0YXNrTGlzdCxMVlMuV2ViLmFzaHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ajax/LVS.Web.UserLogin,LVS.Web.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FqYXgvTFZTLldlYi5Vc2VyTG9naW4sTFZTLldlYi5hc2h4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ajax/getufvouchdata.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FqYXgvZ2V0dWZ2b3VjaGRhdGEucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ajax_dialog.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FqYXhfZGlhbG9nLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ajaxinvoke/frameworkModuleJob.processApkUpload.upload` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FqYXhpbnZva2UvZnJhbWV3b3JrTW9kdWxlSm9iLnByb2Nlc3NBcGtVcGxvYWQudXBsb2FkKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/alarm_appeal/getAlarmAppealByGuid;downloadLogger.action` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FsYXJtX2FwcGVhbC9nZXRBbGFybUFwcGVhbEJ5R3VpZDtkb3dubG9hZExvZ2dlci5hY3Rpb24qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/FileUpload/Upload` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9GaWxlVXBsb2FkL1VwbG9hZCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/blade-log/error/list` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9ibGFkZS1sb2cvZXJyb3IvbGlzdCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/blade-system/tenant/list` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9ibGFkZS1zeXN0ZW0vdGVuYW50L2xpc3QqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/drag/onlDragDatasetHead/getTotalData` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9kcmFnL29ubERyYWdEYXRhc2V0SGVhZC9nZXRUb3RhbERhdGEqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/ds/query` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9kcy9xdWVyeSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/fabric/device/status` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9mYWJyaWMvZGV2aWNlL3N0YXR1cyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/system/ExecuteSqlForNone` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9zeXN0ZW0vRXhlY3V0ZVNxbEZvck5vbmUqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/timelion/run` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS90aW1lbGlvbi9ydW4qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/user-profile-mode/findPass-profilelist` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS91c2VyLXByb2ZpbGUtbW9kZS9maW5kUGFzcy1wcm9maWxlbGlzdCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/v1/files/profile_pictures/../secret_key` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS92MS9maWxlcy9wcm9maWxlX3BpY3R1cmVzLy4uL3NlY3JldF9rZXkqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/v1/node-load-method/customMCP` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS92MS9ub2RlLWxvYWQtbWV0aG9kL2N1c3RvbU1DUCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/app/action/edit_update.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwcC9hY3Rpb24vZWRpdF91cGRhdGUucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/auth/auth.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2F1dGgvYXV0aC5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/background/reservationcomplete.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2JhY2tncm91bmQvcmVzZXJ2YXRpb25jb21wbGV0ZS5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/bi/api/Portal/LoginWithV8/` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2JpL2FwaS9Qb3J0YWwvTG9naW5XaXRoVjgvKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/bi/profit/shopprofit/getdepartmentprofitlist` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2JpL3Byb2ZpdC9zaG9wcHJvZml0L2dldGRlcGFydG1lbnRwcm9maXRsaXN0KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/bin/ssx/Main/WebHome` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Jpbi9zc3gvTWFpbi9XZWJIb21lKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/borrowout/ajaxgetborrowdata.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2JvcnJvd291dC9hamF4Z2V0Ym9ycm93ZGF0YS5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/brightmail/servlet/com.ve.kavachart.servlet.ChartStream` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2JyaWdodG1haWwvc2VydmxldC9jb20udmUua2F2YWNoYXJ0LnNlcnZsZXQuQ2hhcnRTdHJlYW0qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/business/common/importdata/sendfile.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2J1c2luZXNzL2NvbW1vbi9pbXBvcnRkYXRhL3NlbmRmaWxlLmpzcCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/carbon/generic/save_artifact_ajaxprocessor.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NhcmJvbi9nZW5lcmljL3NhdmVfYXJ0aWZhY3RfYWpheHByb2Nlc3Nvci5qc3AqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cardcase/card_update.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NhcmRjYXNlL2NhcmRfdXBkYXRlLmpzcCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/casmain.xgi` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Nhc21haW4ueGdpKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cgi-bin/php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NnaS1iaW4vcGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cgi-bin/php5-cgi` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NnaS1iaW4vcGhwNS1jZ2kqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cgi-bin/popen.cgi` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NnaS1iaW4vcG9wZW4uY2dpKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cgi/networkDiag.cgi` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NnaS9uZXR3b3JrRGlhZy5jZ2kqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/compliancepolicies.inc.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvbXBsaWFuY2Vwb2xpY2llcy5pbmMucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/console/j_security_check` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvbnNvbGUval9zZWN1cml0eV9jaGVjayoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/controller/ping.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvbnRyb2xsZXIvcGluZy5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/crm/WeiXinApp/cloudpro/index.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NybS9XZWlYaW5BcHAvY2xvdWRwcm8vaW5kZXgucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/crm/data/pdf.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NybS9kYXRhL3BkZi5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/crm/modules/Home/multipleUpload.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NybS9tb2R1bGVzL0hvbWUvbXVsdGlwbGVVcGxvYWQucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/crm/upload.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NybS91cGxvYWQucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ctc/servlet/com.sap.ctc.util.ConfigServlet` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2N0Yy9zZXJ2bGV0L2NvbS5zYXAuY3RjLnV0aWwuQ29uZmlnU2VydmxldCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/dbbackup/adminMgr/download.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RiYmFja3VwL2FkbWluTWdyL2Rvd25sb2FkLmpzcCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/defaultroot/extension/smartUpload.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RlZmF1bHRyb290L2V4dGVuc2lvbi9zbWFydFVwbG9hZC5qc3AqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/defaultroot/platform/custom/custom_database/dropdownselect/selectPopTable.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RlZmF1bHRyb290L3BsYXRmb3JtL2N1c3RvbS9jdXN0b21fZGF0YWJhc2UvZHJvcGRvd25zZWxlY3Qvc2VsZWN0UG9wVGFibGUuanNwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/defaultroot/services/./././RhinoScriptEngineService` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RlZmF1bHRyb290L3NlcnZpY2VzLy4vLi8uL1JoaW5vU2NyaXB0RW5naW5lU2VydmljZSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/developmentserver/metadatauploader` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RldmVsb3BtZW50c2VydmVyL21ldGFkYXRhdXBsb2FkZXIqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/eassso/WEB-INF/web.xml` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Vhc3Nzby9XRUItSU5GL3dlYi54bWwqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/emp/lang2sql` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2VtcC9sYW5nMnNxbCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/eps/resourceOperations/upload.action` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Vwcy9yZXNvdXJjZU9wZXJhdGlvbnMvdXBsb2FkLmFjdGlvbioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/erp/wap/../downloadFile.action` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2VycC93YXAvLi4vZG93bmxvYWRGaWxlLmFjdGlvbioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/feed/ShowImage.do;.js.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2ZlZWQvU2hvd0ltYWdlLmRvOy5qcy5qc3AqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/feed/UploadImage.do;.js.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2ZlZWQvVXBsb2FkSW1hZ2UuZG87LmpzLmpzcCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/femail/uploadAccessory.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2ZlbWFpbC91cGxvYWRBY2Nlc3NvcnkuanNwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/file-manager/backend/makefile` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2ZpbGUtbWFuYWdlci9iYWNrZW5kL21ha2VmaWxlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/filemanage/file_memo.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2ZpbGVtYW5hZ2UvZmlsZV9tZW1vLmFzcHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/frame/actionLogin.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2ZyYW1lL2FjdGlvbkxvZ2luLmRvKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/frmSaveChartImage.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2ZybVNhdmVDaGFydEltYWdlLmFzcHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/general/appbuilder/web/appcenter/appdata/recoverdata` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2dlbmVyYWwvYXBwYnVpbGRlci93ZWIvYXBwY2VudGVyL2FwcGRhdGEvcmVjb3ZlcmRhdGEqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/general/appbuilder/web/officeproduct/productapply/applyprobygroup` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2dlbmVyYWwvYXBwYnVpbGRlci93ZWIvb2ZmaWNlcHJvZHVjdC9wcm9kdWN0YXBwbHkvYXBwbHlwcm9ieWdyb3VwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/general/new_mytable/content_list/content_-4.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2dlbmVyYWwvbmV3X215dGFibGUvY29udGVudF9saXN0L2NvbnRlbnRfLTQucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/general/picture/header.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2dlbmVyYWwvcGljdHVyZS9oZWFkZXIucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/hac/j_spring_security_check` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2hhYy9qX3NwcmluZ19zZWN1cml0eV9jaGVjayoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/hmrao.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2htcmFvLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/hybridity/api/sessions` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2h5YnJpZGl0eS9hcGkvc2Vzc2lvbnMqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/iOffice/prg/set/wss/ioDesktopData.asmx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2lPZmZpY2UvcHJnL3NldC93c3MvaW9EZXNrdG9wRGF0YS5hc214KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/imc/primepush/../flexFileUpload` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2ltYy9wcmltZXB1c2gvLi4vZmxleEZpbGVVcGxvYWQqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/inc/group_user_list/group_xml.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2luYy9ncm91cF91c2VyX2xpc3QvZ3JvdXBfeG1sLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/inc/jquery/uploadify/uploadify.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2luYy9qcXVlcnkvdXBsb2FkaWZ5L3VwbG9hZGlmeS5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/index.php/api/GetSpecial` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2luZGV4LnBocC9hcGkvR2V0U3BlY2lhbCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/index.php/weixin/Notice/index` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2luZGV4LnBocC93ZWl4aW4vTm90aWNlL2luZGV4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/installed_emanual_down.html` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2luc3RhbGxlZF9lbWFudWFsX2Rvd24uaHRtbCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/interlib/websearch/WebBookNew` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2ludGVybGliL3dlYnNlYXJjaC9XZWJCb29rTmV3KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/jc6/servlet/Upload` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2pjNi9zZXJ2bGV0L1VwbG9hZCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/jsoa/GetRawFile` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2pzb2EvR2V0UmF3RmlsZSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/kp/PrintZPFB.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2twL1ByaW50WlBGQi5qc3AqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/login/../api/template/param/edits` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2xvZ2luLy4uL2FwaS90ZW1wbGF0ZS9wYXJhbS9lZGl0cyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/login/SAML` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2xvZ2luL1NBTUwqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/login/changepswd.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2xvZ2luL2NoYW5nZXBzd2QucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/mac/gateway.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hYy9nYXRld2F5LnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/magmi/web/ajax_pluginconf.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hZ21pL3dlYi9hamF4X3BsdWdpbmNvbmYucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/manage/meeting/uploadMeetingFile.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS9tZWV0aW5nL3VwbG9hZE1lZXRpbmdGaWxlLmRvKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/manage/mobiMeetingApp/uploadMeetingFile.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS9tb2JpTWVldGluZ0FwcC91cGxvYWRNZWV0aW5nRmlsZS5kbyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/manage/systemBlackList/uploadBlackListFile.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS9zeXN0ZW1CbGFja0xpc3QvdXBsb2FkQmxhY2tMaXN0RmlsZS5kbyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/manage/visitorMapConfig/updateVisitorMapConfig.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS92aXNpdG9yTWFwQ29uZmlnL3VwZGF0ZVZpc2l0b3JNYXBDb25maWcuZG8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/manage/visitorMapConfig/uploadMapFile.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS92aXNpdG9yTWFwQ29uZmlnL3VwbG9hZE1hcEZpbGUuZG8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/management/export.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZW1lbnQvZXhwb3J0LnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/mbilling/index.php/authentication/login` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21iaWxsaW5nL2luZGV4LnBocC9hdXRoZW50aWNhdGlvbi9sb2dpbioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/mifs/j_spring_security_check` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21pZnMval9zcHJpbmdfc2VjdXJpdHlfY2hlY2sqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/mobile/plugin/ /browser.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21vYmlsZS9wbHVnaW4vIC9icm93c2VyLmpzcCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/mobsm/common/upload` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21vYnNtL2NvbW1vbi91cGxvYWQqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/module/Kernel/Controller/SysOrganization.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21vZHVsZS9LZXJuZWwvQ29udHJvbGxlci9TeXNPcmdhbml6YXRpb24uYXNoeCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/moffice` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21vZmZpY2UqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/nacos/v1/cs/ops/data/removal` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL25hY29zL3YxL2NzL29wcy9kYXRhL3JlbW92YWwqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/nette.micro/` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL25ldHRlLm1pY3JvLyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/newsedit/outerfotobase/imageProxy.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL25ld3NlZGl0L291dGVyZm90b2Jhc2UvaW1hZ2VQcm94eS5kbyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/nmss/cloud/Ajax/ajax_cloud_router_config.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL25tc3MvY2xvdWQvQWpheC9hamF4X2Nsb3VkX3JvdXRlcl9jb25maWcucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/notice/jumper.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL25vdGljZS9qdW1wZXIucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/oa/PES/QCPES.asmx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL29hL1BFUy9RQ1BFUy5hc214KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/oemupload.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL29lbXVwbG9hZC5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/pacs/nocache.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BhY3Mvbm9jYWNoZS5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/pages/edit_fields/9_ajax/add_keyword.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BhZ2VzL2VkaXRfZmllbGRzLzlfYWpheC9hZGRfa2V5d29yZC5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/php/addlanguagedata.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BocC9hZGRsYW5ndWFnZWRhdGEucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/php/history/add.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BocC9oaXN0b3J5L2FkZC5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/pictory/config.json` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BpY3RvcnkvY29uZmlnLmpzb24qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/plugins/payment/weixin/lib/WxPay.tedatac.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BsdWdpbnMvcGF5bWVudC93ZWl4aW4vbGliL1d4UGF5LnRlZGF0YWMucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/plus/weixin.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BsdXMvd2VpeGluLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/portal/ibilling/index.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BvcnRhbC9pYmlsbGluZy9pbmRleC5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/portal/pt/servlet/workflowService/doPost` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BvcnRhbC9wdC9zZXJ2bGV0L3dvcmtmbG93U2VydmljZS9kb1Bvc3QqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/prod-api/drag/onlDragDatasetHead/getTotalData` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Byb2QtYXBpL2RyYWcvb25sRHJhZ0RhdGFzZXRIZWFkL2dldFRvdGFsRGF0YSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/public/index.php/weixin/Notice/index` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3B1YmxpYy9pbmRleC5waHAvd2VpeGluL05vdGljZS9pbmRleCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/res/url.html` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Jlcy91cmwuaHRtbCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/rest/../dynamicDataSourceController.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Jlc3QvLi4vZHluYW1pY0RhdGFTb3VyY2VDb250cm9sbGVyLmRvKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/rest/../iconController.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Jlc3QvLi4vaWNvbkNvbnRyb2xsZXIuZG8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/rest/ofs/ReceiveRequestInfoByJson` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Jlc3Qvb2ZzL1JlY2VpdmVSZXF1ZXN0SW5mb0J5SnNvbioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/send_order.cgi` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlbmRfb3JkZXIuY2dpKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/service/~iufo/nc.itf.iufo.mobilereport.task.TaskTreeQuery` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlcnZpY2Uvfml1Zm8vbmMuaXRmLml1Zm8ubW9iaWxlcmVwb3J0LnRhc2suVGFza1RyZWVRdWVyeSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/services/IWsBaseService.IWsBaseServiceHttpSoap11Endpoint` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlcnZpY2VzL0lXc0Jhc2VTZXJ2aWNlLklXc0Jhc2VTZXJ2aWNlSHR0cFNvYXAxMUVuZHBvaW50KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/services/operOriztion` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlcnZpY2VzL29wZXJPcml6dGlvbioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/servlet/ChangeBGServlet` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlcnZsZXQvQ2hhbmdlQkdTZXJ2bGV0KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/setup/setup-s/%u002e%u002e/%u002e%u002e/log.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NldHVwL3NldHVwLXMvJXUwMDJlJXUwMDJlLyV1MDAyZSV1MDAyZS9sb2cuanNwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/solr/solrdefault/debug/dump` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NvbHIvc29scmRlZmF1bHQvZGVidWcvZHVtcCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/status/call_details` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3N0YXR1cy9jYWxsX2RldGFpbHMqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/storfs-asup` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3N0b3Jmcy1hc3VwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/suite-auth/login` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3N1aXRlLWF1dGgvbG9naW4qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/sys/drag/onlDragDatasetHead/getTotalData` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3N5cy9kcmFnL29ubERyYWdEYXRhc2V0SGVhZC9nZXRUb3RhbERhdGEqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/sys/webservice/kmsMultidocMaintainCategoryWSService` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3N5cy93ZWJzZXJ2aWNlL2ttc011bHRpZG9jTWFpbnRhaW5DYXRlZ29yeVdTU2VydmljZSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/sys/webservice/kmsWikiSearchCategoryWSService` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3N5cy93ZWJzZXJ2aWNlL2ttc1dpa2lTZWFyY2hDYXRlZ29yeVdTU2VydmljZSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/templates/attestation/../../report/report_collect/report_org_collect_tree.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3RlbXBsYXRlcy9hdHRlc3RhdGlvbi8uLi8uLi9yZXBvcnQvcmVwb3J0X2NvbGxlY3QvcmVwb3J0X29yZ19jb2xsZWN0X3RyZWUuanNwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/theme/BlueCharm/new/sp/initLogin.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3RoZW1lL0JsdWVDaGFybS9uZXcvc3AvaW5pdExvZ2luLmFzaHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/tplus/UFAQD/KeyRegister.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3RwbHVzL1VGQVFEL0tleVJlZ2lzdGVyLmFzcHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/u8cloud/api/uapbd/sysinit/query` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3U4Y2xvdWQvYXBpL3VhcGJkL3N5c2luaXQvcXVlcnkqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/uapws/service/nc.uap.oba.wordWebservice.IServiceEntry` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3VhcHdzL3NlcnZpY2UvbmMudWFwLm9iYS53b3JkV2Vic2VydmljZS5JU2VydmljZUVudHJ5KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ufmail/uploadAccessory.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3VmbWFpbC91cGxvYWRBY2Nlc3NvcnkuanNwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/update/../../..//windows/win.ini` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3VwZGF0ZS8uLi8uLi8uLi8vd2luZG93cy93aW4uaW5pKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/update/../../../etc/passwd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3VwZGF0ZS8uLi8uLi8uLi9ldGMvcGFzc3dkKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/userLogin.asp/../actionpolicy_status/../ER2100n.cfg` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3VzZXJMb2dpbi5hc3AvLi4vYWN0aW9ucG9saWN5X3N0YXR1cy8uLi9FUjIxMDBuLmNmZyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/userLogin.asp/../actionpolicy_status/../ER5100G2.cfg` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3VzZXJMb2dpbi5hc3AvLi4vYWN0aW9ucG9saWN5X3N0YXR1cy8uLi9FUjUxMDBHMi5jZmcqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/userLogin.asp/../actionpolicy_status/../ER6300G2.cfg` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3VzZXJMb2dpbi5hc3AvLi4vYWN0aW9ucG9saWN5X3N0YXR1cy8uLi9FUjYzMDBHMi5jZmcqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/userLogin.asp/../actionpolicy_status/../GR-1800AX.cfg` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3VzZXJMb2dpbi5hc3AvLi4vYWN0aW9ucG9saWN5X3N0YXR1cy8uLi9HUi0xODAwQVguY2ZnKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/userLogin.asp/../actionpolicy_status/../GR1108-P.cfg` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3VzZXJMb2dpbi5hc3AvLi4vYWN0aW9ucG9saWN5X3N0YXR1cy8uLi9HUjExMDgtUC5jZmcqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/userLogin.asp/../actionpolicy_status/../GR3200.cfg` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3VzZXJMb2dpbi5hc3AvLi4vYWN0aW9ucG9saWN5X3N0YXR1cy8uLi9HUjMyMDAuY2ZnKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/userLogin.asp/../actionpolicy_status/../GR8300.cfg` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3VzZXJMb2dpbi5hc3AvLi4vYWN0aW9ucG9saWN5X3N0YXR1cy8uLi9HUjgzMDAuY2ZnKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/usr-cgi/logdownload.cgi` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Vzci1jZ2kvbG9nZG93bmxvYWQuY2dpKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/v1/app/readFileSync` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3YxL2FwcC9yZWFkRmlsZVN5bmMqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/v1/cs/ops/data/removal` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3YxL2NzL29wcy9kYXRhL3JlbW92YWwqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/v1_0/home/job/map` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3YxXzAvaG9tZS9qb2IvbWFwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/vehicleServer/carDev/icon/import/1` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3ZlaGljbGVTZXJ2ZXIvY2FyRGV2L2ljb24vaW1wb3J0LzEqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/vendor/htmlawed/htmlawed/htmLawedTest.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3ZlbmRvci9odG1sYXdlZC9odG1sYXdlZC9odG1MYXdlZFRlc3QucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/view/action/download.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3ZpZXcvYWN0aW9uL2Rvd25sb2FkLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/view/qJvqhFt.json` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3ZpZXcvcUp2cWhGdC5qc29uKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/views..\..\..\..\..\..\..\..\..\..\..\..\..\..\..\..\ProgramData\Repetier-Server\database\user.sql /base/connectionLost.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3ZpZXdzLi5cXC4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXFByb2dyYW1EYXRhXFxSZXBldGllci1TZXJ2ZXJcXGRhdGFiYXNlXFx1c2VyLnNxbCAvYmFzZS9jb25uZWN0aW9uTG9zdC5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/vision/FileServlet` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Zpc2lvbi9GaWxlU2VydmxldCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/wap/wap-company-show.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dhcC93YXAtY29tcGFueS1zaG93LnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/web/storage/raid_cgi.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dlYi9zdG9yYWdlL3JhaWRfY2dpLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/webadmin/reporter/view_server_log.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dlYmFkbWluL3JlcG9ydGVyL3ZpZXdfc2VydmVyX2xvZy5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/webapi/APP/CheckOrder` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dlYmFwaS9BUFAvQ2hlY2tPcmRlcioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/webmail/calendar/minimizer/index.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dlYm1haWwvY2FsZW5kYXIvbWluaW1pemVyL2luZGV4LnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/webmail/old/calendar/minimizer/index.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dlYm1haWwvb2xkL2NhbGVuZGFyL21pbmltaXplci9pbmRleC5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/witapprovemanage/report/depReimburse.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dpdGFwcHJvdmVtYW5hZ2UvcmVwb3J0L2RlcFJlaW1idXJzZS5qc3AqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/wp-content/plugins/sf-booking/lib/downloads.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dwLWNvbnRlbnQvcGx1Z2lucy9zZi1ib29raW5nL2xpYi9kb3dubG9hZHMucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/wp-content/plugins/wp-miniaudioplayer/map_download.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dwLWNvbnRlbnQvcGx1Z2lucy93cC1taW5pYXVkaW9wbGF5ZXIvbWFwX2Rvd25sb2FkLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/wp-content/plugins/wp-symposium/get_album_item.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dwLWNvbnRlbnQvcGx1Z2lucy93cC1zeW1wb3NpdW0vZ2V0X2FsYnVtX2l0ZW0ucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/wp-content/themes/diarise/download.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dwLWNvbnRlbnQvdGhlbWVzL2RpYXJpc2UvZG93bmxvYWQucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/wp-content/themes/mTheme-Unus/css/css.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dwLWNvbnRlbnQvdGhlbWVzL21UaGVtZS1VbnVzL2Nzcy9jc3MucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ws_utc/resources/ws/config/import` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dzX3V0Yy9yZXNvdXJjZXMvd3MvY29uZmlnL2ltcG9ydCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/x/..//RestAPI/LicenseMgr` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3gvLi4vL1Jlc3RBUEkvTGljZW5zZU1ncioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/xmlpserver/convert` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3htbHBzZXJ2ZXIvY29udmVydCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/yyoa/portal/tools/doUpload.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3l5b2EvcG9ydGFsL3Rvb2xzL2RvVXBsb2FkLmpzcCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/zhanting/licence.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3poYW50aW5nL2xpY2VuY2UucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/. ./. ./etc/passwd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy4ALi8uAC4vZXRjL3Bhc3N3ZCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/./WEB-INF/web.xml` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy4vV0VCLUlORi93ZWIueG1sKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/API/convertCSVtoParquet.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0FQSS9jb252ZXJ0Q1NWdG9QYXJxdWV0LnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Ajax/LicManage.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0FqYXgvTGljTWFuYWdlLmFzaHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Business/DownLoad.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0J1c2luZXNzL0Rvd25Mb2FkLmFzcHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/CDGServer3/js/../SaveCDGPermissionFromGFOA` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0NER1NlcnZlcjMvanMvLi4vU2F2ZUNER1Blcm1pc3Npb25Gcm9tR0ZPQSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/DepartmentPlan/department_plan_attach_download.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0RlcGFydG1lbnRQbGFuL2RlcGFydG1lbnRfcGxhbl9hdHRhY2hfZG93bmxvYWQuYXNweCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/IDWebSoft/Common/Handler/Download.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0lEV2ViU29mdC9Db21tb24vSGFuZGxlci9Eb3dubG9hZC5hc3B4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/NewsDetailPage.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL05ld3NEZXRhaWxQYWdlLmFzcHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/SearchSvc/CVSearchService.svc` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1NlYXJjaFN2Yy9DVlNlYXJjaFNlcnZpY2Uuc3ZjKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Util/UploadApi` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1V0aWwvVXBsb2FkQXBpKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/WEB_SERVICE/WeChatAPI.asmx/WxUserBind` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1dFQl9TRVJWSUNFL1dlQ2hhdEFQSS5hc214L1d4VXNlckJpbmQqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/WebServices/SIMMaintainService.asmx/GetAllRechargeRecordsBySIMCardId` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1dlYlNlcnZpY2VzL1NJTU1haW50YWluU2VydmljZS5hc214L0dldEFsbFJlY2hhcmdlUmVjb3Jkc0J5U0lNQ2FyZElkKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/WorkFlow/OfficeFileDownload.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1dvcmtGbG93L09mZmljZUZpbGVEb3dubG9hZC5hc3B4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/administrator/components/com_joomla-visites/core/include/myMailer.class.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWluaXN0cmF0b3IvY29tcG9uZW50cy9jb21fam9vbWxhLXZpc2l0ZXMvY29yZS9pbmNsdWRlL215TWFpbGVyLmNsYXNzLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ajax/api/content_infraction/getIndexableContent` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FqYXgvYXBpL2NvbnRlbnRfaW5mcmFjdGlvbi9nZXRJbmRleGFibGVDb250ZW50KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/PhoneLogin/login` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9QaG9uZUxvZ2luL2xvZ2luKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/blade-log/api/list` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9ibGFkZS1sb2cvYXBpL2xpc3QqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/client/fax/send_fax.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9jbGllbnQvZmF4L3NlbmRfZmF4LnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/runscript` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9ydW5zY3JpcHQqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/server/config` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9zZXJ2ZXIvY29uZmlnKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/sms/get_users_data` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9zbXMvZ2V0X3VzZXJzX2RhdGEqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/v1/label/__name__/values` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS92MS9sYWJlbC9fX25hbWVfXy92YWx1ZXMqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/v1/method.callAnon/getPasswordPolicy` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS92MS9tZXRob2QuY2FsbEFub24vZ2V0UGFzc3dvcmRQb2xpY3kqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/assets/built/../..//package.json` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Fzc2V0cy9idWlsdC8uLi8uLi8vcGFja2FnZS5qc29uKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/avatar/1?d=http:%2F%2Fimgur.com%2F..%252F1.1.1.1` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2F2YXRhci8xP2Q9aHR0cDolMkYlMkZpbWd1ci5jb20lMkYuLiUyNTJGMS4xLjEuMSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/badging/badge_print_v0.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2JhZGdpbmcvYmFkZ2VfcHJpbnRfdjAucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/bhost/repeat_get_usb_status` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Job3N0L3JlcGVhdF9nZXRfdXNiX3N0YXR1cyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/building/subject/subject/tables/json.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2J1aWxkaW5nL3N1YmplY3Qvc3ViamVjdC90YWJsZXMvanNvbi5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cgi-bin/awstats/awredir.pl` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NnaS1iaW4vYXdzdGF0cy9hd3JlZGlyLnBsKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cgi-bin/login_mgr.cgi` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NnaS1iaW4vbG9naW5fbWdyLmNnaSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cgi-bin/mainfunction.cgi/cvmcfgupload` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NnaS1iaW4vbWFpbmZ1bmN0aW9uLmNnaS9jdm1jZmd1cGxvYWQqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cgi-bin/supportInstaller` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NnaS1iaW4vc3VwcG9ydEluc3RhbGxlcioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/conf_mail.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvbmZfbWFpbC5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/config/fillbacksettingedit.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvbmZpZy9maWxsYmFja3NldHRpbmdlZGl0LnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cpt/manage/validate.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NwdC9tYW5hZ2UvdmFsaWRhdGUuanNwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/dav/server.php/files/personal/../..//..//../data/settings/settings.xml` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Rhdi9zZXJ2ZXIucGhwL2ZpbGVzL3BlcnNvbmFsLy4uLy4uLy8uLi8vLi4vZGF0YS9zZXR0aW5ncy9zZXR0aW5ncy54bWwqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/default/en_US/frame.html` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RlZmF1bHQvZW5fVVMvZnJhbWUuaHRtbCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/dispatch/layuiIm/uploadImg` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Rpc3BhdGNoL2xheXVpSW0vdXBsb2FkSW1nKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/down_data.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Rvd25fZGF0YS5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/duomiphp/ajax.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2R1b21pcGhwL2FqYXgucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/enginemanager/server/logs/download` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2VuZ2luZW1hbmFnZXIvc2VydmVyL2xvZ3MvZG93bmxvYWQqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/entsoft_en/entereditor/jsp/fileupload.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2VudHNvZnRfZW4vZW50ZXJlZGl0b3IvanNwL2ZpbGV1cGxvYWQuanNwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/export/classroom-course-statistics` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2V4cG9ydC9jbGFzc3Jvb20tY291cnNlLXN0YXRpc3RpY3MqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/function/save` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Z1bmN0aW9uL3NhdmUqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/general/appbuilder/web/portal/gateway/` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2dlbmVyYWwvYXBwYnVpbGRlci93ZWIvcG9ydGFsL2dhdGV3YXkvKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/general/appbuilder/web/portal/gateway/getdata` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2dlbmVyYWwvYXBwYnVpbGRlci93ZWIvcG9ydGFsL2dhdGV3YXkvZ2V0ZGF0YSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/goform/AccessControl` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2dvZm9ybS9BY2Nlc3NDb250cm9sKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/hr_position/del_position.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2hyX3Bvc2l0aW9uL2RlbF9wb3NpdGlvbi5qc3AqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/images/../../../../../../../../etc/passwd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2ltYWdlcy8uLi8uLi8uLi8uLi8uLi8uLi8uLi8uLi9ldGMvcGFzc3dkKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ioffice/prg/set/wss/MobileOA.asmx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2lvZmZpY2UvcHJnL3NldC93c3MvTW9iaWxlT0EuYXNteCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/jeecgboot/jmreport/show` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2plZWNnYm9vdC9qbXJlcG9ydC9zaG93KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/kingdee/login/comm_user.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2tpbmdkZWUvbG9naW4vY29tbV91c2VyLmpzcCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ma/api/selectMaEmpByPage` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hL2FwaS9zZWxlY3RNYUVtcEJ5UGFnZSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/maintenance/controllerFlirSystem.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21haW50ZW5hbmNlL2NvbnRyb2xsZXJGbGlyU3lzdGVtLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/mobilefront/c/2.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21vYmlsZWZyb250L2MvMi5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/moduleinterface.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21vZHVsZWludGVyZmFjZS5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/monitoring/..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2fetc/passwd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21vbml0b3JpbmcvLi4lMmYuLiUyZi4uJTJmLi4lMmYuLiUyZi4uJTJmLi4lMmYuLiUyZi4uJTJmLi4lMmYuLiUyZi4uJTJmLi4lMmYuLiUyZi4uJTJmLi4lMmZldGMvcGFzc3dkKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/nagiosql/admin/commandline.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL25hZ2lvc3FsL2FkbWluL2NvbW1hbmRsaW5lLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/nagiosql/admin/info.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL25hZ2lvc3FsL2FkbWluL2luZm8ucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/opensis/index.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL29wZW5zaXMvaW5kZXgucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/payslip/search/index/userid/time` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BheXNsaXAvc2VhcmNoL2luZGV4L3VzZXJpZC90aW1lKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/payslip/search/index/userid/time/time` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BheXNsaXAvc2VhcmNoL2luZGV4L3VzZXJpZC90aW1lL3RpbWUqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/photo/combine.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Bob3RvL2NvbWJpbmUucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/print/DynamaticExport.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3ByaW50L0R5bmFtYXRpY0V4cG9ydC5hc3B4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/report/data_source_test.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3JlcG9ydC9kYXRhX3NvdXJjZV90ZXN0LmFzcHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/res/../admin/diagnostic.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Jlcy8uLi9hZG1pbi9kaWFnbm9zdGljLmpzcCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/seeyon/autoinstall.do/../../seeyon/fileUpload.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlZXlvbi9hdXRvaW5zdGFsbC5kby8uLi8uLi9zZWV5b24vZmlsZVVwbG9hZC5kbyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/services/HrpService` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlcnZpY2VzL0hycFNlcnZpY2UqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/sites/all/modules/avatar_uploader/lib/demo/view.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NpdGVzL2FsbC9tb2R1bGVzL2F2YXRhcl91cGxvYWRlci9saWIvZGVtby92aWV3LnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/static/../../../../../../C:\Windows\win.ini` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3N0YXRpYy8uLi8uLi8uLi8uLi8uLi8uLi9DOlxcV2luZG93c1xcd2luLmluaSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/svm/api/external/report` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3N2bS9hcGkvZXh0ZXJuYWwvcmVwb3J0KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/template/custom/content-editor` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3RlbXBsYXRlL2N1c3RvbS9jb250ZW50LWVkaXRvcioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/theme/META-INF/����/����/����/����/����/����/����/����/����/����/etc/passwd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3RoZW1lL01FVEEtSU5GL--_ve-_ve-_ve-_vS_vv73vv73vv73vv70v77-977-977-977-9L--_ve-_ve-_ve-_vS_vv73vv73vv73vv70v77-977-977-977-9L--_ve-_ve-_ve-_vS_vv73vv73vv73vv70v77-977-977-977-9L--_ve-_ve-_ve-_vS9ldGMvcGFzc3dkKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/update/../admin/diagnostic.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3VwZGF0ZS8uLi9hZG1pbi9kaWFnbm9zdGljLmpzcCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/webeditor/../../../windows/win.ini` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dlYmVkaXRvci8uLi8uLi8uLi93aW5kb3dzL3dpbi5pbmkqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/webservice-json/online_person/online_person.wsdl.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dlYnNlcnZpY2UtanNvbi9vbmxpbmVfcGVyc29uL29ubGluZV9wZXJzb24ud3NkbC5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/wp-content/plugins/cherry-plugin/admin/import-export/download-content.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dwLWNvbnRlbnQvcGx1Z2lucy9jaGVycnktcGx1Z2luL2FkbWluL2ltcG9ydC1leHBvcnQvZG93bmxvYWQtY29udGVudC5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/wp-content/plugins/google-mp3-audio-player/direct_download.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dwLWNvbnRlbnQvcGx1Z2lucy9nb29nbGUtbXAzLWF1ZGlvLXBsYXllci9kaXJlY3RfZG93bmxvYWQucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/wp-content/plugins/wp-automatic/inc/csv.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dwLWNvbnRlbnQvcGx1Z2lucy93cC1hdXRvbWF0aWMvaW5jL2Nzdi5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/wp-json/am-member/license` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dwLWpzb24vYW0tbWVtYmVyL2xpY2Vuc2UqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/wp-json/api/flutter_woo/config_file` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dwLWpzb24vYXBpL2ZsdXR0ZXJfd29vL2NvbmZpZ19maWxlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/%77eb%75i_%77sma_Http` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLyU3N2ViJTc1aV8lNzdzbWFfSHR0cCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/../conf/config.properties` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy4uL2NvbmYvY29uZmlnLnByb3BlcnRpZXMqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/..;/actuator` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy4uOy9hY3R1YXRvcioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/API/VshopProcess.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0FQSS9Wc2hvcFByb2Nlc3MuYXNoeCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Applications/BaseInfos/System/Ajax_operaFile.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0FwcGxpY2F0aW9ucy9CYXNlSW5mb3MvU3lzdGVtL0FqYXhfb3BlcmFGaWxlLmFzcHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/BigTree-CMS/core/launch.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0JpZ1RyZWUtQ01TL2NvcmUvbGF1bmNoLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Brand.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0JyYW5kLmFzcHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/BudgetManage/Handler/ReturnConsRep.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0J1ZGdldE1hbmFnZS9IYW5kbGVyL1JldHVybkNvbnNSZXAuYXNoeCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/C6/Control/GetSqlData.aspx/.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0M2L0NvbnRyb2wvR2V0U3FsRGF0YS5hc3B4Ly5hc2h4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/C6/JHSoft.Web.IncentivePlan/IncentivePlanPrint1.aspx/` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0M2L0pIU29mdC5XZWIuSW5jZW50aXZlUGxhbi9JbmNlbnRpdmVQbGFuUHJpbnQxLmFzcHgvKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/C6/JHSoft.Web.TargetPlan/TargetPlan/deptPlanCompile.aspx/` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0M2L0pIU29mdC5XZWIuVGFyZ2V0UGxhbi9UYXJnZXRQbGFuL2RlcHRQbGFuQ29tcGlsZS5hc3B4Lyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/C6/JHSoft.Web.WorkFlat/RssModulesHttp.aspx/` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0M2L0pIU29mdC5XZWIuV29ya0ZsYXQvUnNzTW9kdWxlc0h0dHAuYXNweC8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/CDGServer3/SecretKeyService;login` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0NER1NlcnZlcjMvU2VjcmV0S2V5U2VydmljZTtsb2dpbioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/CDGServer3/js/../DocInfoAjax` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0NER1NlcnZlcjMvanMvLi4vRG9jSW5mb0FqYXgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/CDGServer3/js/../LogicGroupAjax` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0NER1NlcnZlcjMvanMvLi4vTG9naWNHcm91cEFqYXgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/CDGServer3/js/../NoticeAjax` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0NER1NlcnZlcjMvanMvLi4vTm90aWNlQWpheCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Common/GetImage.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0NvbW1vbi9HZXRJbWFnZS5hc3B4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Common/ckeditor/plugins/multiimg/dialogs/image_upload.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0NvbW1vbi9ja2VkaXRvci9wbHVnaW5zL211bHRpaW1nL2RpYWxvZ3MvaW1hZ2VfdXBsb2FkLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/DBAService/PolicySetDetailController/queryPolicyUseConditionDetail` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0RCQVNlcnZpY2UvUG9saWN5U2V0RGV0YWlsQ29udHJvbGxlci9xdWVyeVBvbGljeVVzZUNvbmRpdGlvbkRldGFpbCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Electron/download/windows/..\..\..\Http\webroot\config.json` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0VsZWN0cm9uL2Rvd25sb2FkL3dpbmRvd3MvLi5cXC4uXFwuLlxcSHR0cFxcd2Vicm9vdFxcY29uZmlnLmpzb24qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/EnjoyRMIS_WS/WS/POS/cwsoa.asmx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0Vuam95Uk1JU19XUy9XUy9QT1MvY3dzb2EuYXNteCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/FeeCodes/CRMClientInfo.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0ZlZUNvZGVzL0NSTUNsaWVudEluZm8uYXNweCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/FeeCodes/CUSTOMERNAMEGIDAdapter.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0ZlZUNvZGVzL0NVU1RPTUVSTkFNRUdJREFkYXB0ZXIuYXNweCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/HM/M_Main/AjaxUpload.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0hNL01fTWFpbi9BamF4VXBsb2FkLmFzcHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/HM/M_main/InformationManage/VacantDiscountDownLoad.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0hNL01fbWFpbi9JbmZvcm1hdGlvbk1hbmFnZS9WYWNhbnREaXNjb3VudERvd25Mb2FkLmFzcHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Handler/MobileAppLogin.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0hhbmRsZXIvTW9iaWxlQXBwTG9naW4uYXNoeCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Hkbgl/PhoneWorkflow/Business/PhoneHandler.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0hrYmdsL1Bob25lV29ya2Zsb3cvQnVzaW5lc3MvUGhvbmVIYW5kbGVyLmFzaHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/JoinfApp/EMail/UploadEmailAttr` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0pvaW5mQXBwL0VNYWlsL1VwbG9hZEVtYWlsQXR0cioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/LKT/index.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0xLVC9pbmRleC5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/LetsEncrypt/Index` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0xldHNFbmNyeXB0L0luZGV4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Login/Reg_H5_PC.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0xvZ2luL1JlZ19INV9QQy5hc2h4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/LoginAuth` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0xvZ2luQXV0aCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Module/FileUpPage/FileUpAd.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL01vZHVsZS9GaWxlVXBQYWdlL0ZpbGVVcEFkLmFzcHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/OA_HTML/configurator/UiServlet` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL09BX0hUTUwvY29uZmlndXJhdG9yL1VpU2VydmxldCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/OAapp/htpages/app/module/trace/component/fileEdit/ntkoupload.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL09BYXBwL2h0cGFnZXMvYXBwL21vZHVsZS90cmFjZS9jb21wb25lbnQvZmlsZUVkaXQvbnRrb3VwbG9hZC5qc3AqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/OpenWindows/Openleibie_wtMc.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL09wZW5XaW5kb3dzL09wZW5sZWliaWVfd3RNYy5hc3B4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/PbootCMS/api.php/List/index` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1Bib290Q01TL2FwaS5waHAvTGlzdC9pbmRleCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/RAPAgent.XGI` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1JBUEFnZW50LlhHSSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Service/EmployeeInfoService.asmx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1NlcnZpY2UvRW1wbG95ZWVJbmZvU2VydmljZS5hc214KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Upload/upload_file.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1VwbG9hZC91cGxvYWRfZmlsZS5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/UploadFileData` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1VwbG9hZEZpbGVEYXRhKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/WEB_SERVICE/WarehousePublic.asmx/CompanyChange` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1dFQl9TRVJWSUNFL1dhcmVob3VzZVB1YmxpYy5hc214L0NvbXBhbnlDaGFuZ2UqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/WeChat/ashx/UploadHandler.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1dlQ2hhdC9hc2h4L1VwbG9hZEhhbmRsZXIuYXNoeCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/WebCloud.asmx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1dlYkNsb3VkLmFzbXgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/actions/seomatic/meta-container/all-meta-containers` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FjdGlvbnMvc2VvbWF0aWMvbWV0YS1jb250YWluZXIvYWxsLW1ldGEtY29udGFpbmVycyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/activity/biztype.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FjdGl2aXR5L2JpenR5cGUucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/admin/ajax/avatar.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWluL2FqYXgvYXZhdGFyLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/admin/appointment.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWluL2FwcG9pbnRtZW50LnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/admin/configApp/queryPrintTemplate` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWluL2NvbmZpZ0FwcC9xdWVyeVByaW50VGVtcGxhdGUqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/admin/config_ISCGroupNoCache.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWluL2NvbmZpZ19JU0NHcm91cE5vQ2FjaGUucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/admin/config_time_sync.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWluL2NvbmZpZ190aW1lX3N5bmMucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/admin/export_excel_user.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWluL2V4cG9ydF9leGNlbF91c2VyLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/admin/sql` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWluL3NxbCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/admin/suppliers/view_details.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWluL3N1cHBsaWVycy92aWV3X2RldGFpbHMucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/adminPage/login/getAuth` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWluUGFnZS9sb2dpbi9nZXRBdXRoKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/adminx/house.save.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWlueC9ob3VzZS5zYXZlLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/Common/uploadFile` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9Db21tb24vdXBsb2FkRmlsZSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/VersionManage/getDeviceInfoById` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9WZXJzaW9uTWFuYWdlL2dldERldmljZUluZm9CeUlkKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/client/vmonitor.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9jbGllbnQvdm1vbml0b3IucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/clusters/local/topics/__consumer_offsets/messages` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9jbHVzdGVycy9sb2NhbC90b3BpY3MvX19jb25zdW1lcl9vZmZzZXRzL21lc3NhZ2VzKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/global/configs/checklist` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9nbG9iYWwvY29uZmlncy9jaGVja2xpc3QqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/image/cover-upload` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9pbWFnZS9jb3Zlci11cGxvYWQqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/logrotate/open` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9sb2dyb3RhdGUvb3Blbioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/sql/query` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9zcWwvcXVlcnkqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/system/data-exports/../../../../../../../etc/passwd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9zeXN0ZW0vZGF0YS1leHBvcnRzLy4uLy4uLy4uLy4uLy4uLy4uLy4uL2V0Yy9wYXNzd2QqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/system/sessions` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9zeXN0ZW0vc2Vzc2lvbnMqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/uploader/uploadImage` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS91cGxvYWRlci91cGxvYWRJbWFnZSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/v1/dags/example_bash_operator/dagRuns` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS92MS9kYWdzL2V4YW1wbGVfYmFzaF9vcGVyYXRvci9kYWdSdW5zKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/v1/users/file/download` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS92MS91c2Vycy9maWxlL2Rvd25sb2FkKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/v2/configs` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS92Mi9jb25maWdzKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/w/_/jobs_u/get_log_file/../../../../../../etc/passwd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS93L18vam9ic191L2dldF9sb2dfZmlsZS8uLi8uLi8uLi8uLi8uLi8uLi9ldGMvcGFzc3dkKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/app/ajax/search_sell_paymen_report.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwcC9hamF4L3NlYXJjaF9zZWxsX3BheW1lbl9yZXBvcnQucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/app/system/entrance.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwcC9zeXN0ZW0vZW50cmFuY2UucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/application/down.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwcGxpY2F0aW9uL2Rvd24ucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ashx/Common/MediaUpload.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FzaHgvQ29tbW9uL01lZGlhVXBsb2FkLmFzaHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/assets/img/.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Fzc2V0cy9pbWcvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/auth-ui/v1/api/user/token/getToken` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2F1dGgtdWkvdjEvYXBpL3VzZXIvdG9rZW4vZ2V0VG9rZW4qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/back/common/logon/loginPage.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2JhY2svY29tbW9uL2xvZ29uL2xvZ2luUGFnZS5kbyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/base_import/static/etc/passwd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Jhc2VfaW1wb3J0L3N0YXRpYy9ldGMvcGFzc3dkKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/bi/profit/gooddiffanalyse/getlist` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2JpL3Byb2ZpdC9nb29kZGlmZmFuYWx5c2UvZ2V0bGlzdCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/c42api/v3/LoginConfiguration` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2M0MmFwaS92My9Mb2dpbkNvbmZpZ3VyYXRpb24qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/c6/JHSoft.Web.CustomQuery/UploadFileDownLoadnew.aspx/` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2M2L0pIU29mdC5XZWIuQ3VzdG9tUXVlcnkvVXBsb2FkRmlsZURvd25Mb2FkbmV3LmFzcHgvKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/casa/nodes/thumbprints` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Nhc2Evbm9kZXMvdGh1bWJwcmludHMqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cf_scripts/scripts/ajax/ckeditor/plugins/filemanager/iedit.cfc` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NmX3NjcmlwdHMvc2NyaXB0cy9hamF4L2NrZWRpdG9yL3BsdWdpbnMvZmlsZW1hbmFnZXIvaWVkaXQuY2ZjKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cgi-bin/../../../../../../bin/sh` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NnaS1iaW4vLi4vLi4vLi4vLi4vLi4vLi4vYmluL3NoKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cgi-bin/../../../../etc/passwd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NnaS1iaW4vLi4vLi4vLi4vLi4vZXRjL3Bhc3N3ZCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cgi-bin/Save.cgi` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NnaS1iaW4vU2F2ZS5jZ2kqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cgi-bin/backup/hbs_mgnt.cgi` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NnaS1iaW4vYmFja3VwL2hic19tZ250LmNnaSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cgi-bin/readycloud_control.cgi` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NnaS1iaW4vcmVhZHljbG91ZF9jb250cm9sLmNnaSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cgi-bin/vitogate.cgi` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NnaS1iaW4vdml0b2dhdGUuY2dpKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cockpit+=127.0.0.1:22/login` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvY2twaXQrPTEyNy4wLjAuMToyMi9sb2dpbioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/comfileup.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvbWZpbGV1cC5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/common/FCKeditor/editor/filemanager/browser/default/connectors/jsp/connector` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvbW1vbi9GQ0tlZGl0b3IvZWRpdG9yL2ZpbGVtYW5hZ2VyL2Jyb3dzZXIvZGVmYXVsdC9jb25uZWN0b3JzL2pzcC9jb25uZWN0b3IqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/config/fillbacksetting.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvbmZpZy9maWxsYmFja3NldHRpbmcucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/console/images/%2e%2e%2fconsole.portal` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvbnNvbGUvaW1hZ2VzLyUyZSUyZSUyZmNvbnNvbGUucG9ydGFsKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/controller/users.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvbnRyb2xsZXIvdXNlcnMucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/course/filterRecords/` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvdXJzZS9maWx0ZXJSZWNvcmRzLyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/crm/modules/XlsImportNew/documentEntry/XlsFileUpload.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NybS9tb2R1bGVzL1hsc0ltcG9ydE5ldy9kb2N1bWVudEVudHJ5L1hsc0ZpbGVVcGxvYWQucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/crm/uploadRecordFile.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NybS91cGxvYWRSZWNvcmRGaWxlLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/custom/zx/event/eventlist.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2N1c3RvbS96eC9ldmVudC9ldmVudGxpc3QucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ddns_check.ccp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RkbnNfY2hlY2suY2NwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/dede/sys_verifies.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RlZGUvc3lzX3ZlcmlmaWVzLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/defaultroot/download_ftp.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RlZmF1bHRyb290L2Rvd25sb2FkX2Z0cC5qc3AqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/defaultroot/information_manager/informationmanager_upload.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RlZmF1bHRyb290L2luZm9ybWF0aW9uX21hbmFnZXIvaW5mb3JtYXRpb25tYW5hZ2VyX3VwbG9hZC5qc3AqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/down/class/index.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Rvd24vY2xhc3MvaW5kZXgucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/download/NCFindWeb` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Rvd25sb2FkL05DRmluZFdlYioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/download_work_dir_file` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Rvd25sb2FkX3dvcmtfZGlyX2ZpbGUqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/dr/authentication/oauth2/oauth2login` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RyL2F1dGhlbnRpY2F0aW9uL29hdXRoMi9vYXV0aDJsb2dpbioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ebvp/advorappcoll/complainjudge` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2VidnAvYWR2b3JhcHBjb2xsL2NvbXBsYWluanVkZ2UqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/fhem/FileLog_logWrapper` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2ZoZW0vRmlsZUxvZ19sb2dXcmFwcGVyKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/file/upload.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2ZpbGUvdXBsb2FkLmRvKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/flow/fl_define_flow_chart_show.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Zsb3cvZmxfZGVmaW5lX2Zsb3dfY2hhcnRfc2hvdy5hc3B4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/fosagent/repl/download-file` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Zvc2FnZW50L3JlcGwvZG93bmxvYWQtZmlsZSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/fosagent/repl/download-snapshot` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Zvc2FnZW50L3JlcGwvZG93bmxvYWQtc25hcHNob3QqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/fpc/login/` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2ZwYy9sb2dpbi8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/general/crm/apps/crm/include/import/export.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2dlbmVyYWwvY3JtL2FwcHMvY3JtL2luY2x1ZGUvaW1wb3J0L2V4cG9ydC5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/general/system/workflow/flow_type/flow_xml.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2dlbmVyYWwvc3lzdGVtL3dvcmtmbG93L2Zsb3dfdHlwZS9mbG93X3htbC5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/gla/dataSource/selectGlaDatasourcePreview` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2dsYS9kYXRhU291cmNlL3NlbGVjdEdsYURhdGFzb3VyY2VQcmV2aWV3KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/go/add-on/business-continuity/api/plugin` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2dvL2FkZC1vbi9idXNpbmVzcy1jb250aW51aXR5L2FwaS9wbHVnaW4qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/goform/formWsc` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2dvZm9ybS9mb3JtV3NjKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/goform/formping` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2dvZm9ybS9mb3JtcGluZyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/graph_realtime.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2dyYXBoX3JlYWx0aW1lLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/group1/upload` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2dyb3VwMS91cGxvYWQqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/hmc/j_spring_security_check` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2htYy9qX3NwcmluZ19zZWN1cml0eV9jaGVjayoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/hms/admin/` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2htcy9hZG1pbi8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/home/job/map` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2hvbWUvam9iL21hcCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/hrms/sys/qrcode/uploadFile` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2hybXMvc3lzL3FyY29kZS91cGxvYWRGaWxlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/i3geo/exemplos/codemirror.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2kzZ2VvL2V4ZW1wbG9zL2NvZGVtaXJyb3IucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/iOffice/prg/set/wss/ioAssistance.asmx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2lPZmZpY2UvcHJnL3NldC93c3MvaW9Bc3Npc3RhbmNlLmFzbXgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/iOffice/prg/set/wss/ioAssistance2.asmx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2lPZmZpY2UvcHJnL3NldC93c3MvaW9Bc3Npc3RhbmNlMi5hc214KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/icinga2/lib/icinga/icinga-php-thirdparty/etc/passwd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2ljaW5nYTIvbGliL2ljaW5nYS9pY2luZ2EtcGhwLXRoaXJkcGFydHkvZXRjL3Bhc3N3ZCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/icons/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/etc/passwd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2ljb25zLyUlMzIlNjUlJTMyJTY1LyUlMzIlNjUlJTMyJTY1LyUlMzIlNjUlJTMyJTY1LyUlMzIlNjUlJTMyJTY1LyUlMzIlNjUlJTMyJTY1LyUlMzIlNjUlJTMyJTY1LyUlMzIlNjUlJTMyJTY1L2V0Yy9wYXNzd2QqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/icons/.%%32%65/.%%32%65/.%%32%65/.%%32%65/.%%32%65/.%%32%65/.%%32%65/etc/passwd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2ljb25zLy4lJTMyJTY1Ly4lJTMyJTY1Ly4lJTMyJTY1Ly4lJTMyJTY1Ly4lJTMyJTY1Ly4lJTMyJTY1Ly4lJTMyJTY1L2V0Yy9wYXNzd2QqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/icons/../../../../../../etc/passwd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2ljb25zLy4uLy4uLy4uLy4uLy4uLy4uL2V0Yy9wYXNzd2QqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/include/dialog/select_templets.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2luY2x1ZGUvZGlhbG9nL3NlbGVjdF90ZW1wbGV0cy5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/index.php/Pan/ShareUrl/downloadSharedFile` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2luZGV4LnBocC9QYW4vU2hhcmVVcmwvZG93bmxvYWRTaGFyZWRGaWxlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/index.php/api/Software/getInfo` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2luZGV4LnBocC9hcGkvU29mdHdhcmUvZ2V0SW5mbyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/inter/software_relation.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2ludGVyL3NvZnR3YXJlX3JlbGF0aW9uLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/interface/DownFileAttach.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2ludGVyZmFjZS9Eb3duRmlsZUF0dGFjaC5qc3AqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ioffice/prg/interface/GetWorkUnit.asmx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2lvZmZpY2UvcHJnL2ludGVyZmFjZS9HZXRXb3JrVW5pdC5hc214KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ioffice/prg/interface/udfGetDocStep.asmx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2lvZmZpY2UvcHJnL2ludGVyZmFjZS91ZGZHZXREb2NTdGVwLmFzbXgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ipg/appr/MApplyList/downloadFile_client` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2lwZy9hcHByL01BcHBseUxpc3QvZG93bmxvYWRGaWxlX2NsaWVudCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ispirit/interface/login.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2lzcGlyaXQvaW50ZXJmYWNlL2xvZ2luLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/itc/attachment_downloadByUrlAtt.action` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2l0Yy9hdHRhY2htZW50X2Rvd25sb2FkQnlVcmxBdHQuYWN0aW9uKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/iweboffice/OfficeServer.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2l3ZWJvZmZpY2UvT2ZmaWNlU2VydmVyLmpzcCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/jc6/JHSoft.WCF/WorkFlow/GetFieldIsState` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2pjNi9KSFNvZnQuV0NGL1dvcmtGbG93L0dldEZpZWxkSXNTdGF0ZSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/jc6/servlet/imagefield` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2pjNi9zZXJ2bGV0L2ltYWdlZmllbGQqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/jc6/servlet/uploaddoc` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2pjNi9zZXJ2bGV0L3VwbG9hZGRvYyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/jeecg-boot/jmreport/loadTableData` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2plZWNnLWJvb3Qvam1yZXBvcnQvbG9hZFRhYmxlRGF0YSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/jeecg-boot/sys/user/queryUserByDepId` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2plZWNnLWJvb3Qvc3lzL3VzZXIvcXVlcnlVc2VyQnlEZXBJZCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/js/../.htpasswd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2pzLy4uLy5odHBhc3N3ZCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/js/../components/fileupload/upload` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2pzLy4uL2NvbXBvbmVudHMvZmlsZXVwbG9hZC91cGxvYWQqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/kp/PrintZPZP.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2twL1ByaW50WlBaUC5qc3AqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/lib/icinga/icinga-php-thirdparty/etc/passwd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2xpYi9pY2luZ2EvaWNpbmdhLXBocC10aGlyZHBhcnR5L2V0Yy9wYXNzd2QqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/log/actions/view` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2xvZy9hY3Rpb25zL3ZpZXcqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/login.html/../user/list` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2xvZ2luLmh0bWwvLi4vdXNlci9saXN0KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/login.php5` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2xvZ2luLnBocDUqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/login/userverify.cgi` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2xvZ2luL3VzZXJ2ZXJpZnkuY2dpKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/logistics/delivery/php/dispatchsort.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2xvZ2lzdGljcy9kZWxpdmVyeS9waHAvZGlzcGF0Y2hzb3J0LnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/lucee/admin/imgProcess.cfm` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2x1Y2VlL2FkbWluL2ltZ1Byb2Nlc3MuY2ZtKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/m/mobileAction.ashx/do.asmx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL20vbW9iaWxlQWN0aW9uLmFzaHgvZG8uYXNteCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/mailinspector/public/loader.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21haWxpbnNwZWN0b3IvcHVibGljL2xvYWRlci5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/mainpage/msg.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21haW5wYWdlL21zZy5hc3B4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/manage/device/queryVisDeviceManagerList.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS9kZXZpY2UvcXVlcnlWaXNEZXZpY2VNYW5hZ2VyTGlzdC5kbyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/manage/lawSchedules/queryLawSchedulesUseDetail.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS9sYXdTY2hlZHVsZXMvcXVlcnlMYXdTY2hlZHVsZXNVc2VEZXRhaWwuZG8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/manage/mobiVisit/..;/systemBlackList/queryBlackList.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS9tb2JpVmlzaXQvLi47L3N5c3RlbUJsYWNrTGlzdC9xdWVyeUJsYWNrTGlzdC5kbyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/manage/schedules/querySchedulesUseDetail.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS9zY2hlZHVsZXMvcXVlcnlTY2hlZHVsZXNVc2VEZXRhaWwuZG8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/manage/sysAuthUser/queryAppointmentWx.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS9zeXNBdXRoVXNlci9xdWVyeUFwcG9pbnRtZW50V3guZG8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/manage/visitorInformation/queryHistoryVisitorInformation.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS92aXNpdG9ySW5mb3JtYXRpb24vcXVlcnlIaXN0b3J5VmlzaXRvckluZm9ybWF0aW9uLmRvKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/manage/visitorRegist/queryAppointment.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS92aXNpdG9yUmVnaXN0L3F1ZXJ5QXBwb2ludG1lbnQuZG8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/manager/radius/server_ping.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZXIvcmFkaXVzL3NlcnZlcl9waW5nLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/manager/teletext/material/rewrite.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZXIvdGVsZXRleHQvbWF0ZXJpYWwvcmV3cml0ZS5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/maportal/appmanager/save` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hcG9ydGFsL2FwcG1hbmFnZXIvc2F2ZSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/maportal/usermanager/init` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hcG9ydGFsL3VzZXJtYW5hZ2VyL2luaXQqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/mdiy/dict/listExcludeApp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21kaXkvZGljdC9saXN0RXhjbHVkZUFwcCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/message/fi_message_receiver.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21lc3NhZ2UvZmlfbWVzc2FnZV9yZWNlaXZlci5hc3B4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/mifs/rs/api/v2/featureusage` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21pZnMvcnMvYXBpL3YyL2ZlYXR1cmV1c2FnZSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/module/Kernel/Controller/SysOrgInPermission.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21vZHVsZS9LZXJuZWwvQ29udHJvbGxlci9TeXNPcmdJblBlcm1pc3Npb24uYXNoeCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/module/askforaquote/QuotesCart` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21vZHVsZS9hc2tmb3JhcXVvdGUvUXVvdGVzQ2FydCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/modules/ndk_steppingpack/search-result.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21vZHVsZXMvbmRrX3N0ZXBwaW5ncGFjay9zZWFyY2gtcmVzdWx0LnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/modules/possearchproducts/SearchProducts.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21vZHVsZXMvcG9zc2VhcmNocHJvZHVjdHMvU2VhcmNoUHJvZHVjdHMucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ncchr/attendcalendar/queryRuleByDeptId` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL25jY2hyL2F0dGVuZGNhbGVuZGFyL3F1ZXJ5UnVsZUJ5RGVwdElkKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ncchr/period/queryBeginEndTime` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL25jY2hyL3BlcmlvZC9xdWVyeUJlZ2luRW5kVGltZSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/nccloud/mob/hrwa/datainterface/ExportErrorAction` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL25jY2xvdWQvbW9iL2hyd2EvZGF0YWludGVyZmFjZS9FeHBvcnRFcnJvckFjdGlvbioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/news/class/index.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL25ld3MvY2xhc3MvaW5kZXgucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/newsedit/newsplan/task/binary.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL25ld3NlZGl0L25ld3NwbGFuL3Rhc2svYmluYXJ5LmRvKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/nssys/common/filehandle.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL25zc3lzL2NvbW1vbi9maWxlaGFuZGxlLmFzcHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/nvsthird/getDepResList` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL252c3RoaXJkL2dldERlcFJlc0xpc3QqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/oa/Common/WF/WorkFlow/WorkFlow.asmx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL29hL0NvbW1vbi9XRi9Xb3JrRmxvdy9Xb3JrRmxvdy5hc214KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/oa/admin/application/file_download.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL29hL2FkbWluL2FwcGxpY2F0aW9uL2ZpbGVfZG93bmxvYWQuanNwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/objects/getImageMP4.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL29iamVjdHMvZ2V0SW1hZ2VNUDQucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/opac/shelf/upload` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL29wYWMvc2hlbGYvdXBsb2FkKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/pacsone/nocache.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BhY3NvbmUvbm9jYWNoZS5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/payment/unionpay/notify.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BheW1lbnQvdW5pb25wYXkvbm90aWZ5LnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/pda/auth.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BkYS9hdXRoLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/php/manga/delete.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BocC9tYW5nYS9kZWxldGUucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/portal/logoImgServlet` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BvcnRhbC9sb2dvSW1nU2VydmxldCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/portal/services/carReadin` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3BvcnRhbC9zZXJ2aWNlcy9jYXJSZWFkaW4qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/resources/backup/..\..\WEB-INF/web.xml` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Jlc291cmNlcy9iYWNrdXAvLi5cXC4uXFxXRUItSU5GL3dlYi54bWwqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/rest/api/content/macro/preview` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Jlc3QvYXBpL2NvbnRlbnQvbWFjcm8vcHJldmlldyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/search/members.json` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlYXJjaC9tZW1iZXJzLmpzb24qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/search/members/` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlYXJjaC9tZW1iZXJzLyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/seeyon/autoinstall.do.css/..;/ajax.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlZXlvbi9hdXRvaW5zdGFsbC5kby5jc3MvLi47L2FqYXguZG8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/service_transport/service.action` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlcnZpY2VfdHJhbnNwb3J0L3NlcnZpY2UuYWN0aW9uKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/services /WorkflowServiceXml` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlcnZpY2VzIC9Xb3JrZmxvd1NlcnZpY2VYbWwqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/services/HrChangeInfoService` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlcnZpY2VzL0hyQ2hhbmdlSW5mb1NlcnZpY2UqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/servlet/PayBill` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlcnZsZXQvUGF5QmlsbCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/servlet/com.sksoft.bill.QueryService` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlcnZsZXQvY29tLnNrc29mdC5iaWxsLlF1ZXJ5U2VydmljZSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/servlet/dataSphereServlet` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlcnZsZXQvZGF0YVNwaGVyZVNlcnZsZXQqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/servlet/nc.bs.hr.tools.trans.FileServlet` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NlcnZsZXQvbmMuYnMuaHIudG9vbHMudHJhbnMuRmlsZVNlcnZsZXQqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/sitecore/shell/ClientBin/Reporting/Report.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NpdGVjb3JlL3NoZWxsL0NsaWVudEJpbi9SZXBvcnRpbmcvUmVwb3J0LmFzaHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/slogin/service` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3Nsb2dpbi9zZXJ2aWNlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/sslvpn/img/../../../../../../etc/passwd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3NzbHZwbi9pbWcvLi4vLi4vLi4vLi4vLi4vLi4vZXRjL3Bhc3N3ZCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/sys/webservice/hrStaffWebService` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3N5cy93ZWJzZXJ2aWNlL2hyU3RhZmZXZWJTZXJ2aWNlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/sysShell` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3N5c1NoZWxsKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/system/dept/edit` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3N5c3RlbS9kZXB0L2VkaXQqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/system/sharedir.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3N5c3RlbS9zaGFyZWRpci5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/tag_test_action.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3RhZ190ZXN0X2FjdGlvbi5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/texteditor.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3RleHRlZGl0b3IucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/tmp/ac_upgrade/../../etc/passwd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3RtcC9hY191cGdyYWRlLy4uLy4uL2V0Yy9wYXNzd2QqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/tmui/locallb/workspace/tmshCmd.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3RtdWkvbG9jYWxsYi93b3Jrc3BhY2UvdG1zaENtZC5qc3AqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/tplus/ajaxpro/Ufida.T.SM.UIP.MultiCompanySettingController,Ufida.T.SM.UIP.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3RwbHVzL2FqYXhwcm8vVWZpZGEuVC5TTS5VSVAuTXVsdGlDb21wYW55U2V0dGluZ0NvbnRyb2xsZXIsVWZpZGEuVC5TTS5VSVAuYXNoeCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/two_fact_auth` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3R3b19mYWN0X2F1dGgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/u8cloud/openapi/uapbd.refdef.query` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3U4Y2xvdWQvb3BlbmFwaS91YXBiZC5yZWZkZWYucXVlcnkqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/u9/OnLine/UMWebService.asmx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3U5L09uTGluZS9VTVdlYlNlcnZpY2UuYXNteCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/uapws/service/nc.itf.bap.service.IBapIOService` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3VhcHdzL3NlcnZpY2UvbmMuaXRmLmJhcC5zZXJ2aWNlLklCYXBJT1NlcnZpY2UqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/uapws/service/nc.ws.itf.mm.mobile.IMoQuery` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3VhcHdzL3NlcnZpY2UvbmMud3MuaXRmLm1tLm1vYmlsZS5JTW9RdWVyeSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ui/h5-vsan/rest/proxy/service/com.vmware.vsan.client.services.capability.VsanCapabilityProvider/getClusterCapabilityData` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3VpL2g1LXZzYW4vcmVzdC9wcm94eS9zZXJ2aWNlL2NvbS52bXdhcmUudnNhbi5jbGllbnQuc2VydmljZXMuY2FwYWJpbGl0eS5Wc2FuQ2FwYWJpbGl0eVByb3ZpZGVyL2dldENsdXN0ZXJDYXBhYmlsaXR5RGF0YSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/upgrade_handle.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3VwZ3JhZGVfaGFuZGxlLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/upload/UploadLogo.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3VwbG9hZC9VcGxvYWRMb2dvLmFzaHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/userLogin.asp/../actionpolicy_status/../ER2200G2.cfg` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3VzZXJMb2dpbi5hc3AvLi4vYWN0aW9ucG9saWN5X3N0YXR1cy8uLi9FUjIyMDBHMi5jZmcqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/userLogin.asp/../actionpolicy_status/../ER3200G2.cfg` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3VzZXJMb2dpbi5hc3AvLi4vYWN0aW9ucG9saWN5X3N0YXR1cy8uLi9FUjMyMDBHMi5jZmcqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/userLogin.asp/../actionpolicy_status/../ER3260G2.cfg` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3VzZXJMb2dpbi5hc3AvLi4vYWN0aW9ucG9saWN5X3N0YXR1cy8uLi9FUjMyNjBHMi5jZmcqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/userLogin.asp/../actionpolicy_status/../ER5200G2.cfg` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3VzZXJMb2dpbi5hc3AvLi4vYWN0aW9ucG9saWN5X3N0YXR1cy8uLi9FUjUyMDBHMi5jZmcqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/userLogin.asp/../actionpolicy_status/../GR5200.cfg` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3VzZXJMb2dpbi5hc3AvLi4vYWN0aW9ucG9saWN5X3N0YXR1cy8uLi9HUjUyMDAuY2ZnKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/uusafe/mbs/mdm/rest/file/preview` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3V1c2FmZS9tYnMvbWRtL3Jlc3QvZmlsZS9wcmV2aWV3KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/weaver/weaver.formmode.setup.ImportValidationFieldServlet` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dlYXZlci93ZWF2ZXIuZm9ybW1vZGUuc2V0dXAuSW1wb3J0VmFsaWRhdGlvbkZpZWxkU2VydmxldCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/web/addons/ftp_download.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dlYi9hZGRvbnMvZnRwX2Rvd25sb2FkLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/web/config.json` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dlYi9jb25maWcuanNvbioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/webtools/control/ProgramExport;/` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dlYnRvb2xzL2NvbnRyb2wvUHJvZ3JhbUV4cG9ydDsvKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/webtools/control/main` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dlYnRvb2xzL2NvbnRyb2wvbWFpbioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/webui/file_guest` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dlYnVpL2ZpbGVfZ3Vlc3QqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/workrelate/plan/util/uploaderOperate.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dvcmtyZWxhdGUvcGxhbi91dGlsL3VwbG9hZGVyT3BlcmF0ZS5qc3AqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/wp-content/themes/churchope/lib/downloadlink.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dwLWNvbnRlbnQvdGhlbWVzL2NodXJjaG9wZS9saWIvZG93bmxvYWRsaW5rLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/wp-json/buddypress/v1/signup` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3dwLWpzb24vYnVkZHlwcmVzcy92MS9zaWdudXAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/wxclient/app/recruit/resume/addResume` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3d4Y2xpZW50L2FwcC9yZWNydWl0L3Jlc3VtZS9hZGRSZXN1bWUqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/yyoa/ext/trafaxserver/downloadAtt.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3l5b2EvZXh0L3RyYWZheHNlcnZlci9kb3dubG9hZEF0dC5qc3AqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/zabbix/jsrpc.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3phYmJpeC9qc3JwYy5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/zfca/axis/CreateCaFile` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3pmY2EvYXhpcy9DcmVhdGVDYUZpbGUqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/zhanting/news.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL3poYW50aW5nL25ld3MucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ /../../../../../../etc/passwd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLwAvLi4vLi4vLi4vLi4vLi4vLi4vZXRjL3Bhc3N3ZCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/${(#a=@org.apache.commons.io.IOUtils@toString(@java.lang.Runtime@getRuntime().exec("whoami").getInputStream(),"utf-8")).(@com.opensymphony.webwork.ServletActionContext@getResponse().setHeader("X-Cmd-Response",#a))}/` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLyR7KCNhPUBvcmcuYXBhY2hlLmNvbW1vbnMuaW8uSU9VdGlsc0B0b1N0cmluZyhAamF2YS5sYW5nLlJ1bnRpbWVAZ2V0UnVudGltZSgpLmV4ZWMoXCJ3aG9hbWlcIikuZ2V0SW5wdXRTdHJlYW0oKSxcInV0Zi04XCIpKS4oQGNvbS5vcGVuc3ltcGhvbnkud2Vid29yay5TZXJ2bGV0QWN0aW9uQ29udGV4dEBnZXRSZXNwb25zZSgpLnNldEhlYWRlcihcIlgtQ21kLVJlc3BvbnNlXCIsI2EpKX0vKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/..;/..;/heapdump` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy4uOy8uLjsvaGVhcGR1bXAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.//..//NOTICE.txt` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy4vLy4uLy9OT1RJQ0UudHh0KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.//WEB-INF/classes/META-INF/microprofile-config.properties` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy4vL1dFQi1JTkYvY2xhc3Nlcy9NRVRBLUlORi9taWNyb3Byb2ZpbGUtY29uZmlnLnByb3BlcnRpZXMqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.\./.\./.\./.\./.\./.\./.\./windows/win.ini` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5cXC4vLlxcLi8uXFwuLy5cXC4vLlxcLi8uXFwuLy5cXC4vd2luZG93cy93aW4uaW5pKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.htaccess.` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy5odGFjY2Vzcy4qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/.well-known/acme-challenge/../../admin/diagnostic.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLy53ZWxsLWtub3duL2FjbWUtY2hhbGxlbmdlLy4uLy4uL2FkbWluL2RpYWdub3N0aWMuanNwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/3g/index.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLzNnL2luZGV4LnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/808gps/MobileAction_downLoad.action` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLzgwOGdwcy9Nb2JpbGVBY3Rpb25fZG93bkxvYWQuYWN0aW9uKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/;/sys/user/list` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLzsvc3lzL3VzZXIvbGlzdCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/></.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLz48Ly5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/></option></.env` | [访问](https://www.nextrap.net/info?q=dXJsPSIqLz48L29wdGlvbj48Ly5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/AdminService/urest/v1/LogonResource` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0FkbWluU2VydmljZS91cmVzdC92MS9Mb2dvblJlc291cmNlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/AjaxMethods.asmx/GetCompanyItem` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0FqYXhNZXRob2RzLmFzbXgvR2V0Q29tcGFueUl0ZW0qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/AppInterface/Business/BusinessManger.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0FwcEludGVyZmFjZS9CdXNpbmVzcy9CdXNpbmVzc01hbmdlci5hc2h4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Archive/ErecordManage/selectFileRemote` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0FyY2hpdmUvRXJlY29yZE1hbmFnZS9zZWxlY3RGaWxlUmVtb3RlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Audio/anything/hls/..\..\..\..\..\..\Windows\win.ini/stream.mp3/` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0F1ZGlvL2FueXRoaW5nL2hscy8uLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFxXaW5kb3dzXFx3aW4uaW5pL3N0cmVhbS5tcDMvKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/BaseModule/ExcelImport/GetExcellTemperature` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0Jhc2VNb2R1bGUvRXhjZWxJbXBvcnQvR2V0RXhjZWxsVGVtcGVyYXR1cmUqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/C6/Control/GetDictionary.aspx/` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0M2L0NvbnRyb2wvR2V0RGljdGlvbmFyeS5hc3B4Lyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/C6/Fileupload/Upload.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0M2L0ZpbGV1cGxvYWQvVXBsb2FkLmFzaHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/C6/JHSoft.Web.CustomQuery/FileDownLoad.aspx/` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0M2L0pIU29mdC5XZWIuQ3VzdG9tUXVlcnkvRmlsZURvd25Mb2FkLmFzcHgvKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/C6/JHSoft.Web.Mail/MailTemplates.aspx/.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0M2L0pIU29mdC5XZWIuTWFpbC9NYWlsVGVtcGxhdGVzLmFzcHgvLmFzaHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/C6/JHSoft.Web.Meeting/SummaryTemplateForSel.aspx/` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0M2L0pIU29mdC5XZWIuTWVldGluZy9TdW1tYXJ5VGVtcGxhdGVGb3JTZWwuYXNweC8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/C6/JHSoft.Web.ModuleCount/CountSetUpdate.aspx/` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0M2L0pIU29mdC5XZWIuTW9kdWxlQ291bnQvQ291bnRTZXRVcGRhdGUuYXNweC8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/C6/JHSoft.Web.ModuleCount/QueryGetFormContent.aspx/` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0M2L0pIU29mdC5XZWIuTW9kdWxlQ291bnQvUXVlcnlHZXRGb3JtQ29udGVudC5hc3B4Lyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/C6/JHSoft.Web.ModuleCount/QuerySetUpdate.aspx/` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0M2L0pIU29mdC5XZWIuTW9kdWxlQ291bnQvUXVlcnlTZXRVcGRhdGUuYXNweC8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/C6/JHSoft.Web.Project/WebProjectServer/WebServiceOfficeProject.asmx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0M2L0pIU29mdC5XZWIuUHJvamVjdC9XZWJQcm9qZWN0U2VydmVyL1dlYlNlcnZpY2VPZmZpY2VQcm9qZWN0LmFzbXgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/C6/JHSoft.web.JiliTixiMN/CheckClassEdit.aspx/` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0M2L0pIU29mdC53ZWIuSmlsaVRpeGlNTi9DaGVja0NsYXNzRWRpdC5hc3B4Lyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/CDGServer3/device/SecureUsbService;login` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0NER1NlcnZlcjMvZGV2aWNlL1NlY3VyZVVzYlNlcnZpY2U7bG9naW4qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/CDGServer3/dwr/call/plaincall/JLockSeniorDao.findByLockName.dwr` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0NER1NlcnZlcjMvZHdyL2NhbGwvcGxhaW5jYWxsL0pMb2NrU2VuaW9yRGFvLmZpbmRCeUxvY2tOYW1lLmR3cioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/CDGServer3/hiddenWatermark/uploadFile` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0NER1NlcnZlcjMvaGlkZGVuV2F0ZXJtYXJrL3VwbG9hZEZpbGUqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/CDGServer3/js/../FileFormatAjax` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0NER1NlcnZlcjMvanMvLi4vRmlsZUZvcm1hdEFqYXgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/CDGServer3/policy/CourseService;login` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0NER1NlcnZlcjMvcG9saWN5L0NvdXJzZVNlcnZpY2U7bG9naW4qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/CFCARD/images/SeleaCamera//../../../../../../../../../../etc/passwd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0NGQ0FSRC9pbWFnZXMvU2VsZWFDYW1lcmEvLy4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uL2V0Yy9wYXNzd2QqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/CgZtbWeb/VisitorWeb/VisitorWeb_XMLHTTP.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0NnWnRiV2ViL1Zpc2l0b3JXZWIvVmlzaXRvcldlYl9YTUxIVFRQLmFzcHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Citrix/XenApp/auth/login.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0NpdHJpeC9YZW5BcHAvYXV0aC9sb2dpbi5hc3B4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Common/DownLoad.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0NvbW1vbi9Eb3duTG9hZC5hc3B4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Common/GetIcon.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0NvbW1vbi9HZXRJY29uLmFzcHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/CorporateCulture/kaizen_download.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0NvcnBvcmF0ZUN1bHR1cmUva2FpemVuX2Rvd25sb2FkLmFzcHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Data/setImg.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0RhdGEvc2V0SW1nLmFzaHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Dept_Portal/uploadImg.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0RlcHRfUG9ydGFsL3VwbG9hZEltZy5hc3B4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/DialogTemplates/SelectImage.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0RpYWxvZ1RlbXBsYXRlcy9TZWxlY3RJbWFnZS5hc3B4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/DocManage/WorkFlow/uploaddisk.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0RvY01hbmFnZS9Xb3JrRmxvdy91cGxvYWRkaXNrLmFzcHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/E-mobile/App/System/Login/login_other.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0UtbW9iaWxlL0FwcC9TeXN0ZW0vTG9naW4vbG9naW5fb3RoZXIucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/E-mobile/sms_page.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0UtbW9iaWxlL3Ntc19wYWdlLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/FeeCodes/OPAdapter.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0ZlZUNvZGVzL09QQWRhcHRlci5hc3B4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/FeeCodes/OPERATORCODEAdapter.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0ZlZUNvZGVzL09QRVJBVE9SQ09ERUFkYXB0ZXIuYXNweCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/FileManage/UpLoadFile.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0ZpbGVNYW5hZ2UvVXBMb2FkRmlsZS5hc3B4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/HM/M_Main/WorkGeneral/docfileDownLoad.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0hNL01fTWFpbi9Xb3JrR2VuZXJhbC9kb2NmaWxlRG93bkxvYWQuYXNweCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Hosp_Portal/uploadLogo.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0hvc3BfUG9ydGFsL3VwbG9hZExvZ28uYXNweCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/InformationService/v3/Json/Query` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0luZm9ybWF0aW9uU2VydmljZS92My9Kc29uL1F1ZXJ5KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/LHMail/email_attach_delete.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL0xITWFpbC9lbWFpbF9hdHRhY2hfZGVsZXRlLmFzcHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Main/GetFile.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL01haW4vR2V0RmlsZS5hc3B4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Maintain/sprog_deletevent.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL01haW50YWluL3Nwcm9nX2RlbGV0ZXZlbnQucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Mobile/Bulletin/AttachDownLoad.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL01vYmlsZS9CdWxsZXRpbi9BdHRhY2hEb3duTG9hZC5hc3B4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/MobileAction_downLoad.action` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL01vYmlsZUFjdGlvbl9kb3duTG9hZC5hY3Rpb24qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Module/AD/AD_Tag/Controller/ADTag_Info.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL01vZHVsZS9BRC9BRF9UYWcvQ29udHJvbGxlci9BRFRhZ19JbmZvLmFzaHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Module/FileUpPage/FileUp.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL01vZHVsZS9GaWxlVXBQYWdlL0ZpbGVVcC5hc3B4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Module/FileUpPage/FileUpProductupdate.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL01vZHVsZS9GaWxlVXBQYWdlL0ZpbGVVcFByb2R1Y3R1cGRhdGUuYXNweCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/MsWlTruck/CertUpload` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL01zV2xUcnVjay9DZXJ0VXBsb2FkKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/NWorkFlow/NForm.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL05Xb3JrRmxvdy9ORm9ybS5hc3B4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/OA/api/2.0/Common/AttachFile/UploadEditorFile` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL09BL2FwaS8yLjAvQ29tbW9uL0F0dGFjaEZpbGUvVXBsb2FkRWRpdG9yRmlsZSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/OA/api/2.0/Common/AttachFile/UploadFile` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL09BL2FwaS8yLjAvQ29tbW9uL0F0dGFjaEZpbGUvVXBsb2FkRmlsZSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/OfficeManagement/RegisterManager/Report/Training/Report/GetprintData.asmx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL09mZmljZU1hbmFnZW1lbnQvUmVnaXN0ZXJNYW5hZ2VyL1JlcG9ydC9UcmFpbmluZy9SZXBvcnQvR2V0cHJpbnREYXRhLmFzbXgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/OnlineChat/chatroom_show.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL09ubGluZUNoYXQvY2hhdHJvb21fc2hvdy5hc3B4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/OpenCourse_new.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL09wZW5Db3Vyc2VfbmV3LmFzcHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/PDCA/ashx/CommentStandardHandler.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1BEQ0EvYXNoeC9Db21tZW50U3RhbmRhcmRIYW5kbGVyLmFzaHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/PDCA/ashx/ViewCountHandler.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1BEQ0EvYXNoeC9WaWV3Q291bnRIYW5kbGVyLmFzaHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Page/BasicInfo/ashx/GetData.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1BhZ2UvQmFzaWNJbmZvL2FzaHgvR2V0RGF0YS5hc2h4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Page/BasicInfo/ashx/UpLoadHandler.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1BhZ2UvQmFzaWNJbmZvL2FzaHgvVXBMb2FkSGFuZGxlci5hc2h4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Page/upload/UploadHandler.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1BhZ2UvdXBsb2FkL1VwbG9hZEhhbmRsZXIuYXNoeCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/PageApp/AQXJ/AQXJ.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1BhZ2VBcHAvQVFYSi9BUVhKLmFzcHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/PersonalAffair/worklog_template_show.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1BlcnNvbmFsQWZmYWlyL3dvcmtsb2dfdGVtcGxhdGVfc2hvdy5hc3B4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Products/Category_MSelect.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1Byb2R1Y3RzL0NhdGVnb3J5X01TZWxlY3QuYXNweCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ProjectManage/pm_gatt_inc.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1Byb2plY3RNYW5hZ2UvcG1fZ2F0dF9pbmMuYXNweCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/PublicInfoManage/Upload/DownFile` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1B1YmxpY0luZm9NYW5hZ2UvVXBsb2FkL0Rvd25GaWxlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/RST_status.htm currentsetting.htm` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1JTVF9zdGF0dXMuaHRtAGN1cnJlbnRzZXR0aW5nLmh0bSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ReportCenter/FangAnManage.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1JlcG9ydENlbnRlci9GYW5nQW5NYW5hZ2UuYXNweCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/RestAPI/getAPIKey` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1Jlc3RBUEkvZ2V0QVBJS2V5KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/SSL/admin/UserFile` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1NTTC9hZG1pbi9Vc2VyRmlsZSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/SamlResponseServlet` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1NhbWxSZXNwb25zZVNlcnZsZXQqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/School/sub_delete.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1NjaG9vbC9zdWJfZGVsZXRlLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Service/DownloadTemplate.asmx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1NlcnZpY2UvRG93bmxvYWRUZW1wbGF0ZS5hc214KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/SmartTradeScan/StockIn/getStockInRequestPrintDetail` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1NtYXJ0VHJhZGVTY2FuL1N0b2NrSW4vZ2V0U3RvY2tJblJlcXVlc3RQcmludERldGFpbCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/SolarWinds/InformationService/v3/Json/Query` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1NvbGFyV2luZHMvSW5mb3JtYXRpb25TZXJ2aWNlL3YzL0pzb24vUXVlcnkqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/SuperMarket/InterestInfoDetail.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1N1cGVyTWFya2V0L0ludGVyZXN0SW5mb0RldGFpbC5hc3B4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Sys/DictionaryEdit.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1N5cy9EaWN0aW9uYXJ5RWRpdC5hc3B4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/SysFrame4/Desktop.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1N5c0ZyYW1lNC9EZXNrdG9wLmFzaHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/SysHelper/Upload` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1N5c0hlbHBlci9VcGxvYWQqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/SysManage/wf_template_child_field_list.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1N5c01hbmFnZS93Zl90ZW1wbGF0ZV9jaGlsZF9maWVsZF9saXN0LmFzcHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Sys_ReportFile/ImportReport` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1N5c19SZXBvcnRGaWxlL0ltcG9ydFJlcG9ydCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/System/WorkFlow/upload.html` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1N5c3RlbS9Xb3JrRmxvdy91cGxvYWQuaHRtbCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/SystemManage/BaseProject/UploadFile` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1N5c3RlbU1hbmFnZS9CYXNlUHJvamVjdC9VcGxvYWRGaWxlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/SystemManager/Api/TicketManager.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1N5c3RlbU1hbmFnZXIvQXBpL1RpY2tldE1hbmFnZXIuYXNoeCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/SystemManager/Comm/CommFunHandler.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1N5c3RlbU1hbmFnZXIvQ29tbS9Db21tRnVuSGFuZGxlci5hc2h4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/SystemManager/Planetarium/ReserveTicketManagerPlane.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1N5c3RlbU1hbmFnZXIvUGxhbmV0YXJpdW0vUmVzZXJ2ZVRpY2tldE1hbmFnZXJQbGFuZS5hc2h4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/TaskManager/TaskServiceServlet` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1Rhc2tNYW5hZ2VyL1Rhc2tTZXJ2aWNlU2VydmxldCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Templete/default/Include/search.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1RlbXBsZXRlL2RlZmF1bHQvSW5jbHVkZS9zZWFyY2gucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Tool/ReceiveClassVideo.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1Rvb2wvUmVjZWl2ZUNsYXNzVmlkZW8uYXNoeCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/U8SMSProxy` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1U4U01TUHJveHkqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/UserControl/FileUpload/FileUploadNew.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1VzZXJDb250cm9sL0ZpbGVVcGxvYWQvRmlsZVVwbG9hZE5ldy5hc2h4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Utility/GetCssFile` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1V0aWxpdHkvR2V0Q3NzRmlsZSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Utility/UEditor` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1V0aWxpdHkvVUVkaXRvcioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/WEB_SERVICE/JXCWebService.asmx/GetBudgetMate` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1dFQl9TRVJWSUNFL0pYQ1dlYlNlcnZpY2UuYXNteC9HZXRCdWRnZXRNYXRlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/WEB_SERVICE/Login.asmx/GetBaseInfo` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1dFQl9TRVJWSUNFL0xvZ2luLmFzbXgvR2V0QmFzZUluZm8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/WEB_SERVICE/OA_JZcase.asmx/GetJZcaseInfoByID` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1dFQl9TRVJWSUNFL09BX0paY2FzZS5hc214L0dldEpaY2FzZUluZm9CeUlEKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/WEB_SERVICE/OA_KeyCustInfo.asmx/GetGridBindByCode` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1dFQl9TRVJWSUNFL09BX0tleUN1c3RJbmZvLmFzbXgvR2V0R3JpZEJpbmRCeUNvZGUqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/WEB_SERVICE/WeChatAPI_ERPMobile.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1dFQl9TRVJWSUNFL1dlQ2hhdEFQSV9FUlBNb2JpbGUuYXNoeCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/WEB_SERVICE/WebSite_interface.asmx/GetProjectInfo` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1dFQl9TRVJWSUNFL1dlYlNpdGVfaW50ZXJmYWNlLmFzbXgvR2V0UHJvamVjdEluZm8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/WeChatConfig/ashx/DownLoadFiles.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1dlQ2hhdENvbmZpZy9hc2h4L0Rvd25Mb2FkRmlsZXMuYXNoeCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/Web/SysManage/sysGroupEdit.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1dlYi9TeXNNYW5hZ2Uvc3lzR3JvdXBFZGl0LmFzcHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/WebDwgDefault.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1dlYkR3Z0RlZmF1bHQuYXNweCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/WebService/HR/Salary/SalaryAccounting.asmx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1dlYlNlcnZpY2UvSFIvU2FsYXJ5L1NhbGFyeUFjY291bnRpbmcuYXNteCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/WorkFlow/OfficeFileUpdate.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1dvcmtGbG93L09mZmljZUZpbGVVcGRhdGUuYXNweCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/WorkFlow/wf_office_file_history_show.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1dvcmtGbG93L3dmX29mZmljZV9maWxlX2hpc3Rvcnlfc2hvdy5hc3B4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/XmjdUI/Handle/GetErpDept.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1htamRVSS9IYW5kbGUvR2V0RXJwRGVwdC5hc2h4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/\..\..\..\..\..\..\..\..\..\..\..\..\windows\win.ini` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL1xcLi5cXC4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFwuLlxcd2luZG93c1xcd2luLmluaSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/__openclaw/control-ui-config.json` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL19fb3BlbmNsYXcvY29udHJvbC11aS1jb25maWcuanNvbioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/_next/../../../../../../../../../../etc/passwd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL19uZXh0Ly4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uL2V0Yy9wYXNzd2QqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/_next/static/../server/pages-manifest.json` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL19uZXh0L3N0YXRpYy8uLi9zZXJ2ZXIvcGFnZXMtbWFuaWZlc3QuanNvbioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/about/../tree` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Fib3V0Ly4uL3RyZWUqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/acenter/meetingShow!downloadDocument.action` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FjZW50ZXIvbWVldGluZ1Nob3chZG93bmxvYWREb2N1bWVudC5hY3Rpb24qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/actions/seomatic/meta-container/meta-link-container/` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FjdGlvbnMvc2VvbWF0aWMvbWV0YS1jb250YWluZXIvbWV0YS1saW5rLWNvbnRhaW5lci8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/actuator/..;/..;/heapdump` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FjdHVhdG9yLy4uOy8uLjsvaGVhcGR1bXAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/admin/add_getlogin.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWluL2FkZF9nZXRsb2dpbi5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/admin/users/upavatar.html` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWluL3VzZXJzL3VwYXZhdGFyLmh0bWwqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/admini/html.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWluaS9odG1sLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/adpweb/static/..;/a/sys/sysMessage/statusList` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FkcHdlYi9zdGF0aWMvLi47L2Evc3lzL3N5c01lc3NhZ2Uvc3RhdHVzTGlzdCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ajax/loaduser.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FqYXgvbG9hZHVzZXIucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ajax/networking/get_netcfg.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FqYXgvbmV0d29ya2luZy9nZXRfbmV0Y2ZnLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ajax/openvpn/del_ovpncfg.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FqYXgvb3BlbnZwbi9kZWxfb3ZwbmNmZy5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ajax/swfupload.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FqYXgvc3dmdXBsb2FkLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/anywebmail/login.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FueXdlYm1haWwvbG9naW4ucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api.php/List/index` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS5waHAvTGlzdC9pbmRleCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/../cgAutoListController.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS8uLi9jZ0F1dG9MaXN0Q29udHJvbGxlci5kbyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/Download/GetFile` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9Eb3dubG9hZC9HZXRGaWxlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/OperationLog/QueryBackendLog` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9PcGVyYXRpb25Mb2cvUXVlcnlCYWNrZW5kTG9nKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/admin/common/tableStyle/layerEditor` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9hZG1pbi9jb21tb24vdGFibGVTdHlsZS9sYXllckVkaXRvcioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/blade-develop/code/list` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9ibGFkZS1kZXZlbG9wL2NvZGUvbGlzdCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/blade-system/menu/list` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9ibGFkZS1zeXN0ZW0vbWVudS9saXN0KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/cgInvtSp/UploadInvtSpFile` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9jZ0ludnRTcC9VcGxvYWRJbnZ0U3BGaWxlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/client/autobridgecall.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9jbGllbnQvYXV0b2JyaWRnZWNhbGwucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/client/editemedia.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9jbGllbnQvZWRpdGVtZWRpYS5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/client/get_extension.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9jbGllbnQvZ2V0X2V4dGVuc2lvbi5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/client/getgidsbymids` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9jbGllbnQvZ2V0Z2lkc2J5bWlkcyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/client/task/uploadgps.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9jbGllbnQvdGFzay91cGxvYWRncHMucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/client_upload_file.json` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9jbGllbnRfdXBsb2FkX2ZpbGUuanNvbioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/console/api_server` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9jb25zb2xlL2FwaV9zZXJ2ZXIqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/devices/backup/download` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9kZXZpY2VzL2JhY2t1cC9kb3dubG9hZCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/doc/out/more/list` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9kb2Mvb3V0L21vcmUvbGlzdCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/experimental/dags/example_trigger_target_dag/dag_runs` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9leHBlcmltZW50YWwvZGFncy9leGFtcGxlX3RyaWdnZXJfdGFyZ2V0X2RhZy9kYWdfcnVucyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/file/formimage` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9maWxlL2Zvcm1pbWFnZSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/file/ufile.api.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9maWxlL3VmaWxlLmFwaS5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/get-organizations` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9nZXQtb3JnYW5pemF0aW9ucyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/getOrderStatus` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9nZXRPcmRlclN0YXR1cyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/hassio/app/.%2e/supervisor/info` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9oYXNzaW8vYXBwLy4lMmUvc3VwZXJ2aXNvci9pbmZvKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/line/get_users_data` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9saW5lL2dldF91c2Vyc19kYXRhKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/pdfverifier` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9wZGZ2ZXJpZmllcioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/sonicos/auth` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9zb25pY29zL2F1dGgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/swaggerui/static/../../../../../../../../../../../../../../../../etc/passwd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9zd2FnZ2VydWkvc3RhdGljLy4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uL2V0Yy9wYXNzd2QqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/system/ExecuteSqlForDataSet` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9zeXN0ZW0vRXhlY3V0ZVNxbEZvckRhdGFTZXQqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/system/system/string_render` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9zeXN0ZW0vc3lzdGVtL3N0cmluZ19yZW5kZXIqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/v1.index.article/getList.html` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS92MS5pbmRleC5hcnRpY2xlL2dldExpc3QuaHRtbCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/v1/config` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS92MS9jb25maWcqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/v1/convert/markdown/pdf` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS92MS9jb252ZXJ0L21hcmtkb3duL3BkZioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/v1/markdown/link:metadata` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS92MS9tYXJrZG93bi9saW5rOm1ldGFkYXRhKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/v1/method.callAnon/sendForgotPasswordEmail` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS92MS9tZXRob2QuY2FsbEFub24vc2VuZEZvcmdvdFBhc3N3b3JkRW1haWwqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/v1/totp/user-backup-code/../../system/system-information` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS92MS90b3RwL3VzZXItYmFja3VwLWNvZGUvLi4vLi4vc3lzdGVtL3N5c3RlbS1pbmZvcm1hdGlvbioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/v1;v1/users/login/events/subscriptions/validation/condition/T(java.lang.Runtime).getRuntime().exec(new java.lang.String(T(java.util.Base64).getDecoder().decode("cGluZyA=")))` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS92MTt2MS91c2Vycy9sb2dpbi9ldmVudHMvc3Vic2NyaXB0aW9ucy92YWxpZGF0aW9uL2NvbmRpdGlvbi9UKGphdmEubGFuZy5SdW50aW1lKS5nZXRSdW50aW1lKCkuZXhlYyhuZXcgamF2YS5sYW5nLlN0cmluZyhUKGphdmEudXRpbC5CYXNlNjQpLmdldERlY29kZXIoKS5kZWNvZGUoXCJjR2x1WnlBPVwiKSkpKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/api/v3/activities/1) AND 3281=(SELECT 3281 FROM PG_SLEEP(0)) AND (7777=7777` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS92My9hY3Rpdml0aWVzLzEpIEFORCAzMjgxPShTRUxFQ1QgMzI4MSBGUk9NIFBHX1NMRUVQKDApKSBBTkQgKDc3Nzc9Nzc3Nyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/apiws/services/API` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwaXdzL3NlcnZpY2VzL0FQSSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/app/ajax/ex_catagory_data.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwcC9hamF4L2V4X2NhdGFnb3J5X2RhdGEucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/app/ext/ajax_users.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwcC9leHQvYWpheF91c2Vycy5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/app/uploadFile` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwcC91cGxvYWRGaWxlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/appPatchDownLoad` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwcFBhdGNoRG93bkxvYWQqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/appearance/langs/../../conf.json` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwcGVhcmFuY2UvbGFuZ3MvLi4vLi4vY29uZi5qc29uKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/apply/index.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FwcGx5L2luZGV4LnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/arcgis/manager/3552/js/../WEB-INF/web.xml` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FyY2dpcy9tYW5hZ2VyLzM1NTIvanMvLi4vV0VCLUlORi93ZWIueG1sKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ashx/wapHandler.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FzaHgvd2FwSGFuZGxlci5hc2h4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/aspera/faspex/package_relay/relay_package` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2FzcGVyYS9mYXNwZXgvcGFja2FnZV9yZWxheS9yZWxheV9wYWNrYWdlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/auth/authorize` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2F1dGgvYXV0aG9yaXplKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/auth/login_flow` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2F1dGgvbG9naW5fZmxvdyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/autheditpwd.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2F1dGhlZGl0cHdkLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/awstats/awredir.pl` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2F3c3RhdHMvYXdyZWRpci5wbCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/backupmgt/pre_connect_check.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2JhY2t1cG1ndC9wcmVfY29ubmVjdF9jaGVjay5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/badging/badge_template_print.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2JhZGdpbmcvYmFkZ2VfdGVtcGxhdGVfcHJpbnQucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/bgt/sendsms.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2JndC9zZW5kc21zLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/block-main.html` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Jsb2NrLW1haW4uaHRtbCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/boafrm/formSysCmd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2JvYWZybS9mb3JtU3lzQ21kKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ccmivr/IVRGetAudioFile.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NjbWl2ci9JVlJHZXRBdWRpb0ZpbGUuZG8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/certmngr.cgi` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NlcnRtbmdyLmNnaSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cgi-bin/mesh.cgi` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NnaS1iaW4vbWVzaC5jZ2kqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cgi-bin/ping_exec.cgi` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NnaS1iaW4vcGluZ19leGVjLmNnaSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cgi-bin/tsaupload.cgi` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NnaS1iaW4vdHNhdXBsb2FkLmNnaSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cgi-bin/wappwd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NnaS1iaW4vd2FwcHdkKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cgibin/webproc` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NnaWJpbi93ZWJwcm9jKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/chat/imController/showOrDownByurl.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NoYXQvaW1Db250cm9sbGVyL3Nob3dPckRvd25CeXVybC5kbyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/chfs/downloaddir/../` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NoZnMvZG93bmxvYWRkaXIvLi4vKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/circle/index.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NpcmNsZS9pbmRleC5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/clients/MyCRL` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NsaWVudHMvTXlDUkwqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/cms/content/list.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Ntcy9jb250ZW50L2xpc3QuZG8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/commands.inc.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvbW1hbmRzLmluYy5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/commpilot/servlet/Login` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvbW1waWxvdC9zZXJ2bGV0L0xvZ2luKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/compliancepolicyelements.inc.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvbXBsaWFuY2Vwb2xpY3llbGVtZW50cy5pbmMucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/components/com_rwcards/captcha/captcha_image.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvbXBvbmVudHMvY29tX3J3Y2FyZHMvY2FwdGNoYS9jYXB0Y2hhX2ltYWdlLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/config/externalConfig.json` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvbmZpZy9leHRlcm5hbENvbmZpZy5qc29uKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/config/getfile.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvbmZpZy9nZXRmaWxlLmFzcHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/config/setting.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvbmZpZy9zZXR0aW5nLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/config/verifysid.cgi` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvbmZpZy92ZXJpZnlzaWQuY2dpKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/container/jarUpload` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvbnRhaW5lci9qYXJVcGxvYWQqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/count/StatDay.asp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NvdW50L1N0YXREYXkuYXNwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/crm/wechatSession/index.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2NybS93ZWNoYXRTZXNzaW9uL2luZGV4LnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/custom/zx/get_extension.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2N1c3RvbS96eC9nZXRfZXh0ZW5zaW9uLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/custom/zx/task/uploadfile.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2N1c3RvbS96eC90YXNrL3VwbG9hZGZpbGUucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/dashboard../data/config.yaml` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Rhc2hib2FyZC4uL2RhdGEvY29uZmlnLnlhbWwqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/data/sys-common/treexml.tmpl` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RhdGEvc3lzLWNvbW1vbi90cmVleG1sLnRtcGwqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/datacenter/downloadApp/showInfoEdit.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RhdGFjZW50ZXIvZG93bmxvYWRBcHAvc2hvd0luZm9FZGl0LmRvKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/dataservice/disasterrecovery/download/token/../../..//etc/passwd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RhdGFzZXJ2aWNlL2Rpc2FzdGVycmVjb3ZlcnkvZG93bmxvYWQvdG9rZW4vLi4vLi4vLi4vL2V0Yy9wYXNzd2QqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/debug.cgi` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RlYnVnLmNnaSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/decisioncenter-api/v1/about` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RlY2lzaW9uY2VudGVyLWFwaS92MS9hYm91dCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/dede/article_template_rand.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RlZGUvYXJ0aWNsZV90ZW1wbGF0ZV9yYW5kLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/defaultroot/GraphReportAction.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RlZmF1bHRyb290L0dyYXBoUmVwb3J0QWN0aW9uLmRvKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/defaultroot/iWebOfficeSign/OfficeServer.jsp/../../TeleConferenceService` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RlZmF1bHRyb290L2lXZWJPZmZpY2VTaWduL09mZmljZVNlcnZlci5qc3AvLi4vLi4vVGVsZUNvbmZlcmVuY2VTZXJ2aWNlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/defaultroot/modules/govoffice/gov_documentmanager/senddocument_import.jsp;ad` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RlZmF1bHRyb290L21vZHVsZXMvZ292b2ZmaWNlL2dvdl9kb2N1bWVudG1hbmFnZXIvc2VuZGRvY3VtZW50X2ltcG9ydC5qc3A7YWQqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/defaultroot/platform/bpm/work_flow/operate/wf_accessory_delete.jsp;` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RlZmF1bHRyb290L3BsYXRmb3JtL2JwbS93b3JrX2Zsb3cvb3BlcmF0ZS93Zl9hY2Nlc3NvcnlfZGVsZXRlLmpzcDsqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/defaultroot/platform/portal/layout/common/upload.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RlZmF1bHRyb290L3BsYXRmb3JtL3BvcnRhbC9sYXlvdXQvY29tbW9uL3VwbG9hZC5qc3AqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/delete_cart_goods.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RlbGV0ZV9jYXJ0X2dvb2RzLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/descriptorByName/org.jenkinsci.plugins.scriptsecurity.sandbox.groovy.SecureGroovyScript/checkScript` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Rlc2NyaXB0b3JCeU5hbWUvb3JnLmplbmtpbnNjaS5wbHVnaW5zLnNjcmlwdHNlY3VyaXR5LnNhbmRib3guZ3Jvb3Z5LlNlY3VyZUdyb292eVNjcmlwdC9jaGVja1NjcmlwdCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/devices.inc.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RldmljZXMuaW5jLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/directdata/direct/router` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RpcmVjdGRhdGEvZGlyZWN0L3JvdXRlcioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/dispatch/layuiIm/uploadFile` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Rpc3BhdGNoL2xheXVpSW0vdXBsb2FkRmlsZSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/docs/networkdisk/checkFolderCanDelete.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2RvY3MvbmV0d29ya2Rpc2svY2hlY2tGb2xkZXJDYW5EZWxldGUuanNwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/dossier/doc_fileedit_word.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Rvc3NpZXIvZG9jX2ZpbGVlZGl0X3dvcmQuYXNweCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/down.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Rvd24ucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/download/../../../../../etc/passwd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Rvd25sb2FkLy4uLy4uLy4uLy4uLy4uL2V0Yy9wYXNzd2QqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/download/resources/jira.webresources:color-picker-popup/images/..::..::..::..::..::WEB-INF::web.xml` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Rvd25sb2FkL3Jlc291cmNlcy9qaXJhLndlYnJlc291cmNlczpjb2xvci1waWNrZXItcG9wdXAvaW1hZ2VzLy4uOjouLjo6Li46Oi4uOjouLjo6V0VCLUlORjo6d2ViLnhtbCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/dwr/call/plaincall/Validator.ifNewsCheckOutByCurrentUser.dwr` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2R3ci9jYWxsL3BsYWluY2FsbC9WYWxpZGF0b3IuaWZOZXdzQ2hlY2tPdXRCeUN1cnJlbnRVc2VyLmR3cioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/eai/someValue/anotherValue` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2VhaS9zb21lVmFsdWUvYW5vdGhlclZhbHVlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/easportal/tools/appUtil.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Vhc3BvcnRhbC90b29scy9hcHBVdGlsLmpzcCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/egroupware/phpgwapi/js/fckeditor/editor/dialog/fck_spellerpages/spellerpages/server-scripts/spellchecker.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Vncm91cHdhcmUvcGhwZ3dhcGkvanMvZmNrZWRpdG9yL2VkaXRvci9kaWFsb2cvZmNrX3NwZWxsZXJwYWdlcy9zcGVsbGVycGFnZXMvc2VydmVyLXNjcmlwdHMvc3BlbGxjaGVja2VyLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/enrollment/ajax.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Vucm9sbG1lbnQvYWpheC5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/enrollment/controller.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Vucm9sbG1lbnQvY29udHJvbGxlci5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/epay/epay.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2VwYXkvZXBheS5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/eps/api/resourceOperations/upload` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Vwcy9hcGkvcmVzb3VyY2VPcGVyYXRpb25zL3VwbG9hZCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/erp/dwr/call/plaincall/DwrUtil.getSupplyQueryKeyword.dwr` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2VycC9kd3IvY2FsbC9wbGFpbmNhbGwvRHdyVXRpbC5nZXRTdXBwbHlRdWVyeUtleXdvcmQuZHdyKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/erp/wap/../uploadFile.action` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2VycC93YXAvLi4vdXBsb2FkRmlsZS5hY3Rpb24qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/esn_mobile_pns/service/userTokenService` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2Vzbl9tb2JpbGVfcG5zL3NlcnZpY2UvdXNlclRva2VuU2VydmljZSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/eventset/eventsetlist.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2V2ZW50c2V0L2V2ZW50c2V0bGlzdC5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/evo-apigw//evo-oauth/oauth/token` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2V2by1hcGlndy8vZXZvLW9hdXRoL29hdXRoL3Rva2VuKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/files/downloadByName` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2ZpbGVzL2Rvd25sb2FkQnlOYW1lKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/flash_upload.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2ZsYXNoX3VwbG9hZC5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/flexnet/logon.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2ZsZXhuZXQvbG9nb24uZG8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/fsms/fsmsh.dll` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2ZzbXMvZnNtc2guZGxsKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/general/appbuilder/web/portal/gateway/dologin` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2dlbmVyYWwvYXBwYnVpbGRlci93ZWIvcG9ydGFsL2dhdGV3YXkvZG9sb2dpbioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/general/ems/manage/search_excel.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2dlbmVyYWwvZW1zL21hbmFnZS9zZWFyY2hfZXhjZWwucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/general/ems/query/search_excel.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2dlbmVyYWwvZW1zL3F1ZXJ5L3NlYXJjaF9leGNlbC5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/general/vmeet/privateUpload.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2dlbmVyYWwvdm1lZXQvcHJpdmF0ZVVwbG9hZC5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/general/workflow/query/get_columns.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2dlbmVyYWwvd29ya2Zsb3cvcXVlcnkvZ2V0X2NvbHVtbnMucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/geoserver/topp/wfs` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2dlb3NlcnZlci90b3BwL3dmcyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/getGfiUpgradeFile` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2dldEdmaVVwZ3JhZGVGaWxlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/getylist_login.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2dldHlsaXN0X2xvZ2luLmRvKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/gps-web/platformSql` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2dwcy13ZWIvcGxhdGZvcm1TcWwqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/guest/s/default/login` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2d1ZXN0L3MvZGVmYXVsdC9sb2dpbioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/guest_auth/guestIsUp.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2d1ZXN0X2F1dGgvZ3Vlc3RJc1VwLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/h/rest` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2gvcmVzdCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/handler/DownLoad.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2hhbmRsZXIvRG93bkxvYWQuYXNoeCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/hms/doctor/` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2htcy9kb2N0b3IvKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/home/job/index` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2hvbWUvam9iL2luZGV4KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/hr_dept/del_dept.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2hyX2RlcHQvZGVsX2RlcHQuanNwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/hrss/ELTextFile.load.d` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2hyc3MvRUxUZXh0RmlsZS5sb2FkLmQqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/hrss/attach.upload.d` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2hyc3MvYXR0YWNoLnVwbG9hZC5kKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/hrss/ref.show.d` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2hyc3MvcmVmLnNob3cuZCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/http-bind` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2h0dHAtYmluZCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/icinga-web/lib/icinga/icinga-php-thirdparty/etc/passwd` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2ljaW5nYS13ZWIvbGliL2ljaW5nYS9pY2luZ2EtcGhwLXRoaXJkcGFydHkvZXRjL3Bhc3N3ZCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/inc/finger/use_finger.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2luYy9maW5nZXIvdXNlX2Zpbmdlci5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/inc/pay/alipay.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2luYy9wYXkvYWxpcGF5LnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/include/get_dict.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2luY2x1ZGUvZ2V0X2RpY3QuYXNweCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/index.php/Api/Lt/alist` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2luZGV4LnBocC9BcGkvTHQvYWxpc3QqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/index.php/admin/index/index.html` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2luZGV4LnBocC9hZG1pbi9pbmRleC9pbmRleC5odG1sKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/index.php/admin/system/save` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2luZGV4LnBocC9hZG1pbi9zeXN0ZW0vc2F2ZSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/index.php/fuel/pages/select/` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2luZGV4LnBocC9mdWVsL3BhZ2VzL3NlbGVjdC8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/index.php/management/set_timezone` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2luZGV4LnBocC9tYW5hZ2VtZW50L3NldF90aW1lem9uZSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/index/ajax/upload` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2luZGV4L2FqYXgvdXBsb2FkKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/index/login.cgi` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2luZGV4L2xvZ2luLmNnaSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/inter/pdf_maker.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2ludGVyL3BkZl9tYWtlci5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ioffice/prg/set/wss/ioDesktopData.asmx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2lvZmZpY2UvcHJnL3NldC93c3MvaW9EZXNrdG9wRGF0YS5hc214KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ioffice/prg/set/wss/wssRtSyn.asmx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2lvZmZpY2UvcHJnL3NldC93c3Mvd3NzUnRTeW4uYXNteCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ipms/imageConvert/image` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2lwbXMvaW1hZ2VDb252ZXJ0L2ltYWdlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/ispirit/go.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2lzcGlyaXQvZ28ucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/itc/attachment_downloadAtt.action` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2l0Yy9hdHRhY2htZW50X2Rvd25sb2FkQXR0LmFjdGlvbioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/javax.faces.resource/dynamiccontent.properties.xhtml` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2phdmF4LmZhY2VzLnJlc291cmNlL2R5bmFtaWNjb250ZW50LnByb3BlcnRpZXMueGh0bWwqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/javax.faces.resources/web.xml.jsf` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2phdmF4LmZhY2VzLnJlc291cmNlcy93ZWIueG1sLmpzZioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/jeeplus-vue/v1/3rd/file/save` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2plZXBsdXMtdnVlL3YxLzNyZC9maWxlL3NhdmUqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/jeewms/cgAutoListController.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2plZXdtcy9jZ0F1dG9MaXN0Q29udHJvbGxlci5kbyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/job-seekers` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2pvYi1zZWVrZXJzKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/js/player/dmplayer/dmku/` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2pzL3BsYXllci9kbXBsYXllci9kbWt1Lyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/jsoa/workflow/dwr/exec/workflowSync.getWFOnlineUser.dwr` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2pzb2Evd29ya2Zsb3cvZHdyL2V4ZWMvd29ya2Zsb3dTeW5jLmdldFdGT25saW5lVXNlci5kd3IqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/kp/fillKP.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2twL2ZpbGxLUC5qc3AqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/lcms/index.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2xjbXMvaW5kZXgucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/linksframe/linkadd.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2xpbmtzZnJhbWUvbGlua2FkZC5qc3AqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/locales/locale.json` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2xvY2FsZXMvbG9jYWxlLmpzb24qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/login.html/../material/getMaterialEnableSerialNumberList` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2xvZ2luLmh0bWwvLi4vbWF0ZXJpYWwvZ2V0TWF0ZXJpYWxFbmFibGVTZXJpYWxOdW1iZXJMaXN0KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/login.html/../material/list` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2xvZ2luLmh0bWwvLi4vbWF0ZXJpYWwvbGlzdCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/logistics/home_warning/php/not_finish.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2xvZ2lzdGljcy9ob21lX3dhcm5pbmcvcGhwL25vdF9maW5pc2gucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/logistics/home_warning/php/shelflife.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL2xvZ2lzdGljcy9ob21lX3dhcm5pbmcvcGhwL3NoZWxmbGlmZS5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/magicflu/html/mail/mailupdate.jsp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hZ2ljZmx1L2h0bWwvbWFpbC9tYWlsdXBkYXRlLmpzcCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/mainFunctions/drawGrid.action;cookieLogin.action` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21haW5GdW5jdGlvbnMvZHJhd0dyaWQuYWN0aW9uO2Nvb2tpZUxvZ2luLmFjdGlvbioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/manage/mobiVisit/..;/resourceUpload/upload.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS9tb2JpVmlzaXQvLi47L3Jlc291cmNlVXBsb2FkL3VwbG9hZC5kbyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/manager/teletext/material/upload.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZXIvdGVsZXRleHQvbWF0ZXJpYWwvdXBsb2FkLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/mdiy/dict/list.do` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21kaXkvZGljdC9saXN0LmRvKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/mdm/serverurl` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21kbS9zZXJ2ZXJ1cmwqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/mgmnt/..\..\..\..\..\..\..\..\..\..\..\..\..\..\..\..\windows\win.ini` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21nbW50Ly4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFx3aW5kb3dzXFx3aW4uaW5pKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/mics/api/v2/sentry/mics-config/handleMessage` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21pY3MvYXBpL3YyL3NlbnRyeS9taWNzLWNvbmZpZy9oYW5kbGVNZXNzYWdlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/moadmin.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21vYWRtaW4ucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/mobile_portal/api/pns/message/send/batch/6_1sp1` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21vYmlsZV9wb3J0YWwvYXBpL3Bucy9tZXNzYWdlL3NlbmQvYmF0Y2gvNl8xc3AxKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/mobileapp/address/mobileposition.aspx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21vYmlsZWFwcC9hZGRyZXNzL21vYmlsZXBvc2l0aW9uLmFzcHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/mobsm/common/../appManage/getApp` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21vYnNtL2NvbW1vbi8uLi9hcHBNYW5hZ2UvZ2V0QXBwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/mobsm/common/userfile` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21vYnNtL2NvbW1vbi91c2VyZmlsZSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/modifyInsurance.htm` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21vZGlmeUluc3VyYW5jZS5odG0qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/module/Kernel/Controller/SysDictDetail.ashx` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21vZHVsZS9LZXJuZWwvQ29udHJvbGxlci9TeXNEaWN0RGV0YWlsLmFzaHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/module/cityautocomplete/autocompletion` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21vZHVsZS9jaXR5YXV0b2NvbXBsZXRlL2F1dG9jb21wbGV0aW9uKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/module/jmsblog/index.php` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21vZHVsZS9qbXNibG9nL2luZGV4LnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/module/ph_simpleblog/list` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21vZHVsZS9waF9zaW1wbGVibG9nL2xpc3QqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
-| `/module/smartblog/archive` | [访问](https://www.nextrap.net/info?q=dXJsPSIqL21vZHVsZS9zbWFydGJsb2cvYXJjaGl2ZSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github) |
+- [`/`](https://www.nextrap.net/info?q=dXJsPSIqLyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.orig`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYub3JpZyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.production.php`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYucHJvZHVjdGlvbi5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.example.php`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuZXhhbXBsZS5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.swp`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuc3dwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/manage/login/exportAuthorize.do`](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS9sb2dpbi9leHBvcnRBdXRob3JpemUuZG8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.copy`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuY29weSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.config`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuY29uZmlnKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.qa`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYucWEqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.azure`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuYXp1cmUqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.anthropic`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuYW50aHJvcGljKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.openai`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYub3BlbmFpKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.gcp`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuZ2NwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.docker.dev`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuZG9ja2VyLmRldioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.heroku`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuaGVyb2t1KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.netlify`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYubmV0bGlmeSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.yml`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYueW1sKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.staging.local`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuc3RhZ2luZy5sb2NhbCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.vercel`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYudmVyY2VsKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.ini`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuaW5pKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.xml`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYueG1sKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.yaml`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYueWFtbCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.conf`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuY29uZioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.mysql`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYubXlzcWwqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.1`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuMSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/wordpress/.env`](https://www.nextrap.net/info?q=dXJsPSIqL3dvcmRwcmVzcy8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.mongo`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYubW9uZ28qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.production.local.php`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYucHJvZHVjdGlvbi5sb2NhbC5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.bak.php`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuYmFrLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.development.php`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuZGV2ZWxvcG1lbnQucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.enc`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuZW5jKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.example.local`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuZXhhbXBsZS5sb2NhbCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.keys.local`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYua2V5cy5sb2NhbCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.orig.php`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYub3JpZy5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.auth`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuYXV0aCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.aws.local`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuYXdzLmxvY2FsKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.copy.php`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuY29weS5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.deepseek`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuZGVlcHNlZWsqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.old.php`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYub2xkLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.prod.dist`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYucHJvZC5kaXN0KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.s3`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuczMqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.ai`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuYWkqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.db.local`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuZGIubG9jYWwqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.docker.local`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuZG9ja2VyLmxvY2FsKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.encrypted`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuZW5jcnlwdGVkKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.langchain`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYubGFuZ2NoYWluKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.local.dist`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYubG9jYWwuZGlzdCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.staging.local.php`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuc3RhZ2luZy5sb2NhbC5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.tokens`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYudG9rZW5zKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.backup.php`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuYmFja3VwLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/wp/.env`](https://www.nextrap.net/info?q=dXJsPSIqL3dwLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.secret.local`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuc2VjcmV0LmxvY2FsKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.save.php`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuc2F2ZS5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.huggingface`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuaHVnZ2luZ2ZhY2UqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.redis`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYucmVkaXMqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/media/.env`](https://www.nextrap.net/info?q=dXJsPSIqL21lZGlhLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/app_dev.php/_profiler/open`](https://www.nextrap.net/info?q=dXJsPSIqL2FwcF9kZXYucGhwL19wcm9maWxlci9vcGVuKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/sendgrid/.env`](https://www.nextrap.net/info?q=dXJsPSIqL3NlbmRncmlkLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/apis/.env`](https://www.nextrap.net/info?q=dXJsPSIqL2FwaXMvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/crm/.env`](https://www.nextrap.net/info?q=dXJsPSIqL2NybS8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/__nextjs_action`](https://www.nextrap.net/info?q=dXJsPSIqL19fbmV4dGpzX2FjdGlvbioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/__rsc`](https://www.nextrap.net/info?q=dXJsPSIqL19fcnNjKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/blog/.env`](https://www.nextrap.net/info?q=dXJsPSIqL2Jsb2cvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/system/.env`](https://www.nextrap.net/info?q=dXJsPSIqL3N5c3RlbS8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env_1`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnZfMSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env~`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnZ-KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.www`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYud3d3KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.docker/.env`](https://www.nextrap.net/info?q=dXJsPSIqLy5kb2NrZXIvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/old/.env`](https://www.nextrap.net/info?q=dXJsPSIqL29sZC8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/new/.env`](https://www.nextrap.net/info?q=dXJsPSIqL25ldy8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.sample.php`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuc2FtcGxlLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.php.bak`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYucGhwLmJhayoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/wp-content/.env`](https://www.nextrap.net/info?q=dXJsPSIqL3dwLWNvbnRlbnQvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.php-backup`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYucGhwLWJhY2t1cCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.php-bak`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYucGhwLWJhayoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/config/.env.php`](https://www.nextrap.net/info?q=dXJsPSIqL2NvbmZpZy8uZW52LnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/sendgrid/.env.php`](https://www.nextrap.net/info?q=dXJsPSIqL3NlbmRncmlkLy5lbnYucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/twilio/.env.php`](https://www.nextrap.net/info?q=dXJsPSIqL3R3aWxpby8uZW52LnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.php.backup`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYucGhwLmJhY2t1cCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/app_dev.php/_profiler/.env`](https://www.nextrap.net/info?q=dXJsPSIqL2FwcF9kZXYucGhwL19wcm9maWxlci8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/test/.env.php`](https://www.nextrap.net/info?q=dXJsPSIqL3Rlc3QvLmVudi5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/var/.env.local.php`](https://www.nextrap.net/info?q=dXJsPSIqL3Zhci8uZW52LmxvY2FsLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/mail/.env`](https://www.nextrap.net/info?q=dXJsPSIqL21haWwvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/library/.env`](https://www.nextrap.net/info?q=dXJsPSIqL2xpYnJhcnkvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/cron/.env`](https://www.nextrap.net/info?q=dXJsPSIqL2Nyb24vLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/wp-admin/.env`](https://www.nextrap.net/info?q=dXJsPSIqL3dwLWFkbWluLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/static/.env`](https://www.nextrap.net/info?q=dXJsPSIqL3N0YXRpYy8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/shop/.env`](https://www.nextrap.net/info?q=dXJsPSIqL3Nob3AvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/_static/.env`](https://www.nextrap.net/info?q=dXJsPSIqL19zdGF0aWMvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/v2/.env`](https://www.nextrap.net/info?q=dXJsPSIqL3YyLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/files/hMorA9HH.php`](https://www.nextrap.net/info?q=dXJsPSIqL2ZpbGVzL2hNb3JBOUhILnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/cgi-bin/.env`](https://www.nextrap.net/info?q=dXJsPSIqL2NnaS1iaW4vLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/base/.env`](https://www.nextrap.net/info?q=dXJsPSIqL2Jhc2UvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/audio/.env`](https://www.nextrap.net/info?q=dXJsPSIqL2F1ZGlvLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/protected/.env`](https://www.nextrap.net/info?q=dXJsPSIqL3Byb3RlY3RlZC8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/sites/all/libraries/mailchimp/.env`](https://www.nextrap.net/info?q=dXJsPSIqL3NpdGVzL2FsbC9saWJyYXJpZXMvbWFpbGNoaW1wLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.save.1`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuc2F2ZS4xKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/login/.env`](https://www.nextrap.net/info?q=dXJsPSIqL2xvZ2luLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/store/.env`](https://www.nextrap.net/info?q=dXJsPSIqL3N0b3JlLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/erp/.env`](https://www.nextrap.net/info?q=dXJsPSIqL2VycC8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/download/.env`](https://www.nextrap.net/info?q=dXJsPSIqL2Rvd25sb2FkLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.bkp`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuYmtwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/sysplat/dataget/data.ashx`](https://www.nextrap.net/info?q=dXJsPSIqL3N5c3BsYXQvZGF0YWdldC9kYXRhLmFzaHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/files/.env`](https://www.nextrap.net/info?q=dXJsPSIqL2ZpbGVzLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/scripts/ajaxPortal.lua`](https://www.nextrap.net/info?q=dXJsPSIqL3NjcmlwdHMvYWpheFBvcnRhbC5sdWEqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/admin-app/.env`](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWluLWFwcC8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.new`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYubmV3KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/cloud/.env`](https://www.nextrap.net/info?q=dXJsPSIqL2Nsb3VkLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/cart/.env`](https://www.nextrap.net/info?q=dXJsPSIqL2NhcnQvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/mailgun/mail_config.env`](https://www.nextrap.net/info?q=dXJsPSIqL21haWxndW4vbWFpbF9jb25maWcuZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/js/.env`](https://www.nextrap.net/info?q=dXJsPSIqL2pzLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/yii/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php`](https://www.nextrap.net/info?q=dXJsPSIqL3lpaS92ZW5kb3IvcGhwdW5pdC9waHB1bml0L3NyYy9VdGlsL1BIUC9ldmFsLXN0ZGluLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/order/.env`](https://www.nextrap.net/info?q=dXJsPSIqL29yZGVyLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/zend/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php`](https://www.nextrap.net/info?q=dXJsPSIqL3plbmQvdmVuZG9yL3BocHVuaXQvcGhwdW5pdC9zcmMvVXRpbC9QSFAvZXZhbC1zdGRpbi5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/..\..\..\..\..\..\var/log/apache2/access.log`](https://www.nextrap.net/info?q=dXJsPSIqLy4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXHZhci9sb2cvYXBhY2hlMi9hY2Nlc3MubG9nKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/account/.env`](https://www.nextrap.net/info?q=dXJsPSIqL2FjY291bnQvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/mailgun/config.json`](https://www.nextrap.net/info?q=dXJsPSIqL21haWxndW4vY29uZmlnLmpzb24qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/marketplace/.env`](https://www.nextrap.net/info?q=dXJsPSIqL21hcmtldHBsYWNlLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/message/.env`](https://www.nextrap.net/info?q=dXJsPSIqL21lc3NhZ2UvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/admin/.git/config`](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWluLy5naXQvY29uZmlnKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/mail/config.ini`](https://www.nextrap.net/info?q=dXJsPSIqL21haWwvY29uZmlnLmluaSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/payments/.env`](https://www.nextrap.net/info?q=dXJsPSIqL3BheW1lbnRzLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/storage/logs/laravel.logapp/.env`](https://www.nextrap.net/info?q=dXJsPSIqL3N0b3JhZ2UvbG9ncy9sYXJhdmVsLmxvZ2FwcC8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.mandrill`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYubWFuZHJpbGwqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/mail/config.yml`](https://www.nextrap.net/info?q=dXJsPSIqL21haWwvY29uZmlnLnltbCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/mailer/.env`](https://www.nextrap.net/info?q=dXJsPSIqL21haWxlci8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/rest/.env`](https://www.nextrap.net/info?q=dXJsPSIqL3Jlc3QvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/sources/.env`](https://www.nextrap.net/info?q=dXJsPSIqL3NvdXJjZXMvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/app/config/mandrill.env`](https://www.nextrap.net/info?q=dXJsPSIqL2FwcC9jb25maWcvbWFuZHJpbGwuZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/app/mandrill.env`](https://www.nextrap.net/info?q=dXJsPSIqL2FwcC9tYW5kcmlsbC5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/core/public/db.env/`](https://www.nextrap.net/info?q=dXJsPSIqL2NvcmUvcHVibGljL2RiLmVudi8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/next/.env`](https://www.nextrap.net/info?q=dXJsPSIqL25leHQvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/old/bridgeapi4-john/bkg.env`](https://www.nextrap.net/info?q=dXJsPSIqL29sZC9icmlkZ2VhcGk0LWpvaG4vYmtnLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/sendgrid/sendgrid.env`](https://www.nextrap.net/info?q=dXJsPSIqL3NlbmRncmlkL3NlbmRncmlkLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/tools/.env`](https://www.nextrap.net/info?q=dXJsPSIqL3Rvb2xzLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/tr-tr/admin/static/env.env`](https://www.nextrap.net/info?q=dXJsPSIqL3RyLXRyL2FkbWluL3N0YXRpYy9lbnYuZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/tr-tr/api/static/default.env`](https://www.nextrap.net/info?q=dXJsPSIqL3RyLXRyL2FwaS9zdGF0aWMvZGVmYXVsdC5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/tr-tr/config/static/database.env`](https://www.nextrap.net/info?q=dXJsPSIqL3RyLXRyL2NvbmZpZy9zdGF0aWMvZGF0YWJhc2UuZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/v4/.env`](https://www.nextrap.net/info?q=dXJsPSIqL3Y0Ly5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/admin/env/config.env`](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWluL2Vudi9jb25maWcuZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/api/config/config.json`](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9jb25maWcvY29uZmlnLmpzb24qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/app/mailjet.env`](https://www.nextrap.net/info?q=dXJsPSIqL2FwcC9tYWlsamV0LmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/conf/application.properties/`](https://www.nextrap.net/info?q=dXJsPSIqL2NvbmYvYXBwbGljYXRpb24ucHJvcGVydGllcy8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/core/php/config.json`](https://www.nextrap.net/info?q=dXJsPSIqL2NvcmUvcGhwL2NvbmZpZy5qc29uKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/admin/mail/mail_config.env`](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWluL21haWwvbWFpbF9jb25maWcuZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/api/keys/readme.env`](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9rZXlzL3JlYWRtZS5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/config/sql/wp-config.env`](https://www.nextrap.net/info?q=dXJsPSIqL2NvbmZpZy9zcWwvd3AtY29uZmlnLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/current/.env.dev`](https://www.nextrap.net/info?q=dXJsPSIqL2N1cnJlbnQvLmVudi5kZXYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/delivery/.env`](https://www.nextrap.net/info?q=dXJsPSIqL2RlbGl2ZXJ5Ly5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/lms/.env`](https://www.nextrap.net/info?q=dXJsPSIqL2xtcy8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/php/assist_sys/admin/config.php`](https://www.nextrap.net/info?q=dXJsPSIqL3BocC9hc3Npc3Rfc3lzL2FkbWluL2NvbmZpZy5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/qa/.env`](https://www.nextrap.net/info?q=dXJsPSIqL3FhLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/view/.env`](https://www.nextrap.net/info?q=dXJsPSIqL3ZpZXcvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/api/v2/.env`](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS92Mi8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/admin/config/site.env`](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWluL2NvbmZpZy9zaXRlLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/api/config/index.env`](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9jb25maWcvaW5kZXguZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.bak.rc1`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuYmFrLnJjMSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env.smtp`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnYuc210cCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`//.env.save`](https://www.nextrap.net/info?q=dXJsPSIqLy8uZW52LnNhdmUqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`//.env.staging`](https://www.nextrap.net/info?q=dXJsPSIqLy8uZW52LnN0YWdpbmcqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`///.env`](https://www.nextrap.net/info?q=dXJsPSIqLy8vLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`///backend/.env`](https://www.nextrap.net/info?q=dXJsPSIqLy8vYmFja2VuZC8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`///server/.env`](https://www.nextrap.net/info?q=dXJsPSIqLy8vc2VydmVyLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`//backend/.env`](https://www.nextrap.net/info?q=dXJsPSIqLy9iYWNrZW5kLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/@core/.env`](https://www.nextrap.net/info?q=dXJsPSIqL0Bjb3JlLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/admin-panel/.env`](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWluLXBhbmVsLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/android_app/.env`](https://www.nextrap.net/info?q=dXJsPSIqL2FuZHJvaWRfYXBwLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/api/.env.save`](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS8uZW52LnNhdmUqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/api/sendgrid.env`](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9zZW5kZ3JpZC5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/app//.env.back`](https://www.nextrap.net/info?q=dXJsPSIqL2FwcC8vLmVudi5iYWNrKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/application/.env.save`](https://www.nextrap.net/info?q=dXJsPSIqL2FwcGxpY2F0aW9uLy5lbnYuc2F2ZSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/beta/.env.bak`](https://www.nextrap.net/info?q=dXJsPSIqL2JldGEvLmVudi5iYWsqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/bookings/.env`](https://www.nextrap.net/info?q=dXJsPSIqL2Jvb2tpbmdzLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/bz4/.env`](https://www.nextrap.net/info?q=dXJsPSIqL2J6NC8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/core/.env.save`](https://www.nextrap.net/info?q=dXJsPSIqL2NvcmUvLmVudi5zYXZlKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/customer/.env`](https://www.nextrap.net/info?q=dXJsPSIqL2N1c3RvbWVyLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/doc/.env`](https://www.nextrap.net/info?q=dXJsPSIqL2RvYy8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/eRp/.EnV`](https://www.nextrap.net/info?q=dXJsPSIqL2VScC8uRW5WKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/en/.env`](https://www.nextrap.net/info?q=dXJsPSIqL2VuLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/etc/aws_config.env`](https://www.nextrap.net/info?q=dXJsPSIqL2V0Yy9hd3NfY29uZmlnLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/gateway/.env.staging.local`](https://www.nextrap.net/info?q=dXJsPSIqL2dhdGV3YXkvLmVudi5zdGFnaW5nLmxvY2FsKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/graphql/.env.staging`](https://www.nextrap.net/info?q=dXJsPSIqL2dyYXBocWwvLmVudi5zdGFnaW5nKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/identity/.env`](https://www.nextrap.net/info?q=dXJsPSIqL2lkZW50aXR5Ly5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/inventory/.env`](https://www.nextrap.net/info?q=dXJsPSIqL2ludmVudG9yeS8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/invoice/.env`](https://www.nextrap.net/info?q=dXJsPSIqL2ludm9pY2UvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/latest/.env`](https://www.nextrap.net/info?q=dXJsPSIqL2xhdGVzdC8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/loyalty/.env`](https://www.nextrap.net/info?q=dXJsPSIqL2xveWFsdHkvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/mail/sendgrid.env`](https://www.nextrap.net/info?q=dXJsPSIqL21haWwvc2VuZGdyaWQuZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/mailer/sendgrid.env`](https://www.nextrap.net/info?q=dXJsPSIqL21haWxlci9zZW5kZ3JpZC5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/media/.env.bak`](https://www.nextrap.net/info?q=dXJsPSIqL21lZGlhLy5lbnYuYmFrKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/microservices/.env`](https://www.nextrap.net/info?q=dXJsPSIqL21pY3Jvc2VydmljZXMvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/modules/*/.env`](https://www.nextrap.net/info?q=dXJsPSIqL21vZHVsZXMvKi8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/neurofeedback/session.env`](https://www.nextrap.net/info?q=dXJsPSIqL25ldXJvZmVlZGJhY2svc2Vzc2lvbi5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/plan/.env`](https://www.nextrap.net/info?q=dXJsPSIqL3BsYW4vLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/projects/.env`](https://www.nextrap.net/info?q=dXJsPSIqL3Byb2plY3RzLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/projeto/.env`](https://www.nextrap.net/info?q=dXJsPSIqL3Byb2pldG8vLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/settings/.env.local`](https://www.nextrap.net/info?q=dXJsPSIqL3NldHRpbmdzLy5lbnYubG9jYWwqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/sms-service/.env.prod`](https://www.nextrap.net/info?q=dXJsPSIqL3Ntcy1zZXJ2aWNlLy5lbnYucHJvZCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/social/.env`](https://www.nextrap.net/info?q=dXJsPSIqL3NvY2lhbC8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/staging/api/.env`](https://www.nextrap.net/info?q=dXJsPSIqL3N0YWdpbmcvYXBpLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/status/.env`](https://www.nextrap.net/info?q=dXJsPSIqL3N0YXR1cy8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/suppliers/.env`](https://www.nextrap.net/info?q=dXJsPSIqL3N1cHBsaWVycy8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/svelte-app/.env`](https://www.nextrap.net/info?q=dXJsPSIqL3N2ZWx0ZS1hcHAvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/symfony/.env.local`](https://www.nextrap.net/info?q=dXJsPSIqL3N5bWZvbnkvLmVudi5sb2NhbCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/test/bdd/fixtures/agent-rest/.env`](https://www.nextrap.net/info?q=dXJsPSIqL3Rlc3QvYmRkL2ZpeHR1cmVzL2FnZW50LXJlc3QvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/test/integration/env-config/app/.env`](https://www.nextrap.net/info?q=dXJsPSIqL3Rlc3QvaW50ZWdyYXRpb24vZW52LWNvbmZpZy9hcHAvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/ticket/.env`](https://www.nextrap.net/info?q=dXJsPSIqL3RpY2tldC8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/user-service/.env.staging`](https://www.nextrap.net/info?q=dXJsPSIqL3VzZXItc2VydmljZS8uZW52LnN0YWdpbmcqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/wallet/.env`](https://www.nextrap.net/info?q=dXJsPSIqL3dhbGxldC8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.aws/.env`](https://www.nextrap.net/info?q=dXJsPSIqLy5hd3MvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.env_old`](https://www.nextrap.net/info?q=dXJsPSIqLy5lbnZfb2xkKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`//api/.env`](https://www.nextrap.net/info?q=dXJsPSIqLy9hcGkvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`//local/.env`](https://www.nextrap.net/info?q=dXJsPSIqLy9sb2NhbC8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`//media/.env`](https://www.nextrap.net/info?q=dXJsPSIqLy9tZWRpYS8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`//server/.env`](https://www.nextrap.net/info?q=dXJsPSIqLy9zZXJ2ZXIvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/admin/config.ini`](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWluL2NvbmZpZy5pbmkqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/admin/db_credentials.env`](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWluL2RiX2NyZWRlbnRpYWxzLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/admin/env/site.env`](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWluL2Vudi9zaXRlLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/api/config/config.ini`](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9jb25maWcvY29uZmlnLmluaSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/api/login.env`](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS9sb2dpbi5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/backup/site.env`](https://www.nextrap.net/info?q=dXJsPSIqL2JhY2t1cC9zaXRlLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/banking/oauth_redirects.env`](https://www.nextrap.net/info?q=dXJsPSIqL2Jhbmtpbmcvb2F1dGhfcmVkaXJlY3RzLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/config/config.php.bak`](https://www.nextrap.net/info?q=dXJsPSIqL2NvbmZpZy9jb25maWcucGhwLmJhayoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/docs/config.yaml`](https://www.nextrap.net/info?q=dXJsPSIqL2RvY3MvY29uZmlnLnlhbWwqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/lib/config.json`](https://www.nextrap.net/info?q=dXJsPSIqL2xpYi9jb25maWcuanNvbioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/��/s3/.env.bak`](https://www.nextrap.net/info?q=dXJsPSIqL--_ve-_vS9zMy8uZW52LmJhayoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/v1/.env`](https://www.nextrap.net/info?q=dXJsPSIqL3YxLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/admin/modules/h/config.php`](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWluL21vZHVsZXMvaC9jb25maWcucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/customer/config.yaml`](https://www.nextrap.net/info?q=dXJsPSIqL2N1c3RvbWVyL2NvbmZpZy55YW1sKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/database.yml~/`](https://www.nextrap.net/info?q=dXJsPSIqL2RhdGFiYXNlLnltbH4vKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/upload.php.old`](https://www.nextrap.net/info?q=dXJsPSIqL3VwbG9hZC5waHAub2xkKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/login`](https://www.nextrap.net/info?q=dXJsPSIqL2xvZ2luKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/uploads/.env`](https://www.nextrap.net/info?q=dXJsPSIqL3VwbG9hZHMvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/rpc.cgi`](https://www.nextrap.net/info?q=dXJsPSIqL3JwYy5jZ2kqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/fuel/pages/select/`](https://www.nextrap.net/info?q=dXJsPSIqL2Z1ZWwvcGFnZXMvc2VsZWN0Lyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/web/google_analytics.php`](https://www.nextrap.net/info?q=dXJsPSIqL3dlYi9nb29nbGVfYW5hbHl0aWNzLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/plugins/editors/jckeditor/plugins/jtreelink/dialogs/links.php`](https://www.nextrap.net/info?q=dXJsPSIqL3BsdWdpbnMvZWRpdG9ycy9qY2tlZGl0b3IvcGx1Z2lucy9qdHJlZWxpbmsvZGlhbG9ncy9saW5rcy5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/cf_scripts/scripts/ajax/ckeditor/plugins/filemanager/upload.cfm`](https://www.nextrap.net/info?q=dXJsPSIqL2NmX3NjcmlwdHMvc2NyaXB0cy9hamF4L2NrZWRpdG9yL3BsdWdpbnMvZmlsZW1hbmFnZXIvdXBsb2FkLmNmbSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/node/.env`](https://www.nextrap.net/info?q=dXJsPSIqL25vZGUvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/umotion/modules/reporting/track_import_export.php`](https://www.nextrap.net/info?q=dXJsPSIqL3Vtb3Rpb24vbW9kdWxlcy9yZXBvcnRpbmcvdHJhY2tfaW1wb3J0X2V4cG9ydC5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/cache/.env`](https://www.nextrap.net/info?q=dXJsPSIqL2NhY2hlLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/filemanager/upload.php`](https://www.nextrap.net/info?q=dXJsPSIqL2ZpbGVtYW5hZ2VyL3VwbG9hZC5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/administrator/.env`](https://www.nextrap.net/info?q=dXJsPSIqL2FkbWluaXN0cmF0b3IvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/content/.env`](https://www.nextrap.net/info?q=dXJsPSIqL2NvbnRlbnQvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/logs/.env`](https://www.nextrap.net/info?q=dXJsPSIqL2xvZ3MvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/api/.git/config`](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS8uZ2l0L2NvbmZpZyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/service/.env`](https://www.nextrap.net/info?q=dXJsPSIqL3NlcnZpY2UvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/settings/.env`](https://www.nextrap.net/info?q=dXJsPSIqL3NldHRpbmdzLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/v3/.env`](https://www.nextrap.net/info?q=dXJsPSIqL3YzLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/sandbox/.env`](https://www.nextrap.net/info?q=dXJsPSIqL3NhbmRib3gvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/temp/.env`](https://www.nextrap.net/info?q=dXJsPSIqL3RlbXAvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/avcon.action`](https://www.nextrap.net/info?q=dXJsPSIqL2F2Y29uLmFjdGlvbioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/services/.env`](https://www.nextrap.net/info?q=dXJsPSIqL3NlcnZpY2VzLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/manage/resourceUpload/imgDownload.do`](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS9yZXNvdXJjZVVwbG9hZC9pbWdEb3dubG9hZC5kbyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/htdocs/.env`](https://www.nextrap.net/info?q=dXJsPSIqL2h0ZG9jcy8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.dbeaver/credentials-config.json`](https://www.nextrap.net/info?q=dXJsPSIqLy5kYmVhdmVyL2NyZWRlbnRpYWxzLWNvbmZpZy5qc29uKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/developer/.env`](https://www.nextrap.net/info?q=dXJsPSIqL2RldmVsb3Blci8uZW52KiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/stage/.env`](https://www.nextrap.net/info?q=dXJsPSIqL3N0YWdlLy5lbnYqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/service/~iufo/com.ufida.web.action.ActionServlet`](https://www.nextrap.net/info?q=dXJsPSIqL3NlcnZpY2Uvfml1Zm8vY29tLnVmaWRhLndlYi5hY3Rpb24uQWN0aW9uU2VydmxldCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/fcgi-bin/wgsetcgi`](https://www.nextrap.net/info?q=dXJsPSIqL2ZjZ2ktYmluL3dnc2V0Y2dpKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/manage/leaveList/exportResourceByFilePath.do`](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS9sZWF2ZUxpc3QvZXhwb3J0UmVzb3VyY2VCeUZpbGVQYXRoLmRvKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/manage/personnel/fileDownload.do`](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS9wZXJzb25uZWwvZmlsZURvd25sb2FkLmRvKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/assets/file:///etc/passwd`](https://www.nextrap.net/info?q=dXJsPSIqL2Fzc2V0cy9maWxlOi8vL2V0Yy9wYXNzd2QqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/wp-content/plugins/wp-payeezy-pay/donate.php`](https://www.nextrap.net/info?q=dXJsPSIqL3dwLWNvbnRlbnQvcGx1Z2lucy93cC1wYXllZXp5LXBheS9kb25hdGUucGhwKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/Doc/data.aspx`](https://www.nextrap.net/info?q=dXJsPSIqL0RvYy9kYXRhLmFzcHgqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/..\..\..\..\..\..\..\..\..\..\..\..\..\..\windows\win.ini`](https://www.nextrap.net/info?q=dXJsPSIqLy4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFwuLlxcd2luZG93c1xcd2luLmluaSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/css//../../../../../../../../../../../../../../../../../../windows\win.ini`](https://www.nextrap.net/info?q=dXJsPSIqL2Nzcy8vLi4vLi4vLi4vLi4vLi4vLi4vLi4vLi4vLi4vLi4vLi4vLi4vLi4vLi4vLi4vLi4vLi4vLi4vd2luZG93c1xcd2luLmluaSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/jQuery-File-Upload/server/php/index.php`](https://www.nextrap.net/info?q=dXJsPSIqL2pRdWVyeS1GaWxlLVVwbG9hZC9zZXJ2ZXIvcGhwL2luZGV4LnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/ws_utc/resources/setting/keystore`](https://www.nextrap.net/info?q=dXJsPSIqL3dzX3V0Yy9yZXNvdXJjZXMvc2V0dGluZy9rZXlzdG9yZSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/session/language`](https://www.nextrap.net/info?q=dXJsPSIqL3Nlc3Npb24vbGFuZ3VhZ2UqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/.docker/laravel/app/.env`](https://www.nextrap.net/info?q=dXJsPSIqLy5kb2NrZXIvbGFyYXZlbC9hcHAvLmVudioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/jquery-file-upload/server/php/index.php`](https://www.nextrap.net/info?q=dXJsPSIqL2pxdWVyeS1maWxlLXVwbG9hZC9zZXJ2ZXIvcGhwL2luZGV4LnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/server/php/UploadHandler.php`](https://www.nextrap.net/info?q=dXJsPSIqL3NlcnZlci9waHAvVXBsb2FkSGFuZGxlci5waHAqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/mailsms/s`](https://www.nextrap.net/info?q=dXJsPSIqL21haWxzbXMvcyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/example/upload.php`](https://www.nextrap.net/info?q=dXJsPSIqL2V4YW1wbGUvdXBsb2FkLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/server/php/upload.class.php`](https://www.nextrap.net/info?q=dXJsPSIqL3NlcnZlci9waHAvdXBsb2FkLmNsYXNzLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/php/change_config.php`](https://www.nextrap.net/info?q=dXJsPSIqL3BocC9jaGFuZ2VfY29uZmlnLnBocCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/db/config.json`](https://www.nextrap.net/info?q=dXJsPSIqL2RiL2NvbmZpZy5qc29uKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/ajax/render/widget_tabbedcontainer_tab_panel`](https://www.nextrap.net/info?q=dXJsPSIqL2FqYXgvcmVuZGVyL3dpZGdldF90YWJiZWRjb250YWluZXJfdGFiX3BhbmVsKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/database/config.json`](https://www.nextrap.net/info?q=dXJsPSIqL2RhdGFiYXNlL2NvbmZpZy5qc29uKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/w_selfservice/oauthservlet/../../common/org/loadtree`](https://www.nextrap.net/info?q=dXJsPSIqL3dfc2VsZnNlcnZpY2Uvb2F1dGhzZXJ2bGV0Ly4uLy4uL2NvbW1vbi9vcmcvbG9hZHRyZWUqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/seeyon/m-signature/RunSignature/run/getAjaxDataServlet`](https://www.nextrap.net/info?q=dXJsPSIqL3NlZXlvbi9tLXNpZ25hdHVyZS9SdW5TaWduYXR1cmUvcnVuL2dldEFqYXhEYXRhU2VydmxldCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/pweb/careerapply/HrmCareerApplyPerView.jsp`](https://www.nextrap.net/info?q=dXJsPSIqL3B3ZWIvY2FyZWVyYXBwbHkvSHJtQ2FyZWVyQXBwbHlQZXJWaWV3LmpzcCoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/eam/vib`](https://www.nextrap.net/info?q=dXJsPSIqL2VhbS92aWIqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/evo-apigw/evo-oauth/oauth/token`](https://www.nextrap.net/info?q=dXJsPSIqL2V2by1hcGlndy9ldm8tb2F1dGgvb2F1dGgvdG9rZW4qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/templates/attestation/../../general/info/view`](https://www.nextrap.net/info?q=dXJsPSIqL3RlbXBsYXRlcy9hdHRlc3RhdGlvbi8uLi8uLi9nZW5lcmFsL2luZm8vdmlldyoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/uapws/service/nc.itf.smart.ISmartQueryWebService`](https://www.nextrap.net/info?q=dXJsPSIqL3VhcHdzL3NlcnZpY2UvbmMuaXRmLnNtYXJ0LklTbWFydFF1ZXJ5V2ViU2VydmljZSoi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/api/v2/config.json`](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS92Mi9jb25maWcuanNvbioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/dist/config.json`](https://www.nextrap.net/info?q=dXJsPSIqL2Rpc3QvY29uZmlnLmpzb24qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/manage/dgmCommand/finishRegister.do/..;/..;/reportResult/exportReportResultExcel.do`](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS9kZ21Db21tYW5kL2ZpbmlzaFJlZ2lzdGVyLmRvLy4uOy8uLjsvcmVwb3J0UmVzdWx0L2V4cG9ydFJlcG9ydFJlc3VsdEV4Y2VsLmRvKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/manage/intercom/..;/..;/manage/meetingPersonal/exportMeetingFile.do`](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS9pbnRlcmNvbS8uLjsvLi47L21hbmFnZS9tZWV0aW5nUGVyc29uYWwvZXhwb3J0TWVldGluZ0ZpbGUuZG8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/manage/intercom/..;/..;/manage/reportResult/exportReportResultExcel.do`](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS9pbnRlcmNvbS8uLjsvLi47L21hbmFnZS9yZXBvcnRSZXN1bHQvZXhwb3J0UmVwb3J0UmVzdWx0RXhjZWwuZG8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/manage/reportResult/exportReportResultExcel.do`](https://www.nextrap.net/info?q=dXJsPSIqL21hbmFnZS9yZXBvcnRSZXN1bHQvZXhwb3J0UmVwb3J0UmVzdWx0RXhjZWwuZG8qIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/secret/config.json`](https://www.nextrap.net/info?q=dXJsPSIqL3NlY3JldC9jb25maWcuanNvbioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/vue/config.json`](https://www.nextrap.net/info?q=dXJsPSIqL3Z1ZS9jb25maWcuanNvbioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/media../.git/config`](https://www.nextrap.net/info?q=dXJsPSIqL21lZGlhLi4vLmdpdC9jb25maWcqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/rest/ofs/ProcessOverRequestByXml`](https://www.nextrap.net/info?q=dXJsPSIqL3Jlc3Qvb2ZzL1Byb2Nlc3NPdmVyUmVxdWVzdEJ5WG1sKiI&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/share/page/dologin`](https://www.nextrap.net/info?q=dXJsPSIqL3NoYXJlL3BhZ2UvZG9sb2dpbioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/wxjsapi/saveYZJFile`](https://www.nextrap.net/info?q=dXJsPSIqL3d4anNhcGkvc2F2ZVlaSkZpbGUqIg&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
+
+- [`/api/v1/config.json`](https://www.nextrap.net/info?q=dXJsPSIqL2FwaS92MS9jb25maWcuanNvbioi&start=2026-11-17&end=2026-11-17&&page=1&is_public=1&src=github)
